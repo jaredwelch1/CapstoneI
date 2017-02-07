@@ -9,18 +9,16 @@
 		* murder is handled by society
 		* allowing humans to be in the position to cause others murder calls for removal of that responsibility. Prevention > punishment 
 
-	* 2:  Banking software 
+	* 2:  Software is reliable - banking software
 		* handles all of our money
 		* quotes to show how it is better
 		* no one scared of banks stealing money 
 		* regulated 
-	* computer science: same as engineering 
-		* bridges use technology and we trust it
-		* to be used for making lives easier - driving and travel could be made easier (goal of technology)
 	* cars are industry, is that immoral to remove it
 		* advancement is never about worrying about replacing the old ways
 		* improvement and innovation is part of what drives innovation
 		* as automation improves, many jobs will inevitably be replaced; it is more important to further technology than worry about 
+	* software developers must be accoutable 
 	* Many possible benefits of self driving cars and how they could improve things
 		* because of all good things, ethics say we should do it  
 - conclusion: sum up 
