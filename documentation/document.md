@@ -23,7 +23,7 @@ a standard to use, or a metric to measure by, in order to determine how much of 
 
 We propose the following software solution:
 
-1. Using published text from media sources, and computer analysis, we propse a software system that uses these published works and 
+Using published text from media sources, and computer analysis, we propse a software system that uses these published works and 
 the resulting data to provide means to measure how that media source reports on certain topics. This would fix both issues above.
 For the first problem, having this data will allow users to have an objective source analyze the data and output information that they can
 then use to judge the media source. All the data will be relative to the source, and all source data should be analyzed in the same 
