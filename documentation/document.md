@@ -18,11 +18,11 @@ Really though, he is in charge of keeping all the printers in the computer labs 
 
 Picture of Zach: O-|-<
 
-Kurt Bognar
+- Kurt Bognar
 
-Ali Raza
+- Ali Raza
 
-Jared Welch
+- Jared Welch
 
 - Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.
 ![alt text](justin.png "Justin Renneke")
@@ -60,5 +60,5 @@ interview.
 * Any person who is interested in obtaining a better understanding of media bias can expect to use this software to explore measureable indicators of bias which will be presented in the form of data analysis and visualizations.
 * The software will provide an interactive user experience based on menus and UI elements that will allow the user to explore the data presented.
 * The user will be presented with both static and dynamic options for data presentation, including the option to input article text and receive back information regarding analysis of its content.
-### Hardware
+### Hardware 
 * Placeholder
