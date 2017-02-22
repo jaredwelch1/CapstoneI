@@ -20,11 +20,12 @@ Picture of Zach: O-|-<
 
 - Kurt Bognar
 
-- Ali Raza
+- Ali Raza: I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
+![alt text](ali.jpg "Ali Raza")
 
 - Jared Welch
 
-- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.
+- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.   
 ![alt text](justin.png "Justin Renneke")
 
 ## introduction(2)
