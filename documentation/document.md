@@ -1,13 +1,6 @@
 # Capstone 2017 Documentation
 
-## Group members:
-
-- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.
-![alt text](justin.png "Justin Renneke")
-
-- Jared Welch 
-
-## team info (1)
+## Team info
 
 Mission Statement:
 
@@ -19,8 +12,8 @@ Beliefs: The Earth is NOT flat.
 
 Team Name: Squad
 
-Team Members:
-Zach Bryant - Nickname = Zen Master Zach, Works on campus as an IT Support Specialist. Yes, he saves live.
+#### Team Members:
+- Zach Bryant - Nickname = Zen Master Zach, Works on campus as an IT Support Specialist. Yes, he saves live.
 Really though, he is in charge of keeping all the printers in the computer labs filled with paper. He can get you swipe access to the labs for after hour access ;).
 
 Picture of Zach: O-|-<
@@ -31,7 +24,8 @@ Ali Raza
 
 Jared Welch
 
-Justin Renneke
+- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.
+![alt text](justin.png "Justin Renneke")
 
 ## introduction(2)
 
