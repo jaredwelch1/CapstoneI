@@ -7,18 +7,26 @@
 ## team info (1)
 
 Mission Statement:
+
 Agenda: We gonna do work and accomplish all of our goals and dreams.
+
 Thoughts: (insert Step Brothers reference)
+
 Beliefs: The Earth is NOT flat.
+
 Team Name: Squad
 
 Team Members:
 Zach Bryant - Nickname = Zen Master Zach, Works on campus as an IT Support Specialist. Yes, he saves live.
 Really though, he is in charge of keeping all the printers in the computer labs filled with paper. He can get you swipe access to the labs for after hour access ;).
 Picture of Zach: O-|-<
+
 Kurt Bognar
+
 Ali Raza
+
 Jared Welch
+
 Justin Renneke
 
 ## introduction(2)
