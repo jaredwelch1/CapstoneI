@@ -16,7 +16,8 @@ Team Name: Squad
 - Zach Bryant: Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save live. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
-- Kurt Bognar
+- Kurt Bognar: Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining. 
+![alt text](pictures/kurt.jpg "Kurt Bognar")
 
 - Ali Raza: I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
 ![alt text](pictures/ali.jpg "Ali Raza")
@@ -31,6 +32,10 @@ Team Name: Squad
 ![alt text](pictures/justin.png "Justin Renneke")
 
 ## introduction(2)
+Team name: Squad
+Teams mission: To create a model that classifies the bias of a news article. 
+
+This election season has been particularly harsh in America. Republicans and Democrats alike made false claims against the media and both were unfairly attacked as well. Being an informed citizen these days is hard enough without news outlets taking sides and obfuscating this bias from the public. For this reason, Squad has decided to fix this problem by creating a model that could be added as an extension so when you are on a web page, you know that it is bias for or against a certain topic based on the overall text in the article, allowing you to seek out sources for the opposing viewpoint and make up your own mind. 
 
 ## Problem statement and solution (3)
 
