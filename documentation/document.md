@@ -13,7 +13,7 @@ Beliefs: The Earth is NOT flat. The sky is not the limit, the mind is.
 Team Name: Squad
 
 #### Team Members:
-- Zach Bryant: Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save live. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
+- Zach Bryant: Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
 - Kurt Bognar: Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining. 
