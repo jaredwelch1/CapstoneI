@@ -14,17 +14,21 @@ Team Name: Squad
 
 #### Team Members:
 - Zach Bryant: Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save live. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
-![alt text](zach.jpg "Zach Bryant")
+![alt text](pictures/zach.jpg "Zach Bryant")
 
 - Kurt Bognar
 
 - Ali Raza: I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
-![alt text](ali.jpg "Ali Raza")
+![alt text](pictures/ali.jpg "Ali Raza")
 
 - Jared Welch
 
+	- Senior at the Univeristy of Missouri. Passionate about improving my skills. Excited for the potential of our application. 
+
+![alt text](pictures/jared.png "Jared Welch")
+
 - Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.   
-![alt text](justin.png "Justin Renneke")
+![alt text](pictures/justin.png "Justin Renneke")
 
 ## introduction(2)
 
