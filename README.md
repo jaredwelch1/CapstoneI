@@ -1,5 +1,21 @@
 # CapstoneI
 
+This our project for capstone. 
+
+Group consisting of:
+
+Kurt
+Ali
+Zach
+Justin
+Jared
+
+We want to explore machine learning application development, language 
+analysis, and predictions about news bias through integrating the preceeding technologies. 
+
+This readme is a document detailing our brainstorming and thinking
+ process throughout development. 
+
 ## TO DO
 
 Since we have little experience in the way of machine learning algorithms, I thought it would be nice to document our learning experience for future use. 
