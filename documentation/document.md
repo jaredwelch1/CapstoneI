@@ -31,13 +31,21 @@ Team Name: Squad
 - Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.   
 ![alt text](pictures/justin.png "Justin Renneke")
 
-## introduction(2)
+## introduction
 Team name: Squad
 Teams mission: To create a model that classifies the bias of a news article. 
 
-This election season has been particularly harsh in America. Republicans and Democrats alike made false claims against the media and both were unfairly attacked as well. Being an informed citizen these days is hard enough without news outlets taking sides and obfuscating this bias from the public. For this reason, Squad has decided to fix this problem by creating a model that could be added as an extension so when you are on a web page, you know that it is bias for or against a certain topic based on the overall text in the article, allowing you to seek out sources for the opposing viewpoint and make up your own mind. 
+This election season has been particularly harsh in America. Republicans 
+and Democrats alike made false claims against the media and both were 
+unfairly attacked as well. Being an informed citizen these days is hard 
+enough without news outlets taking sides and obfuscating this bias from 
+the public. For this reason, Squad has decided to fix this problem by 
+creating a model that could be added as an extension so when you are 
+on a web page, you know that it is bias for or against a certain topic 
+based on the overall text in the article, allowing you to seek out sources 
+for the opposing viewpoint and make up your own mind. 
 
-## Problem statement and solution (3)
+## Problem statement and solution 
 
 ### Problem Definition
 
@@ -70,4 +78,4 @@ interview.
 * The user will be presented with both static and dynamic options for data presentation, including the option to input article text and receive back information regarding analysis of its content.
 
 ### Hardware  
-* Placeholder
+* This will require more detail and discussion about the direction of our project 
