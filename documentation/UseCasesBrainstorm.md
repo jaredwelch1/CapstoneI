@@ -32,5 +32,3 @@ the more complex use cases above.)
 - Given a topic/event, return a list of news sources that have reported on it 
 
   - "Event: Google CEO resigns, return: Fox, CBS, CNBC, ..., 
-
-- Given an article, plot it on a political spectrum that helps represent how left/right, authoritarian/libertarian the article is.
