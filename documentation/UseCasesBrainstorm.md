@@ -27,10 +27,3 @@ the scope of our project.**
   - "Event: Google CEO resigns, return: Fox, CBS, CNBC, ..., 
   
 - For a news outlet (Fox, CBS, etc.), return a word visualization (word cloud) of the most fequently used words.
- 
-
-# Technologies
-- Python (Flask for web dev)
-- PostgresSQL
-- Bag of Words analysis techniques 
-- D3 for visualizations?
