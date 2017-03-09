@@ -5,30 +5,32 @@ the scope of our project.**
 
 ## Machine Learning Applications
 
-- Analyze given articles, based upon user specified criteria (i. e., user chooses to analyze "Political Bias" and
-"Positive or negative" if they desire to view predictions of those categories), and display predicted values for where
-the article falls on the scale based upon our model.
+- Analyze user given articles, and using bag of words dictionaries, predict political placement within political compass.
 
-- create model of bias and news sources from training data, then using the model, analyze bias over time
-  
-  - the model would need to be based upon training data, maybe chosen at random to reduce selection bias, from all time periods
-  (or depending, from each year), This model should give us classifiers that are modeled based on data from all times sampled.
-  
-  - Then, comparing inidividual samples from each 'bucket' (here meaning years, decades, whatever we use to separate them) we could 
-  say "in year X, the average leaning was here, and year Y, it moved to here"
+- Using language processing, find the top 3 most likely main topics from the article.
 
+- Predict sentiment of article in regards to its main topic (e.g., the article is positive in regards to gun violence)
+ 
+- Analyze how much hyperbole is used within an article using language analysis. 
+
+- Analyze for common persuasive techniques and try to identify their use in supplied texts 
+ 
 ## Data visualizations pulled from News articles
 
-(note: many of the machine learning applications will also probably require data visualizations, but these use cases should 
-only be related to those visualizations that do not require machine learning modeling, e.g., "What percentage of Fox reporting 
-is about guns?" Since this is a raw statistic (number about guns/ total) that can be quickly calculated, we can use the same data
-and simple queries to accomplish these use cases as the machine learning ones, but they are much smaller in work load than 
-the more complex use cases above.)
-
 - Simple polling about the percentages of various topics
-  
-  - for instance: "What percentage of analyzed articles relate to women's rights or feminist movements?" 
+  - examples:
+    - "What percentage of analyzed articles relate to women's rights or feminist movements?" 
+    - "How much does CNN report on violence/crime relative to their total reporting?"
   
 - Given a topic/event, return a list of news sources that have reported on it 
 
   - "Event: Google CEO resigns, return: Fox, CBS, CNBC, ..., 
+  
+- For a news outlet (Fox, CBS, etc.), return a word visualization (word cloud) of the most fequently used words.
+ 
+
+# Technologies
+- Python (Flask for web dev)
+- PostgresSQL
+- Bag of Words analysis techniques 
+- D3 for visualizations?
