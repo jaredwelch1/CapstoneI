@@ -79,3 +79,6 @@ interview.
 
 ### Hardware  
 * This will require more detail and discussion about the direction of our project 
+
+### Prezi
+* http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
