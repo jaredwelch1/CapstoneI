@@ -10,7 +10,7 @@ import json
 
 # log errors to a log file in this directory
 import logging
-logging.basicConfig(filename='auto_scrape.log',level=logging.DEBUG,
+logging.basicConfig(filename='auto_scrape.log',level=logging.ERROR,
  					format='%(asctime)s %(message)s line: %(lineno)d')
 
 host = 'localhost'
@@ -25,7 +25,7 @@ try:
 	# conn.cursor will return a cursor object, you can use this cursor to perform queries
 	cursor = conn.cursor()
 except Exception as e:
-	logging.error("::Failed to connect to database::")
+	logging.error("::Exception:Failed to connect to database::")
 	logging.error("::Exception: " + str(e) + "::")
 	print("Failed to connect to database")
 	print("Exception: " + str(e))
@@ -41,7 +41,7 @@ try:
 	# build an object representing the specified table so we can interact with it
 	table = meta.tables['articles']
 except Exception as e:
-	logging.error("::Failed to create sqlalchemy objects::")
+	logging.error("::Exception:Failed to create sqlalchemy objects::")
 	logging.error("::Exception: " + str(e) + "::")
 	print("Failed to create sqlalchemy objects")
 	print("Exception: " + str(e))
@@ -52,7 +52,7 @@ try:
 	with open('site_list.json') as json_data:
 		site_list = json.load(json_data)
 except Exception as e:
-	logging.error("::Failed to load site list json::")
+	logging.error("::Exception:Failed to load site list json::")
 	logging.error("::Exception: " + str(e) + "::")
 	print("Failed to load site list json")
 	print("Exception: " + str(e))
@@ -68,7 +68,7 @@ for site in site_list:
 		paper = newspaper.build(url,
 								keep_article_html=True,
 								fetch_images=False,
-								memoize_articles=True,	# track the articles we have already scraped from session to session
+								memoize_articles=False,	# track the articles we have already scraped from session to session
 								MIN_WORD_COUNT=200,		# this doesn't seem to be having any affect
 								number_threads=2,
 								request_timeout=12,
@@ -138,13 +138,13 @@ for site in site_list:
 										newspaper_summary=summaries[i])
 				engine.execute(insert)
 			except Exception as e:
-				logging.error("::Database insertion error for page: " + url + "::")
+				logging.error("::Exception:Database insertion error for page: " + url + "::")
 				logging.error("::Exception: " + str(e) + "::")
 				print("Database insertion error for page: " + url)
 				print("Exception: " + str(e))
 				pass
 	except Exception as e:
-		logging.error("::Scrapping error for site: " + name + "::")
+		logging.error("::Exception:Scrapping error for site: " + name + "::")
 		logging.error("::Exception: " + str(e) + "::")
 		print("Scrapping error for site: " + name)
 		print("Exception: " + str(e))
