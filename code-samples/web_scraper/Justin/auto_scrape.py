@@ -7,6 +7,8 @@ import nltk
 from random import randint
 from time import sleep
 import json
+import sys
+
 
 # log errors to a log file in this directory
 import logging
