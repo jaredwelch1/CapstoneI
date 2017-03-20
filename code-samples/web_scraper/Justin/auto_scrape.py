@@ -8,6 +8,7 @@ from sqlalchemy import func
 from random import randint
 from time import sleep
 import json
+import sys
 
 host = 'localhost'
 dbname = 'justin'
