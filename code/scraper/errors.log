@@ -1,5 +1,0 @@
-2017-03-22 12:44:49,146 root         ERROR    Test error to log before looks at scraped articles
-2017-03-22 12:44:56,176 root         ERROR    ___Rejected article for being too short___
-2017-03-22 12:45:00,181 root         ERROR    ::Exception:Scrapping error for site: CNN::
-2017-03-22 12:45:00,185 root         ERROR    ::Exception: list index out of range::
-2017-03-22 12:45:25,650 root         ERROR    Test error to log before looks at scraped articles
