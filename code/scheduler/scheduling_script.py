@@ -1,25 +1,35 @@
+import sys
+sys.path.insert(0, '../scraper/')
 from time import sleep
 from apscheduler.schedulers.background import BackgroundScheduler as Scheduler
 import logging
 import datetime
+import random
+
+from auto_scrape import scrape
 
 # create a scheduler
 s = Scheduler()
 
+# create logging config
+logging.basicConfig(filename='scheduler.log',level=logging.INFO,
+	 					format='%(asctime)s %(message)s line: %(lineno)d')
+
 # This is what I want to happen
+# I define a function that will the job I want to run. I supply that function to the add_job for scheduler
+
 def job():
-
-	logging.basicConfig(filename='scheduled_task.log',level=logging.INFO,
- 					format='%(asctime)s %(message)s line: %(lineno)d')
-
-	try:
-		logging.info( "scheduled event")
-	except Exception as e:
-		print("open file failed")
+	logging.info('Starting scrape job')	
+	scrape('../scraper/site_list.json')
+	logging.info('Ending scrape job')
 
 def main():
-	newTime = datetime.datetime.now() + datetime.timedelta(seconds = 2)
-	s.add_job(job, 'cron',  hour='0-23')
+	# this actually creates the job and background scheduler for it
+	randHour = random.randrange(2,6)
+	randMin = random.randrange(0, 60, 5)
+	logging.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
+	s.add_job(job, 'cron', hour=randHour, minute=randMin)
+	
 	s.start()
 
 	try:
@@ -34,5 +44,3 @@ def main():
 if __name__ == "__main__":
 	main()
 
-
-# Running a python script with python script & will fork that process immediately, so you can close the terminal. 
