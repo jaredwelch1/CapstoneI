@@ -5,6 +5,7 @@ from apscheduler.schedulers.background import BackgroundScheduler as Scheduler
 import logging
 import datetime
 import random
+import pytz	
 
 from auto_scrape import scrape
 
@@ -20,15 +21,20 @@ logging.basicConfig(filename='scheduler.log',level=logging.INFO,
 
 def job():
 	logging.info('Starting scrape job')	
-	scrape('../scraper/site_list.json')
-	logging.info('Ending scrape job')
+	try:	
+		scrape('../scraper/site_list.json')
+	except Exception as e:
+		logging.error("Exception caught inside job" + str(e))
 
+	logging.info('Ending scrape job')
 def main():
 	# this actually creates the job and background scheduler for it
-	randHour = random.randrange(2,6)
-	randMin = random.randrange(0, 60, 5)
-	logging.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
-	s.add_job(job, 'cron', hour=randHour, minute=randMin)
+	# randHour = random.randrange(2,6)
+	# randMin = random.randrange(0, 60, 5)
+	# logging.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
+	logging.info('Scrape scheduled with random time: ' + str(9) + ':' + str(18)) 
+		
+	s.add_job(job, 'cron', hour=9, minute=18, timezone=pytz.timezone('US/Central'))
 	
 	s.start()
 
