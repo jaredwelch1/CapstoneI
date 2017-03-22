@@ -1,5 +1,4 @@
 import newspaper
-import psycopg2
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import func
