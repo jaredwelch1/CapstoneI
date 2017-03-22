@@ -1,5 +1,4 @@
 # CapstoneI
-asdfasdfasdf
 This our project for capstone. 
 
 Group consisting of:
