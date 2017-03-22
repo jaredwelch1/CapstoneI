@@ -1,3 +1,4 @@
+
 import newspaper
 import sqlalchemy
 from sqlalchemy import create_engine
@@ -7,23 +8,19 @@ from random import randint
 from time import sleep
 import json
 import sys
-import logging
+from custom_logging import get_logger 
 
-def scrape(path_to_json):
+def scrape():
 	# log errors to a log file in this directory
 	
-	logging.basicConfig(filename='auto_scrape.log',level=logging.ERROR,
-	 					format='%(asctime)s %(message)s line: %(lineno)d')
-
-	logging.basicConfig(filename='scrape_finish.log',level=logging.INFO,
-	 					format='%(asctime)s %(message)s')
-
+	logging = get_logger()
 
 	host = 'localhost'
-	dbname = 'cap'
+	# dbname = 'cap'
 	user = 'postgres'
-	password = 'secret'
-
+	# password = 'secret'
+	dbname = 'capstone'
+	password = 'testPass'
 
 	try:
 		# create a sqlalchemy engine that connects to our db
@@ -39,7 +36,7 @@ def scrape(path_to_json):
 
 	# get dictionary of sites to scrap from file
 	try:
-		with open(path_to_json) as json_data:
+		with open('site_list.json') as json_data:
 			site_list = json.load(json_data)
 	except Exception as e:
 		logging.error("::Exception:Failed to load site list json::")
@@ -61,7 +58,7 @@ def scrape(path_to_json):
 									request_timeout=12,
 									thread_timeout=3)
 			total = paper.size()
-			numScraped = total
+			numScraped = 5
 
 			htmls = []
 			titles = []
@@ -71,7 +68,7 @@ def scrape(path_to_json):
 			texts = []
 			keywords = []	# keywords according to newspaper's nlp functionality
 			summaries = []	# summary according to newspaper's nlp functionality
-
+			logging.error('Test error to log before looks at scraped articles')
 			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:

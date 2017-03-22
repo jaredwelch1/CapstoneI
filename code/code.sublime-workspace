@@ -1,0 +1,292 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"invalid",
+				"invalid_num"
+			],
+			[
+				"valid",
+				"valid_email"
+			],
+			[
+				"inv",
+				"invalid_num"
+			],
+			[
+				"all",
+				"allocate_not_null"
+			],
+			[
+				"check",
+				"check_email"
+			],
+			[
+				"node",
+				"node"
+			],
+			[
+				"dele",
+				"delete_error2"
+			],
+			[
+				"sum_error",
+				"sum_error_4"
+			],
+			[
+				"sum",
+				"sum_error_3"
+			],
+			[
+				"comment",
+				"commments"
+			],
+			[
+				"er",
+				"error_2"
+			],
+			[
+				"err",
+				"error_2"
+			],
+			[
+				"delete_e",
+				"delete_error2"
+			],
+			[
+				"de",
+				"delete_error1"
+			],
+			[
+				"su",
+				"sum_error_2"
+			],
+			[
+				"list",
+				"list"
+			],
+			[
+				"first",
+				"first_node_check"
+			],
+			[
+				"crea",
+				"create_list"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"sorted",
+				"sorted"
+			],
+			[
+				"A",
+				"ASSERT_EQ"
+			],
+			[
+				"double",
+				"double"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 401.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/run/user/1000/gvfs/sftp:host=capstone/home/ubuntu/CapstoneI/code/scraper/auto_scrape.py",
+		"/home/jared/Desktop/notes/CapstoneI/code/scraper/auto_scrape.py",
+		"/usr/share/VisualBoyAdvance/vba-over.ini",
+		"/home/jared/Desktop/notes/CapstoneI/code-samples/web_scraper/Justin/auto_scrape.py",
+		"/home/jared/Desktop/notes/CapstoneI/code-samples/web_scraper/jared/scheduling_script.py",
+		"/home/jared/Desktop/notes/CapstoneI/code-samples/web_scraper/jared/testing_postgres.py",
+		"/home/jared/Desktop/notes/CapstoneI/code-samples/web_scraper/jared/test.html",
+		"/home/jared/Desktop/notes/CapstoneI/code-samples/web_scraper/Justin/articlesTable.sql",
+		"/home/jared/Desktop/notes/CapstoneI/code-samples/web_scraper/testing_postgres.py",
+		"/opt/lampp/htdocs/leagueJournal/code/profile.php",
+		"/opt/lampp/htdocs/leagueJournal/code/createAccount.php",
+		"/opt/lampp/htdocs/leagueJournal/code/header.php",
+		"/opt/lampp/htdocs/leagueJournal/config.php",
+		"/home/jared/Desktop/code/2050/lab5/gradingScript.sh",
+		"/home/jared/Desktop/code/2050/lab5/tests.cpp",
+		"/home/jared/Desktop/code/2050/lab5/CS2050_LAB5/CS2050B_LAB5/daj6gd_LAB5.c",
+		"/home/jared/Desktop/code/2050/lab5/CS2050_LAB5/tests.cpp",
+		"/home/jared/Desktop/code/2050/lab6/gradingScript.sh",
+		"/opt/lampp/htdocs/leagueJournal/code/photos.php",
+		"/opt/lampp/htdocs/leagueJournal/README.md",
+		"/home/jared/Desktop/code/2050/lab6/labs/pawprint_lab6.c",
+		"/home/jared/Desktop/code/2050/lab6/labs/jbwy9b_lab6.c",
+		"/home/jared/Desktop/code/2050/lab6/tests.cpp",
+		"/home/jared/Desktop/code/2050/lab6/pawprint_lab6.c",
+		"/home/jared/Desktop/code/2050/lab5/CS2050_LAB5/CS2050C_LAB5/bjm44f_LAB5.c",
+		"/home/jared/Desktop/code/test/bashTests/bashGrader/in_file2.txt",
+		"/home/jared/Desktop/code/test/bashTests/bashGrader/in_file.txt",
+		"/home/jared/Desktop/code/test/bashTests/bashGrader/blah.cpp",
+		"/home/jared/Desktop/code/test/bashTests/bashGrader/tests.cpp",
+		"/home/jared/Desktop/code/test/bashTests/bashGrader/test_dir/jbwy9b_lab2.c",
+		"/home/jared/Desktop/code/test/bashTests/bashGrader/test_dir/b_grades/B_lab/jesnwd_LAB2.c",
+		"/run/user/1000/gvfs/sftp:host=tc.rnet.missouri.edu,user=jbwy9b/home/jbwy9b/OS/project1copy/project1_jbwy9b/test/tests.cpp",
+		"/run/user/1000/gvfs/sftp:host=tc.rnet.missouri.edu,user=jbwy9b/home/jbwy9b/OS/modules/learning_modules_jbwy9b/debug/test/tests.cpp",
+		"/run/user/1000/gvfs/sftp:host=tc.rnet.missouri.edu,user=jbwy9b/home/jbwy9b/OS/modules/learning_modules_jbwy9b/allocation/test/tests.cpp",
+		"/home/jared/jbwy9b"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"psycopg2"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "code.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
