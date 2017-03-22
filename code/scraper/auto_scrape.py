@@ -16,11 +16,9 @@ def scrape():
 	logging = get_logger()
 
 	host = 'localhost'
-	# dbname = 'cap'
+	dbname = 'cap'
 	user = 'postgres'
-	# password = 'secret'
-	dbname = 'capstone'
-	password = 'testPass'
+	password = 'secret'
 
 	try:
 		# create a sqlalchemy engine that connects to our db
@@ -58,7 +56,7 @@ def scrape():
 									request_timeout=12,
 									thread_timeout=3)
 			total = paper.size()
-			numScraped = 5
+			numScraped = total
 
 			htmls = []
 			titles = []
@@ -87,9 +85,6 @@ def scrape():
 								paper.articles[x].nlp()
 								keywords.append(paper.articles[x].keywords)
 								summaries.append(paper.articles[x].summary)
-							else:
-								logging.error("___Rejected article for being too short___")
-
 			for i in range(0, len(titles)-1):
 				# catch cases in which there is no primary author
 				# chose not to log the errors regarding authors because this will probably be common
@@ -126,4 +121,3 @@ def scrape():
 			logging.error("::Exception:Scrapping error for site: " + name + "::")
 			logging.error("::Exception: " + str(e) + "::")
 	logging.info("_________SCRIPT FINISHED________" + str(func.current_timestamp()))
-	
