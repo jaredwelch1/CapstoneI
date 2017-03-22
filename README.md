@@ -1,5 +1,4 @@
 # CapstoneI
-
 This our project for capstone. 
 
 Group consisting of:

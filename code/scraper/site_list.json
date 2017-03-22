@@ -1,0 +1,27 @@
+[
+  {
+    "name":"CNN",
+    "url":"http://cnn.com"
+  },
+  {
+    "name":"BBC",
+    "url":"http://bbc.com/news"
+  },
+  {
+    "name":"FOX",
+    "url":"http://www.foxnews.com"
+  },
+  {
+    "name":"Breitbart",
+    "url":"http://www.breitbart.com"
+  },
+  {
+    "name":"HuffingtonPost",
+    "url":"http://www.huffingtonpost.com"
+  },
+  {
+    "name":"Time",
+    "url":"http://www.time.com"
+  }
+]
+
