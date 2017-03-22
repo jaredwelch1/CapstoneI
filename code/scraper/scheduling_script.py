@@ -30,12 +30,10 @@ def main():
 	logger = get_logger()
 
 	# this actually creates the job and background scheduler for it
-	# randHour = random.randrange(2,6)
-	# randMin = random.randrange(0, 60, 5)
-	# logging.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
-	logger.info('Scrape scheduled with random time: ' + str(10) + ':' + str(30)) 
-	s.add_job( job, 'date')	
-	# s.add_job(job, 'cron', hour=10, minute=30, timezone=pytz.timezone('US/Central'))
+	randHour = random.randrange(2,6)
+	randMin = random.randrange(0, 60, 5)
+	logger.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
+	s.add_job(job, 'cron', hour=randHour, minute=randMin, timezone=pytz.timezone('US/Central'))
 	
 	s.start()
 
