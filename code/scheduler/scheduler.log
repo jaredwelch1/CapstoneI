@@ -1,4 +1,0 @@
-2017-03-22 01:23:46,593 Scrape scheduled with random time: 5:55 line: 30
-2017-03-22 01:23:46,639 Adding job tentatively -- it will be properly scheduled when the scheduler starts line: 431
-2017-03-22 01:23:46,640 Added job "job" to job store "default" line: 865
-2017-03-22 01:23:46,640 Scheduler started line: 158
