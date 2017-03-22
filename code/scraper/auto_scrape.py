@@ -66,7 +66,6 @@ def scrape():
 			texts = []
 			keywords = []	# keywords according to newspaper's nlp functionality
 			summaries = []	# summary according to newspaper's nlp functionality
-			logging.error('Test error to log before looks at scraped articles')
 			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:
