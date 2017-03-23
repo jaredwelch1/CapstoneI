@@ -93,7 +93,7 @@ def scrape():
 										site=name, 
 										title=title, 
 										author=primary_author,
-										secondary_authors=secondary_authors,
+										secondary_authors=secondAuth,
 										published_on=published_date,
 										accessed_on=func.current_timestamp(),
 										url=url,
