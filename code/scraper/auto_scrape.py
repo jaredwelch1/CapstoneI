@@ -40,8 +40,6 @@ def scrape():
 		logging.error("::Exception:Failed to load site list json::")
 		logging.error("::Exception: " + str(e) + "::")
 		sys.exit(1)
-
-	logging.info("_________SCRIPT START________" + str(func.current_timestamp()))
 	for site in site_list:
 		name = site['name']
 		url = site['url']
@@ -56,8 +54,9 @@ def scrape():
 									request_timeout=12,
 									thread_timeout=3)
 			total = paper.size()
-			numScraped = 3
+			numScraped = total
 			authors = []
+			secondAuth = []
 			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:
@@ -83,17 +82,18 @@ def scrape():
 									pass
 								# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
 								try:
-									if sum([len(author) for author in authors[1]]) > 100:
-										authors[1] = []
+									if sum([len(author) for author in authors[1:]]) > 100:
+										secondAuth = ''
+									else:
+										secondAuth += authors[1:]
 								except IndexError as ie:
-									authors[1] = []
 									pass
 								try:
 									insert = table.insert().values( 
 										site=name, 
 										title=title, 
 										author=primary_author,
-										secondary_authors=authors[1],
+										secondary_authors=secondary_authors,
 										published_on=published_date,
 										accessed_on=func.current_timestamp(),
 										url=url,
@@ -111,4 +111,4 @@ def scrape():
 			logging.error("::Exception:Scrapping error for site: " + name + "::")
 			logging.error("::Exception: " + str(e) + "::")
 			pass
-	logging.info("_________SCRIPT FINISHED________" + str(func.current_timestamp()))
+
