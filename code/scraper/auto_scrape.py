@@ -56,17 +56,8 @@ def scrape():
 									request_timeout=12,
 									thread_timeout=3)
 			total = paper.size()
-			numScraped = total
-
-			htmls = []
-			titles = []
-			urls = []
+			numScraped = 3
 			authors = []
-			published_dates = []
-			texts = []
-			keywords = []	# keywords according to newspaper's nlp functionality
-			summaries = []	# summary according to newspaper's nlp functionality
-			logging.error('Test error to log before looks at scraped articles')
 			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:
@@ -76,48 +67,48 @@ def scrape():
 							paper.articles[x].parse()
 							# Ensure article is long enough to be valid
 							if len(nltk.word_tokenize(paper.articles[x].text)) > 200:
-								htmls.append(paper.articles[x].article_html.replace('\n', ' '))
-								titles.append(paper.articles[x].title)
-								urls.append(paper.articles[x].url)
-								published_dates.append(paper.articles[x].publish_date)
-								authors.append(paper.articles[x].authors)
-								texts.append(paper.articles[x].text.replace('\n', ' '))
+								html = paper.articles[x].article_html.replace('\n', ' ')
+								title = (paper.articles[x].title)
+								url = paper.articles[x].url
+								published_date = paper.articles[x].publish_date
+								authors = paper.articles[x].authors
+								text = paper.articles[x].text.replace('\n', ' ')
 								paper.articles[x].nlp()
-								keywords.append(paper.articles[x].keywords)
-								summaries.append(paper.articles[x].summary)
-			for i in range(0, len(titles)-1):
-				# catch cases in which there is no primary author
-				# chose not to log the errors regarding authors because this will probably be common
-				try:
-					primary_author = authors[i][0]
-				except IndexError as ie:
-					primary_author = None
-					pass
-				# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
-				try:
-					if sum([len(author) for author in authors[i][1:]]) > 100:
-						authors[i][1:] = []
-				except IndexError as ie:
-					authors[i] = []
-					pass
-				try:
-					insert = table.insert().values(site=name,
-											title=titles[i],
-											author=primary_author,
-											secondary_authors=authors[i][1:],
-											published_on=published_dates[i],
-											accessed_on=func.current_timestamp(),
-											url=urls[i],
-											body=texts[i],
-											html=htmls[i],
-											newspaper_keywords=keywords[i],
-											newspaper_summary=summaries[i])
-					engine.execute(insert)
-				except Exception as e:
-					logging.error("::Exception:Database insertion error for page: " + url + "::")
-					logging.error("::Exception: " + str(e) + "::")
-					pass
+								keywords = paper.articles[x].keywords
+								summary = paper.articles[x].summary
+								try:
+									primary_author = authors[0]
+								except IndexError as ie:
+									primary_author = None
+									pass
+								# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
+								try:
+									if sum([len(author) for author in authors[1]]) > 100:
+										authors[1] = []
+								except IndexError as ie:
+									authors[1] = []
+									pass
+								try:
+									insert = table.insert().values( 
+										site=name, 
+										title=title, 
+										author=primary_author,
+										secondary_authors=authors[1],
+										published_on=published_date,
+										accessed_on=func.current_timestamp(),
+										url=url,
+										body=text,
+										html=html,
+										newspaper_keywords=keywords,
+										newspaper_summary= 	
+										summary)					
+									engine.execute(insert)
+								except Exception as e:
+									logging.error("::Exception:Database insertion error for page: " + url + "::")
+									logging.error("::Exception: " + str(e) + "::")
+									pass
 		except Exception as e:
 			logging.error("::Exception:Scrapping error for site: " + name + "::")
 			logging.error("::Exception: " + str(e) + "::")
+			pass
 	logging.info("_________SCRIPT FINISHED________" + str(func.current_timestamp()))
