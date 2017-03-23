@@ -58,13 +58,6 @@ def scrape():
 			total = paper.size()
 			numScraped = 3
 			authors = []
-<<<<<<< HEAD
-=======
-			published_dates = []
-			texts = []
-			keywords = []	# keywords according to newspaper's nlp functionality
-			summaries = []	# summary according to newspaper's nlp functionality
->>>>>>> 05cf757fe4528d7dd74d3f80d78e9f11bdde57bb
 			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:
