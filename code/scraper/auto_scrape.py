@@ -56,7 +56,7 @@ def scrape():
 			total = paper.size()
 			numScraped = total
 			authors = []
-			secondAuth = []
+			secondAuth = ''
 			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:
