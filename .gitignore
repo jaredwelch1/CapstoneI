@@ -3,3 +3,4 @@ documentation/document_absolutePaths_for_pdf.md
 
 # ignore log files
 *.log
+__pycache__
