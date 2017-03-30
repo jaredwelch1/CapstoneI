@@ -85,7 +85,7 @@ def scrape():
 									if sum([len(author) for author in authors[1:]]) > 100:
 										secondAuth = ''
 									else:
-										secondAuth += authors[1:]
+										secondAuth = str(authors[1:])
 								except IndexError as ie:
 									pass
 								try:
