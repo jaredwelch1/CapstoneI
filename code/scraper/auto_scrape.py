@@ -115,5 +115,6 @@ def scrape():
 				logging.error("::Exception:Scrapping error for site: " + name + "::")
 				logging.error("::Exception: " + str(e) + "::")
 				pass
+			os._exit(0)
 		else:
 			pid, status = os.waitpid(child_id, 0)
