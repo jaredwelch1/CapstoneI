@@ -57,9 +57,8 @@ def scrape():
 			numScraped = total
 			authors = []
 			secondAuth = ''
-			# xrange creates a lazy iteration of the list, rather than creating a complete list
-			# i think this might fix the out of memory error
-			for x in xrange(0,numScraped):
+			
+			for x in range(0,numScraped):
 				sleep(randint(3,6))
 				if paper.articles[x] != None:
 					paper.articles[x].download()
@@ -78,7 +77,7 @@ def scrape():
 								keywords = paper.articles[x].keywords
 								summary = paper.articles[x].summary
 								try:
-									primary_author = authors[0]
+									primary_author = str(authors[0])
 								except IndexError as ie:
 									primary_author = None
 									pass
