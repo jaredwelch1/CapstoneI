@@ -1,21 +1,5 @@
 [
   {
-    "name":"CNN",
-    "url":"http://cnn.com"
-  },
-  {
-    "name":"BBC",
-    "url":"http://bbc.com/news"
-  },
-  {
-    "name":"FOX",
-    "url":"http://www.foxnews.com"
-  },
-  {
-    "name":"Breitbart",
-    "url":"http://www.breitbart.com"
-  },
-  {
     "name":"Yahoo",
     "url":"https://www.yahoo.com/news/"
   },
@@ -46,6 +30,26 @@
   {
     "name":"USAToday",
     "url":"http://www.usatoday.com/"
+  },
+  {
+    "name":"CNN",
+    "url":"http://cnn.com"
+  },
+  {
+    "name":"BBC",
+    "url":"http://bbc.com/news"
+  },
+  {
+    "name":"FOX",
+    "url":"http://www.foxnews.com"
+  },
+  {
+    "name":"Breitbart",
+    "url":"http://www.breitbart.com"
+  },
+  {
+    "name":"Huffington Post",
+    "url":"http://www.huffingtonpost.com"
   }
 ]
 
