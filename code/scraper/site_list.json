@@ -1,5 +1,37 @@
 [
   {
+    "name":"Yahoo",
+    "url":"https://www.yahoo.com/news/"
+  },
+  {
+    "name":"GoogleNews",
+    "url":"https://news.google.com/"
+  },
+  {
+    "name":"NewYorkTimes",
+    "url":"https://www.nytimes.com/"
+  },
+  {
+    "name":"NBC",
+    "url":"http://www.nbcnews.com/"
+  },
+  {
+    "name":"WashingtonPost",
+    "url":"https://www.washingtonpost.com/"
+  },
+  {
+    "name":"Guardian",
+    "url":"https://www.theguardian.com/us"
+  },
+  {
+    "name":"WallStreetJournal",
+    "url":"https://www.wsj.com/"
+  },
+  {
+    "name":"USAToday",
+    "url":"http://www.usatoday.com/"
+  },
+  {
     "name":"CNN",
     "url":"http://cnn.com"
   },
@@ -16,12 +48,8 @@
     "url":"http://www.breitbart.com"
   },
   {
-    "name":"HuffingtonPost",
+    "name":"Huffington Post",
     "url":"http://www.huffingtonpost.com"
-  },
-  {
-    "name":"Time",
-    "url":"http://www.time.com"
   }
 ]
 
