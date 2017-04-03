@@ -13,7 +13,6 @@ s = Scheduler()
 
 # This is what I want to happen
 # I define a function that will the job I want to run. I supply that function to the add_job for scheduler
-
 def job():
 	
 	logger = get_logger()
@@ -22,8 +21,8 @@ def job():
 	try:	
 		scrape()
 	except Exception as e:
-		logger.error("Exception caught inside job" + str(e))
-
+		logger.error("Exception caught inside job " + str(e))
+		pass
 	logger.info('Ending scrape job')
 def main():
 	
