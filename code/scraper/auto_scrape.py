@@ -118,4 +118,4 @@ def scrape(logging):
 		else:
 			pid, status = os.waitpid(child_id, 0)
 	end = time()
-	logging.info("___________Scraper took " + str(end - time) + " seconds_____________")
+	logging.info("___________Scraper took " + str(end - start) + " seconds_____________")
