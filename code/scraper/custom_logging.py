@@ -9,10 +9,6 @@ def get_logger(
     log           = logging.getLogger(LOG_NAME)
     log_formatter = logging.Formatter(LOG_FORMAT)
 
-    # comment this to suppress console output
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(log_formatter)
-    log.addHandler(stream_handler)
 
     file_handler_info = logging.FileHandler(LOG_FILE_INFO, mode='w')
     file_handler_info.setFormatter(log_formatter)
