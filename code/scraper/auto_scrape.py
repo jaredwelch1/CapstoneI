@@ -85,7 +85,7 @@ def scrape(logging):
 										pass
 									# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
 									try:
-										if len(str(author[1:])) > 100:
+										if len(str(authors[1:])) > 100:
 											secondAuth = ''
 										else:
 											secondAuth = str(authors[1:])
