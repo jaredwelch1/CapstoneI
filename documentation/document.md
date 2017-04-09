@@ -4,11 +4,19 @@
 
 Mission Statement: Our mission is to analyze news articles and determine whether they are positive or negative and research the effects that they have on the world.
 
-Agenda: We gonna do work and accomplish all of our goals and dreams.
+Agenda: Get Amazon Webserver
+	Create a database to store articles.
+	Create a Python Webscrapper to get and store those articles in the afformentioned database.
+	Start webscrapper.
+	Brain storm machine learning techniques. 
+	Appy machine learning techniques. 
+	Create visualizations.
+	
+	
 
-Thoughts: (insert Step Brothers reference) Fake news is a growing concern today and we want to do something about it.
+Thoughts: (insert Step Brothers reference) Fake news is a growing concern today and we want to do something about it?????????????????
 
-Beliefs: The Earth is NOT flat. The sky is not the limit, the mind is.
+Beliefs: The Earth is NOT flat. The sky is not the limit, the mind is.???????????????????????????
 
 Team Name: Squad
 
