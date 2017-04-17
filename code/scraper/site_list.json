@@ -52,6 +52,30 @@
     "url":"http://www.huffingtonpost.com"
   },
   {
+    "name":"CNET",
+    "url":"https://www.cnet.com"
+  },
+  {
+    "name":"The Verge",
+    "url":"https://www.theverge.com"
+  },
+  {
+    "name":"Tech Cruch",
+    "url":"https://techcrunch.com/"
+  },
+  {
+    "name":"The Next Web",
+    "url":"https://thenextweb.com/"
+  },
+  {
+    "name":"Engadget",
+    "url":"https://www.engadget.com/"
+  },
+  {
+    "name":"Arstechnica",
+    "url":"https://arstechnica.com/"
+  },
+  {
 	"name":"Time",
 	"url":"http://time.com"
   },
@@ -103,5 +127,4 @@
   "name":"Telegram",
   "url":"http://telegram.com"
   }
-
 ]

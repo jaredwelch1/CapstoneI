@@ -19,7 +19,7 @@ def job():
 
 	logger.info('Starting scrape job')	
 	try:	
-		scrape()
+		scrape(logger)
 	except Exception as e:
 		logger.error("Exception caught inside job " + str(e))
 		pass

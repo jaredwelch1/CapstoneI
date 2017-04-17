@@ -5,15 +5,14 @@ from sqlalchemy import create_engine
 from sqlalchemy import func
 import nltk
 from random import randint
-from time import sleep
+from time import sleep, time
 import json
 import sys, os
 from custom_logging import get_logger 
 
-def scrape():
-	# log errors to a log file in this directory
+def scrape(logging):
 	
-	logging = get_logger()
+	start = time()
 
 	host = 'localhost'
 	dbname = 'cap'
@@ -86,7 +85,7 @@ def scrape():
 										pass
 									# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
 									try:
-										if sum([len(author) for author in authors[1:]]) > 100:
+										if len(str(authors[1:])) > 100:
 											secondAuth = ''
 										else:
 											secondAuth = str(authors[1:])
@@ -118,3 +117,5 @@ def scrape():
 			os._exit(0)
 		else:
 			pid, status = os.waitpid(child_id, 0)
+	end = time()
+	logging.info("___________Scraper took " + str(end - start) + " seconds_____________")

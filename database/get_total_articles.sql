@@ -2,11 +2,10 @@ CREATE OR REPLACE FUNCTION get_total_articles()
   RETURNS int AS
 $$
 BEGIN
-  RETURN QUERY
+  RETURN (
 
   SELECT COUNT(*) 
-  FROM articles;
-
+  FROM articles);
 END; $$
 
 LANGUAGE plpgsql;
