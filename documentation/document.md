@@ -82,3 +82,15 @@ interview.
 
 ### Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
+
+### Non Functional Requirments
+* Availibility: 99% server availibility.
+* Backup: Bi-weekly backups of server, database, and news articles. 
+* HTTPs encryption with a valid SSL certificate.
+* Extensibility: Modular software design using OOP practices to allow for easy addition of new features.
+* Licensing: MIT License 
+* Performance: Analyze users article in less than one minute
+* Portability: Designed to be compatible with modile and tables systems.
+
+#### Non Functional Strech Goal
+* Response Time: Real time article classification
