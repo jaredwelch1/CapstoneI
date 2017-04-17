@@ -50,6 +50,58 @@
   {
     "name":"Huffington Post",
     "url":"http://www.huffingtonpost.com"
+  },
+  {
+	"name":"Time",
+	"url":"http://time.com"
+  },
+  {
+  "name":"Atlantic",
+  "url":"http://theatlantic.com"
+  },
+  {
+  "name":"Vice",
+  "url":"http://vice.com"
+  },
+  {
+  "name":"NPR",
+  "url":"http://npr.org"
+  },
+  {
+  "name":"ChicagoSunTimes",
+  "url":"http://suntimes.com"
+  },
+  {
+  "name":"BusinessInsider",
+  "url":"http://businessinsider.com"
+  },
+  {
+  "name":"BusinessJournal",
+  "url":"http://thebusinessjournal.com"
+  },
+  {
+  "name":"NewRepublic",
+  "url":"http://newrepublic.com"
+  },
+  {
+  "name":"Morningstar",
+  "url":"http://morningstar.com"
+  },
+  {
+  "name":"Variety",
+  "url":"http://variety.com"
+  },
+  {
+  "name":"News.AU",
+  "url":"http://news.com.au"
+  },
+  {
+  "name":"DailyWorld",
+  "url":"http://thedailyworld.com"
+  },
+  {
+  "name":"Telegram",
+  "url":"http://telegram.com"
   }
-]
 
+]
