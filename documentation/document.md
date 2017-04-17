@@ -81,9 +81,9 @@ interview.
 
 ## Requirements
 ### User
-* Any person who is interested in obtaining a better understanding of media bias can expect to use this software to explore measureable indicators of bias which will be presented in the form of data analysis and visualizations.
-* The software will provide an interactive user experience based on menus and UI elements that will allow the user to explore the data presented.
-* The user will be presented with both static and dynamic options for data presentation, including the option to input article text and receive back information regarding analysis of its content.
+* User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
+* User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models. 
+* User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
 ### Hardware  
 * This will require more detail and discussion about the direction of our project
