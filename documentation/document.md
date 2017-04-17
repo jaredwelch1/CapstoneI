@@ -28,7 +28,7 @@ Team Name: Squad
 
 ![alt text](pictures/jared.png "Jared Welch")
 
-- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.   
+- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17. Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.   
 ![alt text](pictures/justin.png "Justin Renneke")
 
 ## introduction
@@ -80,5 +80,16 @@ interview.
 ### Hardware  
 * This will require more detail and discussion about the direction of our project 
 
-### Prezi
+### Functional
+* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
+* Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
+* Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
+* A web application will provide users with visualizations of the clustered topics and their articles.
+* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result.  
+#### Functional Stretch Goals
+* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
+* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
+* Perform sentiment analysis on articles and visualize the results.
+
+## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
