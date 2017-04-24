@@ -109,13 +109,32 @@ interview.
 * Portability: Designed to be compatible with mobile and tablet user interfaces.
 * Scalability: Decoupling an RDS cloud database from computational resources so that we can scale vertically when more computation is required.
 
-#### Non Functional Strech Goal
+#### Non Functional Stretch Goal
 * Response Time: Real time article classification
 
 ## **Design**
 
 ### Phase I: System Design
+We will be deploying our project within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case we want to deploy for real world use).
 
+Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow our web scraping to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
+#### AWS Prototyping Deployment
+![alt text](pictures/DataDrivenWebApp-Prototyping.png "Prototyping Architecture")
+Features:
+* Auto Scaling combined Web Servers/Data Processing
+	* This provides scale-up capability when we need to do data processing and to process individual user queries in a prototyping environment
+	* Saves money by reducing resource consumption since we will not need to handle many users in a prototyping environment and we can afford to sacrifice some responsiveness for the sake of cost
+* Single, decoupled RDS database
+* Decoupled web scraper
+#### AWS Business Model Deployment
+![alt text](pictures/DataDrivenWebApp-Big.png "Business Architecture")
+Features:
+* Elastic load balancing will redirect work and balance load at two levels: User access of web servers on the front end and data processing and data queries on the back end.
+* Multiple auto scaling groups will provide high performance and redundancy across AWS availability zones for a larger business environment deployment
+	* SSD-based M3 web server auto scaling group will provide a high performance cluster for front-end processing
+	* AWS Elastic block store-based M4 data processing auto scaling group will provide high processing capacity for data analysis and queries
+	* Decoupled RDS database auto scaling group with a Master RDS db will feed RDS Read Replicas to provide high database throughput for intense data queries
+* Decoupled web scraper will continue to run its relatively undemanding task undisturbed
 ### Phase II: Web Scraping and Data Design
 
 This project will require a large database of news articles and their associated metadata. To this purpose we have built a web scraper to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, we have collected over 30,000 articles and plan to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
@@ -188,6 +207,11 @@ for site in site_list:
 									published_date = paper.articles[x].publish_date
 									authors = paper.articles[x].authors
 									text = paper.articles[x].text.replace('\n', ' ')
+			except Exception as e:
+				logging.error("::Exception:Scrapping error for site: " + name + "::")
+				logging.error("::Exception: " + str(e) + "::")
+				pass
+			os._exit(0)									
 # Clean author strings
 # Insert into database
 # Log any other errors
