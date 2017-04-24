@@ -133,7 +133,7 @@ Features:
 * Multiple auto scaling groups will provide high performance and redundancy across AWS availability zones for a larger business environment deployment
 	* SSD-based M3 web server auto scaling group will provide a high performance cluster for front-end processing
 	* AWS Elastic block store-based M4 data processing auto scaling group will provide high processing capacity for data analysis and queries
-	* Decoupled RDS database auto scaling group with a Master RDS db will feed RDS Read Replicas to provide high database throughput for intense data queries
+	* Decoupled RDS database scaling group with a Master RDS database feeding RDS Read Replicas will allow us to easily scale manually to provide high database throughput for intense data queries
 * Decoupled web scraper will continue to run its relatively undemanding task undisturbed
 ### Phase II: Web Scraping and Data Design
 
