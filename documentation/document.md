@@ -1,6 +1,6 @@
-# Capstone 2017 Documentation
+# **Capstone 2017 Documentation**
 
-## Team info
+## **Team info**
 
 Mission Statement: Our mission is to analyze news articles and determine whether they are positive or negative and research the effects that they have on the world.
 
@@ -39,7 +39,7 @@ Team Name: Squad
 - Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.  Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.      
 ![alt text](pictures/justin.png "Justin Renneke")
 
-## introduction
+## **Introduction**
 Team name: Squad
 Teams mission: To create a model that classifies the bias of a news article.
 
@@ -79,10 +79,11 @@ The problem of documenting media bias also is solved, as this data could be used
 a basis for research and reports, which is an objective metric, rather than the opinions of the reporting person or eye witness
 interview.
 
-## Requirements
+## **Requirements**
 ### User
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models. 
+#### User Stretch Goals
 * User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
 ### Hardware  
@@ -98,11 +99,6 @@ interview.
 * Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 * Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 * Perform sentiment analysis on articles and visualize the results.
-
-
-## Prezi
-* http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
-
 ### Non Functional Requirments
 * Availibility: 99% server availibility.
 * Backup: Bi-weekly backups of server, database, and news articles. 
@@ -114,3 +110,21 @@ interview.
 
 #### Non Functional Strech Goal
 * Response Time: Real time article classification
+
+## **Design**
+
+### Phase I: Web Scraping and Data Design
+
+
+
+### Phase II: Data Analysis
+
+
+
+
+### Phase III: Web Application
+
+
+
+## Prezi
+* http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
