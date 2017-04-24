@@ -114,16 +114,94 @@ interview.
 
 ## **Design**
 
-### Phase I: Web Scraping and Data Design
+### Phase I: System Design
+
+### Phase II: Web Scraping and Data Design
+
+This project will require a large database of news articles and their associated metadata. To this purpose we have built a web scraper to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, we have collected over 30,000 articles and plan to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
+
+#### Web scraper
+##### Overview
+* Parses a list of multiple news sites. This list is provided by a JSON file containing entries with a site name and URL.
+* Carefully designed to avoid website's banning our IP
+  * The parser is run automatically every day at a random time between 2 AM and 6 AM by using the apscheduler Python library.
+  * A random wait is added between page scrapes
+  * Runs with threading on each site, but limited to 2 threads to avoid stressing site's resources
+* Implements logging to help with troubleshooting an otherwise fully automated program
+* Every individual site crawl and scrape is forked out as a separate process to improve performance and avoid memory issues
+##### Python's Newspaper Library  
+
+[Link to Newspaper library Homepage](http://newspaper.readthedocs.io/en/latest/)
+
+The Newspaper library is specifically designed to scrape articles from news websites. Newspaper itself is based on Python's popular BeautifulSoup and Goose parsing libraries. This library allows us to cleanly scrape news articles from a wide variety of websites - a challenge that would otherwise be incredibly time consuming. The library accomplishes this by: querying a website's home page, crawling through all the links associated with the website, building a tree structure to represent it, then scraping and parsing every previously unseen article in the tree.
+
+Using this library, we are able to collect the following data from every article:
+* Title
+* Primary author (if exists)
+* Secondary authors (if exists)
+* Date published (if exists)
+* URL
+* Body text
+* Raw html
+
+The library also has a memoization capability that we are using. This allows us to scrape only new articles for every subsequent scrape of a site.
+
+**Scraper Code/Pseudocode**
+```
+# Open database connection
+# Read in site list JSON
+
+# Enter core scraping code
+for site in site_list:
+		child_id = os.fork()
+
+		if child_id == 0:			
+			name = site['name']
+			url = site['url']
+			# if a site should throw an exception for any reason (maybe bad url), catch it, pass, and move to next site
+			try:
+				paper = newspaper.build(url,
+						keep_article_html=True,
+						fetch_images=False,
+						memoize_articles=True,	# track the articles we have already scraped from session to session
+						MIN_WORD_COUNT=200,		# this doesn't seem to be having any affect
+						number_threads=2,
+						request_timeout=12,
+						thread_timeout=3)
+				total = paper.size()
+				numScraped = total
+				authors = []
+				secondAuth = ''
+
+				for x in range(0,numScraped):
+					sleep(randint(3,6))
+					if paper.articles[x] != None:
+						paper.articles[x].download()
+						if paper.articles[x].is_downloaded:
+							if paper.articles[x].html != None:
+								paper.articles[x].parse()
+								# Ensure article is long enough to be valid
+								if len(nltk.word_tokenize(paper.articles[x].text)) > 200:
+									html = paper.articles[x].article_html.replace('\n', ' ')
+									title = (paper.articles[x].title)
+									url = paper.articles[x].url
+									published_date = paper.articles[x].publish_date
+									authors = paper.articles[x].authors
+									text = paper.articles[x].text.replace('\n', ' ')
+# Clean author strings
+# Insert into database
+# Log any other errors
+```
+#### Data Design
 
 
 
-### Phase II: Data Analysis
+### Phase III: Data Analysis
 
 
 
 
-### Phase III: Web Application
+### Phase IV: Web Application
 
 
 
