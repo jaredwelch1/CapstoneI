@@ -106,7 +106,8 @@ interview.
 * Extensibility: Modular software design using OOP practices to allow for easy addition of new features.
 * Licensing: MIT License 
 * Performance: Analyze users article in less than one minute
-* Portability: Designed to be compatible with modile and tables systems.
+* Portability: Designed to be compatible with mobile and tablet user interfaces.
+* Scalability: Decoupling an RDS cloud database from computational resources so that we can scale vertically when more computation is required.
 
 #### Non Functional Strech Goal
 * Response Time: Real time article classification
