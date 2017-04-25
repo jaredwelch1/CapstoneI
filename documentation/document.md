@@ -37,34 +37,33 @@ We propose the following software solution:
 
 
 ## **Requirements**
-### User
+
+### User Requirements
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models. 
-#### User Stretch Goals
-* User can peform custom searches against the database, yielding search results related to statistics on the news article data
+* **User Requirements Stretch Goals:**
+	* User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
-### System  
+### System Requirements 
 * The database system must be able to handle massive amounts of data. We intend on scraping over 20,000 full news articles, and storing not only article text, but also related metadata.
 	* The databse should be indexed so efficient queries can be performed. One of the greatest predicitable bottlenecks will be the "all against all" search that is conducted when a new article is to be classified.
 * The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process. 
 * A large amount of Random-Access-Memory will be needed so we can perform fast computations without constantly having to read from disk.
+* **System Requirments Strech Goal:**
+	* Store articles using a distributed framework such as Hadoop.
+	* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
 
-#### System Requirment Strech Goal
-* Store articles using a distributed framework such as Hadoop.
-* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
 
-
-### Functional
+### Functional Requirements
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
 * The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result. 
-
-#### Functional Stretch Goals
-* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
-* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
-* Perform sentiment analysis on articles and visualize the results.
+* **Functional Requirements Stretch Goals**
+	* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
+	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
+	* Perform sentiment analysis on articles and visualize the results.
 
 ### Non Functional Requirments
 * Availibility: 99% server availibility.
@@ -75,9 +74,8 @@ We propose the following software solution:
 * Performance: Analyze users article in less than one minute
 * Portability: Designed to be compatible with mobile and tablet user interfaces.
 * Scalability: Decoupling an RDS cloud database from computational resources so that we can scale vertically when more computation is required.
-
-#### Non Functional Stretch Goal
-* Response Time: Real time article classification
+* **Non Functional Requirements Stretch Goal**
+	* Response Time: Real time article classification
 
 ## **Design**
 
