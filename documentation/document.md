@@ -30,7 +30,7 @@
 - **Ali Raza:** I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
 ![alt text](pictures/ali.jpg "Ali Raza")
 
-- **Jared Welch:** Senior at the Univeristy of Missouri. Passionate about improving my skills. Excited for the potential of our application. 
+- **Jared Welch:** Senior at the Univeristy of Missouri. Passionate about improving my skills. Excited for the potential of our application.
 ![alt text](pictures/jared.png "Jared Welch")
 
 - **Justin Renneke:** Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.  Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.      
@@ -84,7 +84,15 @@ interview.
 * User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
 ### System  
-* 
+* The database system must be able to handle massive amounts of data. We intend on scraping over 20,000 full news articles, and storing not only article text, but also related metadata.
+	* The databse should be indexed so efficient queries can be performed. One of the greatest predicitable bottlenecks will be the "all against all" search that is conducted when a new article is to be classified.
+* The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process. 
+* A large amount of Random-Access-Memory will be needed so we can perform fast computations without constantly having to read from disk.
+
+#### System Requirment Strech Goal
+* Store articles using a distributed framework such as Hadoop.
+* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
+
 
 ### Functional
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
