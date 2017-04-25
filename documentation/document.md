@@ -24,7 +24,7 @@ Team Name: Squad
 - Zach Bryant: Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
-- Kurt Bognar: Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining.
+- Kurt Bognar: Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining.  
 ![alt text](pictures/kurt.jpg "Kurt Bognar")
 
 - Ali Raza: I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
@@ -86,8 +86,8 @@ interview.
 #### User Stretch Goals
 * User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
-### Hardware  
-* This will require more detail and discussion about the direction of our project
+### System  
+* 
 
 ### Functional
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
@@ -217,16 +217,37 @@ for site in site_list:
 # Log any other errors
 ```
 #### Data Design
-
-
+* Why we chose Postgresql 
+* Why we need a data warehouse
+* ERD Diagram (or put it under System design, idk)
 
 ### Phase III: Data Analysis
 
+#### Pre-Processing and Feature Extraction
+
+* ##### Natural Language Processing
+	* Stopwords
+	* Stemming
+	* Lemmatization
+	* Bag of Words
+	* Named Entity Extraction
+	* Keyword Extraction
+	* Latent Dirichlet Allocation (LDA)
+	* Term Frequency - Inverse Document Frequency (TF-IDF)
+
+#### Machine Learning Analysis
+* ##### Clustering
+* ##### Sentiment Analysis
 
 
 
 ### Phase IV: Web Application
-
+* #### Data Visualizations
+	* ##### Clustering Visualization/Explanation
+	* ##### Examples of Statistics-based Visualizations/Explanations
+	* ##### Wordcloud example/Explanation
+	* ##### Sentiment Analysis Visualization example
+* #### User Interface Diagrams
 
 
 ## Prezi
