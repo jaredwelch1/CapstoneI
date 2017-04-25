@@ -227,8 +227,8 @@ for site in site_list:
 
 * ##### Natural Language Processing
  	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and we will have to explore their viability as we explore our data.
-	* ###### Removal of Stopwords  
-	Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. We will use NLP to remove these words before performing bag of words analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
+	* ###### **Removal of Stopwords**  
+	Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. We will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
 	Example code:
 	```
 	from nltk.corpus import stopwords
@@ -237,7 +237,7 @@ for site in site_list:
 	for article in article_database:
 		filtered_article = [word for word in word_list if word not in stopwords.words('english')]
 	```
-	* ###### Stemming  
+	* ###### **Stemming**  
 	Stemming is the process of reducing topically similar words to their roots. For example, “stemming,” “stemmer,” “stemmed,” all have similar meanings; stemming reduces those terms to “stem.” This is an important feature for understanding the nature of a text's topic, which would otherwise view those terms as separate entities and reduce their importance in the model. The NLTK Python library offers a stemmer function based on the most widely used stemming algorithm: Porter's stemmer.
 	```
 	from nltk.stem.porter import PorterStemmer
@@ -248,7 +248,7 @@ for site in site_list:
 	# stem tokens by applying the stemmer to every token in a list of tokens, returning a list of stems
 	texts = [p_stemmer.stem(i) for i in tokens_list]
 	```  
-	* ###### Lemmatization  
+	* ###### **Lemmatization**  
 	Lemmatization is similar in concept to stemming, but there are important differences. Both are an attempt to find the root of a word from amongst its many forms to reduce data dimensionality, but, where stemming uses a relatively unsubtle chopping heuristic to chop word endings, lemmatization uses a more comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: both stemming and lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed'; however, only lemmatization would derive 'be' from 'am', 'are', and 'is.' This increases accuracy but at the price of performance. NLTK offers lemmatization via the WordNetLemmatizer.
 	```
 	from nltk.stem import WordNetLemmatizer
@@ -258,7 +258,7 @@ for site in site_list:
 	" ".join([wnl.lemmatize(i) for i in sent.split()])
 	# outputs 'cat running ran cactus cactus cactus community community'
 	```
-	* ###### Named Entity Extraction  
+	* ###### **Named Entity Extraction**  
 	Named entity extraction attempts to find all named entities within a text document and categorize them as a person, location, organization, etc. The Stanford NLP library is recognized as being the best at this and Python offers access to this Java library with a wrapper. Example:
 	```
 	from nltk.tag import StanfordNERTagger
@@ -273,9 +273,9 @@ for site in site_list:
 	# This will return labeled tuples and, after further manipulation, we will get a list of tagged entity tuples:
 	[('United States', 'LOCATION'), ('Donald Trump', 'PERSON'), ('Donald Trump Jr.', 'PERSON'), ('Invanka Trump', 'PERSON'), ('Jared Kushner', 'PERSON'), ('Trump', 'PERSON'), ('Melania', 'PERSON'), ('Trump', 'PERSON'), ('Republican Party', 'ORGANIZATION'), ('Trump', 'PERSON')]
 	```
-	* ###### Keyword Extraction  
+	* ###### **Keyword Extraction**  
 	Keywords attempt to describe the main topics expressed in an article. Python offers an easy to use keyword extraction library called RAKE. [This link](https://www.airpair.com/nlp/keyword-extraction-tutorial) offers a tutorial on the RAKE workflow.
-	* ###### Frequency Distribution  
+	* ###### **Frequency Distribution**  
 	A frequency distribution counts the number of times every word appears in a text. NLTK offers this functionality with the FreqDist() function.
 	```
 	import nltk
@@ -287,7 +287,7 @@ for site in site_list:
 
 	# returns: 'wood': 4, 'chuck': 4, 'a': 2, 'would': 1, 'could': 1, 'how': 1, 'much': 1, 'if': 1
 	```
-	* ###### Term Frequency - Inverse Document Frequency (TF-IDF)  
+	* ###### **Term Frequency - Inverse Document Frequency (TF-IDF)**  
 	TF-IDF is a way to score the importance of words (or "terms") in a document based on how frequently they appear across multiple documents. If a word appears frequently in a document, it's important. Give the word a high score. But if a word appears in many documents, it's not a unique identifier. Give the word a low score. Python's scikit learn toolkit provides the sklearn library with this functionality.
 	```
 	from sklearn.feature_extraction.text import TfidfVectorizer
