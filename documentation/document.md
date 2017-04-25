@@ -1,24 +1,10 @@
 # **Capstone 2017 Documentation**
 
-## **Team info**
-
-**Mission Statement:** Our mission is to analyze news articles and determine whether they are positive or negative and research the effects that they have on the world.
-
-**Agenda:** 
-
-- Get Amazon Webserver
-- Create a database to store articles.
-- Create a Python Webscrapper to get and store those articles in the afformentioned database.
-- Start webscrapper.
-- Brain storm machine learning techniques. 
-- Appy machine learning techniques. 
-- Create visualizations.
-	
-**Thoughts:** (insert Step Brothers reference) Fake news is a growing concern today and we want to do something about it?????????????????
-
-**Beliefs:** The Earth is NOT flat. The sky is not the limit, the mind is.???????????????????????????
+## **Team Information**
 
 **Team Name:** Squad
+
+**Mission Statement:** Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news. 
 
 #### Team Members:
 - **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
@@ -36,45 +22,19 @@
 - **Justin Renneke:** Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.  Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.      
 ![alt text](pictures/justin.png "Justin Renneke")
 
-## **Introduction**
-- **Team name:** Squad
-- **Teams mission:** To create a model that classifies the bias of a news article.
+## Introduction
 
-This election season has been particularly harsh in America. Republicans
-and Democrats alike made false claims against the media and both were
-unfairly attacked as well. Being an informed citizen these days is hard
-enough without news outlets taking sides and obfuscating this bias from
-the public. For this reason, Squad has decided to fix this problem by
-creating a model that could be added as an extension so when you are
-on a web page, you know that it is bias for or against a certain topic
-based on the overall text in the article, allowing you to seek out sources
-for the opposing viewpoint and make up your own mind.
+#### Problem Definition
+News articles generate massive amounts of data. Following the climactic nature of the 2016 Presedential Election due to the disimmenation of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effictively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
 
-## Problem statement and solution
-
-### Problem Definition
-
-Today, the average consumer of media content is very susceptible to unknown bias in the sources that they use. Because all media sources
-most likely have some bias, in order for consumers to be most informed, they need a reliable way to measure bias and account for it in
-their research/consumtion of media information. If users could know what bias and relevant information about the statistical history for
-a particular news establishment, it would increase consumer ability to gather and trust information from media.
-Similarly, currently, it is very difficult to document and discuss media bias in a way that is provable and measureable. There needs to be
-a standard to use, or a metric to measure by, in order to determine how much of a report is motivated by bias and how much seems to be motivated purely by facts.
-
-### Problem Solution
+#### Problem Resolution
 
 We propose the following software solution:
+- Scrape news articles.
+- Pre-process using NLP and then perform TFIDF.
+- Cluster news articles based on the similarity of TFIDF vectors.
+- Display visualizations
 
-Using published text from media sources, and computer analysis, we propse a software system that uses these published works and
-the resulting data to provide means to measure how that media source reports on certain topics. This would fix both issues above.
-For the first problem, having this data will allow users to have an objective source analyze the data and output information that they can
-then use to judge the media source. All the data will be relative to the source, and all source data should be analyzed in the same
-way to prevent harming the integrity of the data. Having a metric that is gathered in the same way for all sources allows consumers to
-compare data for one source, to the same measurement for a different source, allowing them to make better judgements about bias regarding
-sources they use.
-The problem of documenting media bias also is solved, as this data could be used as evidence for or against these sources to use as
-a basis for research and reports, which is an objective metric, rather than the opinions of the reporting person or eye witness
-interview.
 
 ## **Requirements**
 ### User
