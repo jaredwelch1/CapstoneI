@@ -2,46 +2,43 @@
 
 ## **Team info**
 
-Mission Statement: Our mission is to analyze news articles and determine whether they are positive or negative and research the effects that they have on the world.
+**Mission Statement:** Our mission is to analyze news articles and determine whether they are positive or negative and research the effects that they have on the world.
 
-Agenda: Get Amazon Webserver
-	Create a database to store articles.
-	Create a Python Webscrapper to get and store those articles in the afformentioned database.
-	Start webscrapper.
-	Brain storm machine learning techniques. 
-	Appy machine learning techniques. 
-	Create visualizations.
+**Agenda:** 
+
+- Get Amazon Webserver
+- Create a database to store articles.
+- Create a Python Webscrapper to get and store those articles in the afformentioned database.
+- Start webscrapper.
+- Brain storm machine learning techniques. 
+- Appy machine learning techniques. 
+- Create visualizations.
 	
-	
+**Thoughts:** (insert Step Brothers reference) Fake news is a growing concern today and we want to do something about it?????????????????
 
-Thoughts: (insert Step Brothers reference) Fake news is a growing concern today and we want to do something about it?????????????????
+**Beliefs:** The Earth is NOT flat. The sky is not the limit, the mind is.???????????????????????????
 
-Beliefs: The Earth is NOT flat. The sky is not the limit, the mind is.???????????????????????????
-
-Team Name: Squad
+**Team Name:** Squad
 
 #### Team Members:
-- Zach Bryant: Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
+- **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
-- Kurt Bognar: Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining.  
+- **Kurt Bognar:** Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining.  
 ![alt text](pictures/kurt.jpg "Kurt Bognar")
 
-- Ali Raza: I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
+- **Ali Raza:** I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
 ![alt text](pictures/ali.jpg "Ali Raza")
 
-- Jared Welch
-
-	- Senior at the Univeristy of Missouri. Passionate about improving my skills. Excited for the potential of our application. 
-
+- **Jared Welch:** Senior at the Univeristy of Missouri. Passionate about improving my skills. Excited for the potential of our application. 
 ![alt text](pictures/jared.png "Jared Welch")
 
-- Justin Renneke: Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.  Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.      
+- **Justin Renneke:** Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.  Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.      
 ![alt text](pictures/justin.png "Justin Renneke")
 
 ## **Introduction**
-Team name: Squad
-Teams mission: To create a model that classifies the bias of a news article.
+- **Team name:** Squad
+- **Teams mission:** To create a model that classifies the bias of a news article.
 
 This election season has been particularly harsh in America. Republicans
 and Democrats alike made false claims against the media and both were
@@ -94,11 +91,13 @@ interview.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
-* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result.  
+* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result. 
+
 #### Functional Stretch Goals
 * Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 * Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 * Perform sentiment analysis on articles and visualize the results.
+
 ### Non Functional Requirments
 * Availibility: 99% server availibility.
 * Backup: Bi-weekly backups of server, database, and news articles. 
