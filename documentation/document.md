@@ -35,6 +35,27 @@ We propose the following software solution:
 - Cluster news articles based on the similarity of TFIDF vectors.
 - Display visualizations
 
+## Changelog for software 
+
+### NewsArticleScraper - Version 1.1
+
+- Initial features:
+	
+	- automatically scheduled at time during the night
+
+	- each site runs as an independent process, so any error for a site does not hurt the flow of the scraper itself
+
+	- as articles are scraped from a site, they are pushed into the database, including the text, title, authors, url, and other relevant info
+
+- Version 1.1:
+
+	- add additional sites to list
+
+	- clean up inserts to database
+
+	- add custom logging functionality, including error and information log files
+
+	- more try catch error checking to improve error logs
 
 ## **Requirements**
 
