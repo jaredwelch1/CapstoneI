@@ -97,7 +97,7 @@ We propose the following software solution:
 	* The databse should be indexed so efficient queries can be performed. 
 * The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
 * The Random-Access-Memory must be high enough to minimize reading from disk during computationally intensive tasks.
-* **System Requirments 
+* **System Requirments Strech Goals:**
 	* Store articles using a distributed framework such as Hadoop.
 	* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
 
