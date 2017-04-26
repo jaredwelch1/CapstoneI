@@ -334,10 +334,19 @@ contents.
 * #### User Interface Diagrams
 	##### Homepage 
 	![alt text](pictures/Homepage.png "Homepage")
+	##### Trending Topics
+	![alt text](pictures/TrendingTopics.png "TrendingTopics")
+	![alt text](pictures/TrendingTopicsTopicChosen.png "TrendingTopicsTopicChosen")
+	![alt text](pictures/TrendingTopicsTopicChosenArticleChosen.png "TrendingTopicsTopicChosenArticleChosen")
 	##### Help 
 	![alt text](pictures/Help.png "Help")
 	##### Results 
-	![alt text](pictures/Results.png "Results")
+	![alt text](pictures/Stats.png "Stats")
+	![alt text](pictures/SimilarArticles.png "SimilarArticles")
+	![alt text](pictures/RecentRelatedArticles.png "RecentRelatedArticles")
+	![alt text](pictures/Visualizations.png "Visualizations")
+	##### Options
+	![alt text](pictures/Options.png "Options"))
 
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
