@@ -90,9 +90,9 @@ We propose the following software solution:
 * The project will be hosted on decoupled Amazon AWS instances.
 	* A web scraper, database system, and web applciation will each have their own isolated instance.
 	* The system will auto scale for intensive data analysis and improved response time during high usage situations.
-* A relational database will be used in order to be able to accurately model the data and perform advanced queries. 
+* A relational database will be used in order to be able to accurately model the data and perform advanced queries.
 	* The database should be large enough to store a massive dataset.
-	* The databse should be indexed so efficient queries can be performed. 
+	* The databse should be indexed so efficient queries can be performed.
 * The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
 * The Random-Access-Memory must be high enough to minimize reading from disk during computationally intensive tasks.
 * **System Requirments Strech Goals:**
@@ -122,6 +122,9 @@ Features:
 	* AWS Elastic block store-based M4 data processing auto scaling group will provide high processing capacity for data analysis and queries
 	* Decoupled RDS database scaling group with a Master RDS database feeding RDS Read Replicas will allow us to easily scale manually to provide high database throughput for intense data queries
 * Decoupled web scraper will continue to run its relatively undemanding task undisturbed
+
+#### High Level Logical System Flow
+![alt text](pictures/SystemFlow.png "System Flow")
 ### Phase II: Web Scraping and Data Design
 
 This project will require a large database of news articles and their associated metadata. To this purpose we have built a web scraper to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, we have collected over 30,000 articles and plan to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
@@ -207,11 +210,13 @@ for site in site_list:
 * RDBMS: PostgreSQL is the database system to be used for a variety of reasons:
 	- It is a relational database which is needed because the data being gathered by our scraper has many complex relationships.
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
-* ETL Pipeline: 
-	* Extaction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table. 
+* ETL Pipeline:
+	* Extaction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table.
 	* Transformation: The data is organized into relational tables through SQL queries.
 	* Loading: The relational tables will be used in conjuction with machine-learning analysis to gather meanigful and interesting information.
-* ERD Diagram (or put it under System design, idk)
+* ERD Diagram  
+	The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
+	![alt text](pictures/ERD.png "ERD")
 
 ### Phase III: Data Analysis
 
@@ -388,10 +393,22 @@ be classified and identified as representative of those pre-determined topics.
 		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic could show
 		density of clusters, count of articles within, boundaries of clusters, and/or any information that is determined to be useful
 		in relation to the grouping of the articles by similarities.
+		![alt text](pictures/ClusterViz.png "ClusteringViz")
+		In this example, node size represents confidence, cluster represents rule part groupings, color represents something else and transparency could be another stat if it's not overwhelming.
+	* ##### Examples of Statistics-based Visualizations/Explanations  
+		![alt text](pictures/CalendarPieChart.png "CalendarPieChart")
 
-	* ##### Examples of Statistics-based Visualizations/Explanations
+		By day we can show the amounts of the pie graph based on topics, or based on sentiment towards certain topics.  
+
+		![alt text](pictures/RelationalViz.png "RelationalViz")
+		This could use news sites around the and the relations could be be cross site topics.  
+
+		[More information](https://csaladenes.com/2015/06/21/a-visual-exploratory-of-refugee-flows-over-the-world-using-dynamic-chord-diagrams/)
 	* ##### Wordcloud example/Explanation
-	* ##### Sentiment Analysis Visualization example
+		![alt text](pictures/WordCloud.png "WordCloud")
+		Size will be representative of the word count, color will indicate sentiment and orientation will represent something else.
+
+		[Link to Potential Python Library](https://www.jasondavies.com/wordcloud/)
 
 * #### User Interface Diagrams
 	##### Homepage
