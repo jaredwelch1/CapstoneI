@@ -291,7 +291,15 @@ for site in site_list:
 	lord  -  0.156737043549  
 	king  -  0.164996828044  
 	juliet  -  0.544613034225  
+* #### NLP Workflows
+	* Main NLP pipeline from raw body text through TF-IDF.
 
+		Lemmatization and Stemming do similar things, but with vastly different tradeoffs in accuracy vs performance. The choice to use one or the other will only become clear as we explore our data. Any process that has a high computational cost should be stored in the database so it never has to be re-computed (in the end we may choose to store every stage of the analysis in our database, but the ones shown here for sure should be).
+	![alt text](pictures/NLP-TFIDF.jpg "TF-IDF")
+	* Named Entity Extraction and Keyword Extraction
+
+		Note that this is shown in a separate diagram for the sake of clarity but these processing stages will probably be incorporated into the larger pipeline shown above for sake of simplicity in data pipelining.  
+	![alt text](pictures/NLP-Keyword-Entity.jpg "Entities and Keywords")
 
 #### Machine Learning Analysis
 
@@ -330,7 +338,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		To address the potential issues raised in point 2 above, NLTK offers some generalized text corpora labeled with sentiment that could be used as training data. These include the opinion_lexicon containing a list of positive and negative words in English, and the sentence_polarity corpus containing over 10,000 sentences tagged as positive or negative.
 
-		Finally, Python's NLKT and Sklearn libraries offer machine learning sentiment analysis algorithms. NLTK's NaiveBayesClassifier is the most widely used.
+		Finally, Python's NLTK and Sklearn libraries offer machine learning sentiment analysis algorithms. NLTK's NaiveBayesClassifier is the most widely used.
 
 		Pseudocode for sentiment analysis:
 		```
@@ -362,7 +370,7 @@ be classified and identified as representative of those pre-determined topics.
 
 - (5) Using this model, repeated training can be supplied to improve it, and as users submit articles, their submitted articles can be classified and described, then utilized back into the model to improve it as well.
 
-- (6) Once a similarity classification system is in place, we can attempt to extract meaningful sentiment classification at many different levels including by article, by topic, by news outlet, etc.
+- (6) Once a similarity classification system is in place, we can attempt to extract meaningful sentiment classification at many different levels including by article, by topic cluster, by news outlet, etc.
 
 
 
