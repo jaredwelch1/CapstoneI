@@ -322,6 +322,12 @@ contents.
 ### Phase IV: Web Application
 * #### Data Visualizations
 	* ##### Clustering Visualization/Explanation
+
+		In order to provide meaningful information to end users, and for purposes of measurement and accuracy and interacting with the
+		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic could show 
+		density of clusters, count of articles within, boundaries of clusters, and/or any information that is determined to be useful
+		in relation to the grouping of the articles by similarities. 
+
 	* ##### Examples of Statistics-based Visualizations/Explanations
 	* ##### Wordcloud example/Explanation
 	* ##### Sentiment Analysis Visualization example
