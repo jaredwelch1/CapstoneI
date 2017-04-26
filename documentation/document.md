@@ -271,7 +271,7 @@ for site in site_list:
 
 #### Machine Learning Analysis
 
-	This section will briefly outline the machine learning techinques we intend to use within this project. 
+This section will briefly outline the machine learning techinques we intend to use within this project. 
 
 * ##### Clustering/Unsupervised Learning
 
