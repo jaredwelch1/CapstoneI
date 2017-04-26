@@ -4,7 +4,7 @@
 
 **Team Name:** Squad
 
-**Mission Statement:** Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news. 
+**Mission Statement:** Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
 
 #### Team Members:
 - **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
@@ -35,12 +35,12 @@ We propose the following software solution:
 - Cluster news articles based on the similarity of TFIDF vectors.
 - Display visualizations
 
-## Changelog for software 
+## Changelog for software
 
 ### NewsArticleScraper - Version 1.1
 
 - Initial features:
-	
+
 	- automatically scheduled at time during the night
 
 	- each site runs as an independent process, so any error for a site does not hurt the flow of the scraper itself
@@ -61,14 +61,14 @@ We propose the following software solution:
 
 ### User Requirements
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
-* User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models. 
+* User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
-### System Requirements 
+### System Requirements
 * The database system must be able to handle massive amounts of data. We intend on scraping over 20,000 full news articles, and storing not only article text, but also related metadata.
 	* The databse should be indexed so efficient queries can be performed. One of the greatest predicitable bottlenecks will be the "all against all" search that is conducted when a new article is to be classified.
-* The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process. 
+* The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
 * A large amount of Random-Access-Memory will be needed so we can perform fast computations without constantly having to read from disk.
 * **System Requirments Strech Goal:**
 	* Store articles using a distributed framework such as Hadoop.
@@ -80,7 +80,7 @@ We propose the following software solution:
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
-* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result. 
+* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result.
 * **Functional Requirements Stretch Goals**
 	* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
@@ -88,10 +88,10 @@ We propose the following software solution:
 
 ### Non Functional Requirments
 * Availibility: 99% server availibility.
-* Backup: Bi-weekly backups of server, database, and news articles. 
+* Backup: Bi-weekly backups of server, database, and news articles.
 * HTTPs encryption with a valid SSL certificate.
 * Extensibility: Modular software design using OOP practices to allow for easy addition of new features.
-* Licensing: MIT License 
+* Licensing: MIT License
 * Performance: Analyze users article in less than one minute
 * Portability: Designed to be compatible with mobile and tablet user interfaces.
 * Scalability: Decoupling an RDS cloud database from computational resources so that we can scale vertically when more computation is required.
@@ -203,7 +203,7 @@ for site in site_list:
 # Log any other errors
 ```
 #### Data Design
-* Why we chose Postgresql 
+* Why we chose Postgresql
 * Why we need a data warehouse
 * ERD Diagram (or put it under System design, idk)
 
@@ -214,76 +214,79 @@ for site in site_list:
 * ##### Natural Language Processing
  	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and we will have to explore their viability as we explore our data.
 	* ###### **Removal of Stopwords**  
-	Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. We will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
-	Example code:
-	```
-	from nltk.corpus import stopwords
-	stopwords.words('english')
-	# For every article in the database, filter out the stopwords and return the filtered text using a list comprehension
-	for article in article_database:
-		filtered_article = [word for word in word_list if word not in stopwords.words('english')]
-	```
+		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. We will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
+
+		Example code:
+		```
+		from nltk.corpus import stopwords
+		stopwords.words('english')
+		# For every article in the database, filter out the stopwords and return the filtered text using a list comprehension
+		for article in article_database:
+			filtered_article = [word for word in word_list if word not in stopwords.words('english')]
+		```
 	* ###### **Stemming**  
-	Stemming is the process of reducing topically similar words to their roots. For example, “stemming,” “stemmer,” “stemmed,” all have similar meanings; stemming reduces those terms to “stem.” This is an important feature for understanding the nature of a text's topic, which would otherwise view those terms as separate entities and reduce their importance in the model. The NLTK Python library offers a stemmer function based on the most widely used stemming algorithm: Porter's stemmer.
-	```
-	from nltk.stem.porter import PorterStemmer
+		Stemming is the process of reducing topically similar words to their roots. For example, “stemming,” “stemmer,” “stemmed,” all have similar meanings; stemming reduces those terms to “stem.” This is an important feature for understanding the nature of a text's topic, which would otherwise view those terms as separate entities and reduce their importance in the model. The NLTK Python library offers a stemmer function based on the most widely used stemming algorithm: Porter's stemmer.
+		```
+		from nltk.stem.porter import PorterStemmer
 
-	# Create p_stemmer of class PorterStemmer
-	p_stemmer = PorterStemmer()
+		# Create p_stemmer of class PorterStemmer
+		p_stemmer = PorterStemmer()
 
-	# stem tokens by applying the stemmer to every token in a list of tokens, returning a list of stems
-	texts = [p_stemmer.stem(i) for i in tokens_list]
-	```  
+		# stem tokens by applying the stemmer to every token in a list of tokens, returning a list of stems
+		texts = [p_stemmer.stem(i) for i in tokens_list]
+		```  
 	* ###### **Lemmatization**  
-	Lemmatization is similar in concept to stemming, but there are important differences. Both are an attempt to find the root of a word from amongst its many forms to reduce data dimensionality, but, where stemming uses a relatively unsubtle chopping heuristic to chop word endings, lemmatization uses a more comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: both stemming and lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed'; however, only lemmatization would derive 'be' from 'am', 'are', and 'is.' This increases accuracy but at the price of performance. NLTK offers lemmatization via the WordNetLemmatizer.
-	```
-	from nltk.stem import WordNetLemmatizer
-	sent = "cats running ran cactus cactuses cacti community communities"
+		Lemmatization is similar in concept to stemming, but there are important differences. Both are an attempt to find the root of a word from amongst its many forms to reduce data dimensionality, but, where stemming uses a relatively unsubtle chopping heuristic to chop word endings, lemmatization uses a more comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: both stemming and lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed'; however, only lemmatization would derive 'be' from 'am', 'are', and 'is.' This increases accuracy but at the price of performance. NLTK offers lemmatization via the WordNetLemmatizer.
+		```
+		from nltk.stem import WordNetLemmatizer
+		sent = "cats running ran cactus cactuses cacti community communities"
 
-	wnl = WordNetLemmatizer()
-	" ".join([wnl.lemmatize(i) for i in sent.split()])
-	# outputs 'cat running ran cactus cactus cactus community community'
-	```
+		wnl = WordNetLemmatizer()
+		" ".join([wnl.lemmatize(i) for i in sent.split()])
+		# outputs 'cat running ran cactus cactus cactus community community'
+		```
 	* ###### **Named Entity Extraction**  
-	Named entity extraction attempts to find all named entities within a text document and categorize them as a person, location, organization, etc. The Stanford NLP library is recognized as being the best at this and Python offers access to this Java library with a wrapper. Example:
-	```
-	from nltk.tag import StanfordNERTagger
-	from nltk.tokenize import word_tokenize
+		Named entity extraction attempts to find all named entities within a text document and categorize them as a person, location, organization, etc. The Stanford NLP library is recognized as being the best at this and Python offers access to this Java library with a wrapper. Example:
+		```
+		from nltk.tag import StanfordNERTagger
+		from nltk.tokenize import word_tokenize
 
-	text = "The President of the United States is named Donald Trump and he has several children including Donald Trump Jr., Invanka Trump, and a son-in-law: Jared Kushner. He also has a wife named Melania. President Trump is the defacto head of the Republican Party, even though he identified as a Democrat for most of his life. The Republicans have been slow to embrace Mr. Trump."
+		text = "The President of the United States is named Donald Trump and he has several children including Donald Trump Jr., Invanka Trump, and a son-in-law: Jared Kushner. He also has a wife named Melania. President Trump is the defacto head of the Republican Party, even though he identified as a Democrat for most of his life. The Republicans have been slow to embrace Mr. Trump."
 
-	# Tokenize the text
-	tokenized_text = word_tokenize(text)
-	# Run the text through the tagger
-	categorized_text = st.tag(tokenized_text)
-	# This will return labeled tuples and, after further manipulation, we will get a list of tagged entity tuples:
-	[('United States', 'LOCATION'), ('Donald Trump', 'PERSON'), ('Donald Trump Jr.', 'PERSON'), ('Invanka Trump', 'PERSON'), ('Jared Kushner', 'PERSON'), ('Trump', 'PERSON'), ('Melania', 'PERSON'), ('Trump', 'PERSON'), ('Republican Party', 'ORGANIZATION'), ('Trump', 'PERSON')]
-	```
+		# Tokenize the text
+		tokenized_text = word_tokenize(text)
+		# Run the text through the tagger
+		categorized_text = st.tag(tokenized_text)
+		# This will return labeled tuples and, after further manipulation, we will get a list of tagged entity tuples:
+		[('United States', 'LOCATION'), ('Donald Trump', 'PERSON'), ('Donald Trump Jr.', 'PERSON'), ('Invanka Trump', 'PERSON'), ('Jared Kushner', 'PERSON'), ('Trump', 'PERSON'), ('Melania', 'PERSON'), ('Trump', 'PERSON'), ('Republican Party', 'ORGANIZATION'), ('Trump', 'PERSON')]
+		```
 	* ###### **Keyword Extraction**  
-	Keywords attempt to describe the main topics expressed in an article. Python offers an easy to use keyword extraction library called RAKE. [This link](https://www.airpair.com/nlp/keyword-extraction-tutorial) offers a tutorial on the RAKE workflow.
+		Keywords attempt to describe the main topics expressed in an article. Python offers an easy to use keyword extraction library called RAKE.
+
+		[This link](https://www.airpair.com/nlp/keyword-extraction-tutorial) offers a tutorial on the RAKE workflow.
 	* ###### **Frequency Distribution**  
-	A frequency distribution counts the number of times every word appears in a text. NLTK offers this functionality with the FreqDist() function.
-	```
-	import nltk
+		A frequency distribution counts the number of times every word appears in a text. NLTK offers this functionality with the FreqDist() function.
+		```
+		import nltk
 
-	sentence = 'How much wood would a wood chuck chuck if a wood chuck could chuck wood?'
+		sentence = 'How much wood would a wood chuck chuck if a wood chuck could chuck wood?'
 
-	tokens = nltk.word_tokenize(sentence)
-	fdist = nltk.FreqDist(w.lower() for w in tokens)
+		tokens = nltk.word_tokenize(sentence)
+		fdist = nltk.FreqDist(w.lower() for w in tokens)
 
-	# returns: 'wood': 4, 'chuck': 4, 'a': 2, 'would': 1, 'could': 1, 'how': 1, 'much': 1, 'if': 1
-	```
+		# returns: 'wood': 4, 'chuck': 4, 'a': 2, 'would': 1, 'could': 1, 'how': 1, 'much': 1, 'if': 1
+		```
 	* ###### **Term Frequency - Inverse Document Frequency (TF-IDF)**  
-	TF-IDF is a way to score the importance of words (or "terms") in a document based on how frequently they appear across multiple documents. If a word appears frequently in a document, it's important. Give the word a high score. But if a word appears in many documents, it's not a unique identifier. Give the word a low score. Python's scikit learn toolkit provides the sklearn library with this functionality.
-	```
-	from sklearn.feature_extraction.text import TfidfVectorizer
+		TF-IDF is a way to score the importance of words (or "terms") in a document based on how frequently they appear across multiple documents. If a word appears frequently in a document, it's important. Give the word a high score. But if a word appears in many documents, it's not a unique identifier. Give the word a low score. Python's scikit learn toolkit provides the sklearn library with this functionality.
+		```
+		from sklearn.feature_extraction.text import TfidfVectorizer
 
-	# create a TfidfVectorizer object
-	tfidf = TfidfVectorizer(tokenizer=tokenize, stop_words='english')
-	# give the vectorizor a dictionary of documents containing document:content pairs to vectorize
-	tfs = tfidf.fit_transform(token_dict.values())
-	```
-	The code snippet seen above, if run on a corpus containing the works of Shakespeare, will return a matrix containing the following values for the selected words:  
+		# create a TfidfVectorizer object
+		tfidf = TfidfVectorizer(tokenizer=tokenize, stop_words='english')
+		# give the vectorizor a dictionary of documents containing document:content pairs to vectorize
+		tfs = tfidf.fit_transform(token_dict.values())
+		```
+		The code snippet seen above, if run on a corpus containing the works of Shakespeare, will return a matrix containing the following values for the selected words:  
 	unseen  -  0.309281094362  
 	lord  -  0.156737043549  
 	king  -  0.164996828044  
@@ -292,51 +295,74 @@ for site in site_list:
 
 #### Machine Learning Analysis
 
-This section will briefly outline the machine learning techinques we intend to use within this project. 
+This section will briefly outline the machine learning techniques we intend to use within this project.
 
-* ##### Clustering/Unsupervised Learning
+* ##### Unsupervised Learning
+	* **Clustering**
 
-	At a high level, clustering is simply a process of letting data group together by placing points near those other data points that 
-	are more similar; of course more different data points would be farther away from each other. This allows the data to create clusters, 
-	simply meaning groups of similar datapoints. In our case, we will use K-means clustering, a techinque more thoroughly discussed in the 
+		At a high level, clustering is simply a process of letting data group together by placing points near those other data points that
+	are more similar; of course more different data points would be farther away from each other. This allows the data to create clusters,
+	simply meaning groups of similar data points. In our case, we will use K-means clustering, a technique more thoroughly discussed in the
 	research paper about this topic. The most important aspect is that the data clusters are based purely on the similarity of their keywords,
-	and at a later step the clusters will be characterized using training data. 
+	and at a later step the clusters will be characterized using training data.  
 
-	Another important thing to mention is that articles can overlap with their topics, so it is important not to try to over distinguish
+		Another important thing to mention is that articles can overlap with their topics, so it is important not to try to over distinguish
 	clusters from each other, as overlap is expected with this type of dataset. K-means clustering might need some modifications in order to
-	ensure the overlap is not lost (if it is significant). 
+	ensure the overlap is not lost (if it is significant).
+* ##### Supervised Learning
+	- **K-nearest Neighbors and Distinguishing Clusters**
 
-- ##### K-nearest Neighbors and Distringuishing Clusters.
-
-	We will be employing the classic KNN techinque within our project in a unique way. Once we have created clusters from the data, we 
+		We will be employing the classic KNN technique within our project in a unique way. Once we have created clusters from the data, we
 	will supply training data, and based upon that training data and its nearest neighbors, we can hopefully somewhat classify our clusters
 	based on the training data and its placements within. KNN will be the way we calculate the proportion of our training points within clusters. For further details about KNN check the research paper related to clustering.  
 
-	Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
-	creating more diverse and accurate classifcation of new articles as the model improves through laws of big numbers in statistics.
+		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
+	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
 
+	* **Sentiment Analysis**  
+	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
 
-* ##### Sentiment Analysis
+	 	The accuracy of sentiment analysis is heavily dependent upon the training data provided to it, especially in its similarity to the target data.	Research shows that even human raters agree on text sentiment only 79% of the time, so an algorithm that is 70% accurate is doing a very good job.
 
+		There are two main challenges in analyzing sentiment from news articles:  
+		1. Reporting in general purposefully employs a neutral style of language and it may be hard to extract meaningful sentiment classification results when the authors are making a conscious effort to employ neutral language.
+		2. Finding a labeled dataset similar enough to our own data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing our news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so we might have to creatively combine more generalized sentiment analysis techniques or label some of our data by hand.  
+
+		To address the potential issues raised in point 2 above, NLTK offers some generalized text corpora labeled with sentiment that could be used as training data. These include the opinion_lexicon containing a list of positive and negative words in English, and the sentence_polarity corpus containing over 10,000 sentences tagged as positive or negative.
+
+		Finally, Python's NLKT and Sklearn libraries offer machine learning sentiment analysis algorithms. NLTK's NaiveBayesClassifier is the most widely used.
+
+		Pseudocode for sentiment analysis:
+		```
+		from nltk.classify import NaiveBayesClassifier
+
+		# import a dataset labeled by sentiment
+		# Separate the dataset into training data (call it training_set) and testing data  (test_set)
+		# Majority split should be training data, i.e. 75% training/25% test
+
+		classifier =  NaiveBayesClassifier.train(training_set)
+
+		# Compare results with test_set using comparison function
+		nltk.classify.util.accuracy(classifier, testfeats)		
+		```
 
 #### Formal Procedure for Taking Text to Valid Topic Clusters
 
 - (1) From the entire dataset, word frequencies will be calculated. Stop words will be removed from this list of words, either through
-pre-processing of the text or by removing them from the list of word frequencies. 
+pre-processing of the text or by removing them from the list of word frequencies.
 
 - (2) Keywords will be selected by choosing a subset k of the most frequent words; these selected keywords will be used for TF-IDF analysis
-on each article. This will represent the article as a vector of keywords. 
+on each article. This will represent the article as a vector of keywords.
 
-- (3) Using cosine similarity or euclidean distance, similarity will be measure between articles. Those more similar will be grouped closer, less similar further.
+- (3) Using cosine similarity or Euclidean distance, similarity will be measure between articles. Those more similar will be grouped closer, less similar further.
 
-- (4) Once the entire set of articles is measured and positioned relative to other articles, areas of highest density should naturally occur, 
+- (4) Once the entire set of articles is measured and positioned relative to other articles, areas of highest density should naturally occur,
 indicating similar articles in that area. Using KNN-like measurement, and training datasets pre-determined for some topic, the clusters will
 be classified and identified as representative of those pre-determined topics.
 
-- (5) Using this model, repeatead training can be supplied to improve it, and as users submit articles, their submitted articles can be classified and described, then untilized back into the model to improve it as well. 
+- (5) Using this model, repeated training can be supplied to improve it, and as users submit articles, their submitted articles can be classified and described, then utilized back into the model to improve it as well.
 
-- (6) Sentiment analysis can be done on those topics easily, using pre-existing libraries to gather further information about the article 
-contents. 
+- (6) Once a similarity classification system is in place, we can attempt to extract meaningful sentiment classification at many different levels including by article, by topic, by news outlet, etc.
 
 
 
@@ -345,24 +371,24 @@ contents.
 	* ##### Clustering Visualization/Explanation
 
 		In order to provide meaningful information to end users, and for purposes of measurement and accuracy and interacting with the
-		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic could show 
+		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic could show
 		density of clusters, count of articles within, boundaries of clusters, and/or any information that is determined to be useful
-		in relation to the grouping of the articles by similarities. 
+		in relation to the grouping of the articles by similarities.
 
 	* ##### Examples of Statistics-based Visualizations/Explanations
 	* ##### Wordcloud example/Explanation
 	* ##### Sentiment Analysis Visualization example
 
 * #### User Interface Diagrams
-	##### Homepage 
+	##### Homepage
 	![alt text](pictures/Homepage.png "Homepage")
 	##### Trending Topics
 	![alt text](pictures/TrendingTopics.png "TrendingTopics")
 	![alt text](pictures/TrendingTopicsTopicChosen.png "TrendingTopicsTopicChosen")
 	![alt text](pictures/TrendingTopicsTopicChosenArticleChosen.png "TrendingTopicsTopicChosenArticleChosen")
-	##### Help 
+	##### Help
 	![alt text](pictures/Help.png "Help")
-	##### Results 
+	##### Results
 	![alt text](pictures/Stats.png "Stats")
 	![alt text](pictures/SimilarArticles.png "SimilarArticles")
 	![alt text](pictures/RecentRelatedArticles.png "RecentRelatedArticles")
@@ -374,15 +400,15 @@ contents.
 
 We plan on testing using unit testing, creating testing suites with each new version release of the software. As new features are added,
 unit testing will allow us to continuously ensure old functionality while introducing new features. There remains research to be done in this area as far as testing software to use. However, a general plan for testing will resemble the following:
-	
+
 - As new features are written, verify their functionality with unit tests, ensuring all tests are passing before a feature is finished.
-Alternatively, development may sometimes being with a test first style of development, writing code to match the tests perceived to 
-be imoprtant to that feature. 
+Alternatively, development may sometimes being with a test first style of development, writing code to match the tests perceived to
+be important to that feature.
 
 - Tests will be consolidated in one testing suite, which will allow old tests to be run along with new features to test that the new
-features do not hurt existing functionality. 
+features do not hurt existing functionality.
 
-- A stretch goal for this project will be to implement testing hooks and build automation so that all live code complies with testing 
+- A stretch goal for this project will be to implement testing hooks and build automation so that all live code complies with testing
 before being put into a live environment. This ensures highly stable code releases, and prevents bad code from being released.
 
 ## Prezi
