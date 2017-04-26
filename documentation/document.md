@@ -77,14 +77,12 @@ We propose the following software solution:
 	* Perform sentiment analysis on articles and visualize the results.
 
 ### Non Functional Requirments
-* Availibility: 99% server availibility.
-* Backup: Bi-weekly backups of server, database, and news articles.
-* HTTPs encryption with a valid SSL certificate.
-* Extensibility: Modular software design using OOP practices to allow for easy addition of new features.
-* Licensing: MIT License
-* Performance: Analyze users article in less than one minute
-* Portability: Designed to be compatible with mobile and tablet user interfaces.
-* Scalability: Decoupling an RDS cloud database from computational resources so that we can scale vertically when more computation is required.
+* The server is expected to have a 99% availbility.
+* Each layer of the system should be backed-up weekly
+* The web application will have HTTPs encryption with a valid SSL certificate.
+* The software will be written using modular OOP practices to allow for easy addition of new features.
+* The web application will be designed to be compatible on mobile and tablet devices.
+* The system will decouple an RDS cloud database from computational resources to enable vertical scaling as needed.
 * **Non Functional Requirements Stretch Goal**
 	* Response Time: Real time article classification
 
