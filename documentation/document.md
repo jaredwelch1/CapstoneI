@@ -270,8 +270,52 @@ for site in site_list:
 
 
 #### Machine Learning Analysis
-* ##### Clustering
+
+	This section will briefly outline the machine learning techinques we intend to use within this project. 
+
+* ##### Clustering/Unsupervised Learning
+
+	At a high level, clustering is simply a process of letting data group together by placing points near those other data points that 
+	are more similar; of course more different data points would be farther away from each other. This allows the data to create clusters, 
+	simply meaning groups of similar datapoints. In our case, we will use K-means clustering, a techinque more thoroughly discussed in the 
+	research paper about this topic. The most important aspect is that the data clusters are based purely on the similarity of their keywords,
+	and at a later step the clusters will be characterized using training data. 
+
+	Another important thing to mention is that articles can overlap with their topics, so it is important not to try to over distinguish
+	clusters from each other, as overlap is expected with this type of dataset. K-means clustering might need some modifications in order to
+	ensure the overlap is not lost (if it is significant). 
+
+- ##### K-nearest Neighbors and Distringuishing Clusters.
+
+	We will be employing the classic KNN techinque within our project in a unique way. Once we have created clusters from the data, we 
+	will supply training data, and based upon that training data and its nearest neighbors, we can hopefully somewhat classify our clusters
+	based on the training data and its placements within. KNN will be the way we calculate the proportion of our training points within clusters. For further details about KNN check the research paper related to clustering.  
+
+	Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
+	creating more diverse and accurate classifcation of new articles as the model improves through laws of big numbers in statistics.
+
+
 * ##### Sentiment Analysis
+
+
+#### Formal Procedure for Taking Text to Valid Topic Clusters
+
+- (1) From the entire dataset, word frequencies will be calculated. Stop words will be removed from this list of words, either through
+pre-processing of the text or by removing them from the list of word frequencies. 
+
+- (2) Keywords will be selected by choosing a subset k of the most frequent words; these selected keywords will be used for TF-IDF analysis
+on each article. This will represent the article as a vector of keywords. 
+
+- (3) Using cosine similarity or euclidean distance, similarity will be measure between articles. Those more similar will be grouped closer, less similar further.
+
+- (4) Once the entire set of articles is measured and positioned relative to other articles, areas of highest density should naturally occur, 
+indicating similar articles in that area. Using KNN-like measurement, and training datasets pre-determined for some topic, the clusters will
+be classified and identified as representative of those pre-determined topics.
+
+- (5) Using this model, repeatead training can be supplied to improve it, and as users submit articles, their submitted articles can be classified and described, then untilized back into the model to improve it as well. 
+
+- (6) Sentiment analysis can be done on those topics easily, using pre-existing libraries to gather further information about the article 
+contents. 
 
 
 
