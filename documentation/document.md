@@ -65,16 +65,6 @@ We propose the following software solution:
 * **User Requirements Stretch Goals:**
 	* User can peform custom searches against the database, yielding search results related to statistics on the news article data
 
-### System Requirements
-* The database system must be able to handle massive amounts of data. We intend on scraping over 20,000 full news articles, and storing not only article text, but also related metadata.
-	* The databse should be indexed so efficient queries can be performed. One of the greatest predicitable bottlenecks will be the "all against all" search that is conducted when a new article is to be classified.
-* The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
-* A large amount of Random-Access-Memory will be needed so we can perform fast computations without constantly having to read from disk.
-* **System Requirments Strech Goal:**
-	* Store articles using a distributed framework such as Hadoop.
-	* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
-
-
 ### Functional Requirements
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
@@ -97,6 +87,19 @@ We propose the following software solution:
 * Scalability: Decoupling an RDS cloud database from computational resources so that we can scale vertically when more computation is required.
 * **Non Functional Requirements Stretch Goal**
 	* Response Time: Real time article classification
+
+### System Requirements
+* The project will be hosted on decoupled Amazon AWS instances.
+	* A web scraper, database system, and web applciation will each have their own isolated instance.
+	* The system will auto scale for intensive data analysis and improved response time during high usage situations.
+* A relational database will be used in order to be able to accurately model the data and perform advanced queries. 
+	* The database should be large enough to store a massive dataset.
+	* The databse should be indexed so efficient queries can be performed. 
+* The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
+* The Random-Access-Memory must be high enough to minimize reading from disk during computationally intensive tasks.
+* **System Requirments 
+	* Store articles using a distributed framework such as Hadoop.
+	* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
 
 ## **Design**
 
