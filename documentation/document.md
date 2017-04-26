@@ -207,6 +207,9 @@ for site in site_list:
 # Log any other errors
 ```
 #### Data Design
+![alt text](pictures/ERD.png "ERD")  
+* ERD Diagram  
+		The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
 * RDBMS: PostgreSQL is the database system to be used for a variety of reasons:
 	- It is a relational database which is needed because the data being gathered by our scraper has many complex relationships.
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
@@ -214,9 +217,6 @@ for site in site_list:
 	* Extaction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table.
 	* Transformation: The data is organized into relational tables through SQL queries.
 	* Loading: The relational tables will be used in conjuction with machine-learning analysis to gather meanigful and interesting information.
-* ERD Diagram  
-	The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
-	![alt text](pictures/ERD.png "ERD")
 
 ### Phase III: Data Analysis
 
