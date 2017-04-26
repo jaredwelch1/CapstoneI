@@ -204,8 +204,13 @@ for site in site_list:
 # Log any other errors
 ```
 #### Data Design
-* Why we chose Postgresql
-* Why we need a data warehouse
+* RDBMS: PostgreSQL is the database system to be used for a variety of reasons:
+	- It is a relational database which is needed because the data being gathered by our scraper has many complex relationships.
+	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
+* ETL Pipeline: 
+	* Extaction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table. 
+	* Transformation: The data is organized into relational tables through SQL queries.
+	* Loading: The relational tables will be used in conjuction with machine-learning analysis to gather meanigful and interesting information.
 * ERD Diagram (or put it under System design, idk)
 
 ### Phase III: Data Analysis
