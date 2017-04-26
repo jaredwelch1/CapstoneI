@@ -282,9 +282,12 @@ for site in site_list:
 	* ##### Wordcloud example/Explanation
 	* ##### Sentiment Analysis Visualization example
 * #### User Interface Diagrams
-	* ##### Homepage ![alt text](pictures/Homepage.png "Homepage")
-	* ##### Homepage ![alt text](pictures/Help.png "Help")
-	* ##### Homepage ![alt text](pictures/Results.png "Results")
+	##### Homepage 
+	![alt text](pictures/Homepage.png "Homepage")
+	##### Help 
+	![alt text](pictures/Help.png "Help")
+	##### Results 
+	![alt text](pictures/Results.png "Results")
 
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
