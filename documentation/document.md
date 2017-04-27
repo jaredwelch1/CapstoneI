@@ -411,11 +411,15 @@ be classified and identified as representative of those pre-determined topics.
 		[Link to Potential Python Library](https://www.jasondavies.com/wordcloud/)
 
 * #### User Interface Diagrams
+	##### Site Flow
+	![alt text](pictures/SiteFlow.png "Site Flow")
 	##### Homepage
 	![alt text](pictures/Homepage.png "Homepage")
 	##### Trending Topics
 	![alt text](pictures/TrendingTopics.png "TrendingTopics")
+	##### Topic Chosen
 	![alt text](pictures/TrendingTopicsTopicChosen.png "TrendingTopicsTopicChosen")
+	##### Topic + Article Chosen
 	![alt text](pictures/TrendingTopicsTopicChosenArticleChosen.png "TrendingTopicsTopicChosenArticleChosen")
 	##### Help
 	![alt text](pictures/Help.png "Help")
