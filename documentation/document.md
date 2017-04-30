@@ -61,6 +61,9 @@ We propose the following software solution:
 
 ### User Requirements
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
+	* Users can use the website to view clusters of articles by topic via a visualization.
+	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
+	* Users can use the website to view a word cloud representation of trending topics for that day.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
@@ -140,7 +143,7 @@ This is a list of the technologies we will be using for reference. These are dis
 		* The backend web development language used will be Python. Python was chosen for several reasons:
 			* It supports Object Oriented Programming allowing for applications to be developed modularly. This enables easy application extensibility.
 			* Python has a plethora Machine Learning, Natural Language Processing, and Data Mining libraries that are open source and easy to integrate to a new project.
-		* Python is not a web development language. However, there are many frameworks that enable web development using Python. Flask is the web framework to be used in this project. 
+		* Python is not a web development language. However, there are many frameworks that enable web development using Python. Flask is the web framework to be used in this project.
 			* Flask is a micro framework which means that is has a simple yet extensible core. This is important for a computationally intensive project because any overhead incurred by functionality not being used would be detrimental.  
 * ##### Javascript
 	* ##### D3.js library for visualizations
@@ -495,6 +498,18 @@ be classified and identified as representative of those pre-determined topics.
 ![alt text](pictures/research-39.png)
 ![alt text](pictures/research-40.png)
 ![alt text](pictures/research-41.png)
+
+# Development Plan
+
+## Development Method
+
+## Timeline  
+
+## Work Delegation
+
+## Alternative Strategies
+
+## Possible Troubles
 
 ## Testing
 
