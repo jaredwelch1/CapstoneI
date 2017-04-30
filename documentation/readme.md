@@ -1,4 +1,17 @@
 # TODO
+
+## Presentation  
+* Problem Definition (Ali)
+* Requirements (Ali)
+* AWS System Design (Justin)
+* Why we chose Python (Justin)
+* Web Scraping (Jared)
+* NLP (Zach)
+* Clustering KNN etc (Jared)
+* Database (Ali)
+* Datawarehouse (Kurt)
+* Visualizations (Kurt)
+* Testing (Jared)
 ~~* flowchart for scraper logic (All that info is already there, someone just has to draw it up) (Kurt)~~
 
 ~~* flow chart for natural language processing (Justin)~~
