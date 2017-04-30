@@ -1,7 +1,7 @@
 # TODO
 ~~* flowchart for scraper logic (All that info is already there, someone just has to draw it up) (Kurt)~~
 
-~~* flow chart for natural language processing (Justin) ~~
+~~* flow chart for natural language processing (Justin)~~
 
 ~~* flowchart for data analysis pipeline (Ali)~~
 
