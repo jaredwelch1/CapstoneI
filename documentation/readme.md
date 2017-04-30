@@ -11,7 +11,8 @@
 * Database (Ali)
 * Datawarehouse (Kurt)
 * Visualizations (Kurt)
-* Testing (Jared)
+* Testing (Jared)  
+* Conclusion  
 ~~* flowchart for scraper logic (All that info is already there, someone just has to draw it up) (Kurt)~~
 
 ~~* flow chart for natural language processing (Justin)~~
@@ -29,14 +30,15 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 
 ## Documentation Part III
 
-* Testing Plan
+* Testing Plan (Jared)
+  * Database Integration Testing (Kurt)  
 
-* Development Strategy - Agile? 
+* Development Strategy - Agile? (Kurt)
 
-* Development Timeline\Schedule
+* Development Timeline\Schedule (Zach)  
 
-* Work Delegation
+* Work Delegation (Ali)
 
-* Alternate Strategies
+* Alternate Strategies (Justin)
 
-* Possible Troubles
+* Possible Troubles (Justin)
