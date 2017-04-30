@@ -124,7 +124,23 @@ Features:
 * Decoupled web scraper will continue to run its relatively undemanding task undisturbed
 
 #### High Level Logical System Flow
-![alt text](pictures/SystemFlow.png "System Flow")
+![alt text](pictures/SystemFlow.png "System Flow")  
+
+#### Technologies Used
+This is a list of the technologies we will be using for reference. These are discussed in more detail at various places throughout this document.  
+* ##### Amazon Web Services  
+* ##### PostgreSQL  
+* ##### Python
+	* ##### Important libraries:
+		* Web scraping: Newspaper
+		* Natural language processing: NLTK and Stanford OpenNLP
+		* Machine learning: skLearn
+		* Data manipulation: Pandas
+	* ##### Flask (web framework)
+* ##### Javascript
+	* #####D3.js library for visualizations
+
+
 ### Phase II: Web Scraping and Data Design
 
 This project will require a large database of news articles and their associated metadata. To this purpose we have built a web scraper to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, we have collected over 30,000 articles and plan to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
