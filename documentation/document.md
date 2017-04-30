@@ -136,7 +136,11 @@ This is a list of the technologies we will be using for reference. These are dis
 		* Natural language processing: NLTK and Stanford OpenNLP
 		* Machine learning: skLearn
 		* Data manipulation: Pandas
-	* ##### Flask (web framework)
+	* ##### Flask (web framework)   
+		The backend web development language used will be Python. Python was chosen for several reasons:
+			- It supports Object Oriented Programming allowing for applications to be developed modularly. This enables easy application extensibility.
+			- Python has a plethora Machine Learning, Natural Language Processing, and Data Mining libraries that are open source and easy to integrate to a new project.
+		Python is not a web development language. However, there are many frameworks that enable web development using Python. Flask is the web framework to be used in this project. Flask is a micro framework which means that is has a simple yet extensible core. This is important for a computationally intensive project because any overhead incurred by functionality not being used would be detrimental.  
 * ##### Javascript
 	* ##### D3.js library for visualizations
 
