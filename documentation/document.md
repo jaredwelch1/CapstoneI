@@ -16,7 +16,7 @@
 - **Ali Raza:** I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
 ![alt text](pictures/ali.jpg "Ali Raza")
 
-- **Jared Welch:** Senior at the Univeristy of Missouri. Passionate about improving my skills. Excited for the potential of our application.   
+- **Jared Welch:** Senior at the University of Missouri. Passionate about improving my skills. Excited for the potential of our application.   
 ![alt text](pictures/jared.png "Jared Welch")
 
 - **Justin Renneke:** Senior undergraduate of Computer Science at the University of Missouri, graduating December '17.  Interested in machine learning, data analysis, cloud computing, and using Python to conquer the galaxy.      
@@ -25,7 +25,7 @@
 ## Introduction
 
 #### Problem Definition
-News articles generate massive amounts of data. Following the climactic nature of the 2016 Presedential Election due to the disimmenation of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effictively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
+News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effectively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
 
 #### Problem Resolution
 
@@ -63,7 +63,7 @@ We propose the following software solution:
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
-	* User can peform custom searches against the database, yielding search results related to statistics on the news article data
+	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
 
 ### Functional Requirements
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
@@ -76,8 +76,8 @@ We propose the following software solution:
 	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 	* Perform sentiment analysis on articles and visualize the results.
 
-### Non Functional Requirments
-* The server is expected to have a 99% availbility.
+### Non Functional Requirements
+* The server is expected to have a 99% availability.
 * Each layer of the system should be backed-up weekly
 * The web application will have HTTPs encryption with a valid SSL certificate.
 * The software will be written using modular OOP practices to allow for easy addition of new features.
@@ -88,16 +88,16 @@ We propose the following software solution:
 
 ### System Requirements
 * The project will be hosted on decoupled Amazon AWS instances.
-	* A web scraper, database system, and web applciation will each have their own isolated instance.
+	* A web scraper, database system, and web application will each have their own isolated instance.
 	* The system will auto scale for intensive data analysis and improved response time during high usage situations.
 * A relational database will be used in order to be able to accurately model the data and perform advanced queries.
 	* The database should be large enough to store a massive dataset.
-	* The databse should be indexed so efficient queries can be performed.
+	* The database should be indexed so efficient queries can be performed.
 * The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
 * The Random-Access-Memory must be high enough to minimize reading from disk during computationally intensive tasks.
-* **System Requirments Strech Goals:**
+* **System Requirements Stretch Goals:**
 	* Store articles using a distributed framework such as Hadoop.
-	* Implement a cluster computing system and perform parallel analysis in order to drasticlly improve computational speed.
+	* Implement a cluster computing system and perform parallel analysis in order to drastically improve computational speed.
 
 ## **Design**
 
@@ -209,14 +209,14 @@ for site in site_list:
 #### Data Design
 ![alt text](pictures/ERD.png "ERD")  
 * ERD Diagram  
-		The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
+		The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
 * RDBMS: PostgreSQL is the database system to be used for a variety of reasons:
 	- It is a relational database which is needed because the data being gathered by our scraper has many complex relationships.
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
 * ETL Pipeline:
-	* Extaction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table.
+	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table.
 	* Transformation: The data is organized into relational tables through SQL queries.
-	* Loading: The relational tables will be used in conjuction with machine-learning analysis to gather meanigful and interesting information.
+	* Loading: The relational tables will be used in conjunction with machine-learning analysis to gather meaningful and interesting information.
 
 ### Phase III: Data Analysis
 
