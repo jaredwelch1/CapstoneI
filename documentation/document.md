@@ -138,7 +138,7 @@ This is a list of the technologies we will be using for reference. These are dis
 		* Data manipulation: Pandas
 	* ##### Flask (web framework)
 * ##### Javascript
-	* #####D3.js library for visualizations
+	* ##### D3.js library for visualizations
 
 
 ### Phase II: Web Scraping and Data Design
