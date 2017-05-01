@@ -520,7 +520,7 @@ be classified and identified as representative of those pre-determined topics.
 
 ## Alternative Strategies
 * If AWS proves to be unfeasible for the large amount of data processing required due to financial constraints, the team has access to the university research cluster computer to process data locally, outside of the cloud and its associated costs.
-* If unsupervised clustering proves inadequate for topic classification, we can fall back on supervised learning using K nearest neighbors on labeled data.
+* If unsupervised clustering proves inadequate for topic classification, we can fall back on supervised learning using K nearest neighbors or other supervised learning algorithms on labeled data.
 
 ## Testing
 
