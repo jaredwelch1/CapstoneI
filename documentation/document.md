@@ -528,7 +528,7 @@ We plan on testing using unit testing, creating testing suites with each new ver
 unit testing will allow us to continuously ensure old functionality while introducing new features. There remains research to be done in this area as far as testing software to use. However, a general plan for testing will resemble the following:
 
 - As new features are written, verify their functionality with unit tests, ensuring all tests are passing before a feature is finished.
-Alternatively, development may sometimes being with a test first style of development, writing code to match the tests perceived to
+Alternatively, development may sometimes begin with a test first style of development, writing code to match the tests perceived to
 be important to that feature.
 
 - Tests will be consolidated in one testing suite, which will allow old tests to be run along with new features to test that the new
