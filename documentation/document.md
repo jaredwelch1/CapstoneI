@@ -61,6 +61,9 @@ We propose the following software solution:
 
 ### User Requirements
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
+	* Users can use the website to view clusters of articles by topic via a visualization.
+	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
+	* Users can use the website to view a word cloud representation of trending topics for that day.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
@@ -131,19 +134,14 @@ Features:
 This is a list of the technologies we will be using for reference. These are discussed in more detail at various places throughout this document.  
 * ##### Amazon Web Services  
 * ##### PostgreSQL  
-* ##### Python
+* ##### Python Back-End
 	* ##### Important libraries:
 		* Web scraping: Newspaper
 		* Natural language processing: NLTK and Stanford OpenNLP
 		* Machine learning: skLearn
 		* Data manipulation: Pandas
 	* ##### Flask (web framework)   
-		* The backend web development language used will be Python. Python was chosen for several reasons:
-			* It supports Object Oriented Programming allowing for applications to be developed modularly. This enables easy application extensibility.
-			* Python has a plethora Machine Learning, Natural Language Processing, and Data Mining libraries that are open source and easy to integrate to a new project.
-		* Python is not a web development language. However, there are many frameworks that enable web development using Python. Flask is the web framework to be used in this project. 
-			* Flask is a micro framework which means that is has a simple yet extensible core. This is important for a computationally intensive project because any overhead incurred by functionality not being used would be detrimental.  
-* ##### Javascript
+* ##### HTML/Javascript Front-End
 	* ##### D3.js library for visualizations
 
 
@@ -350,6 +348,10 @@ This section will briefly outline the machine learning techniques we intend to u
 		Another important thing to mention is that articles can overlap with their topics, so it is important not to try to over distinguish
 	clusters from each other, as overlap is expected with this type of dataset. K-means clustering might need some modifications in order to
 	ensure the overlap is not lost (if it is significant).
+
+	![alt text](pictures/clustering.png)
+
+	
 * ##### Supervised Learning
 	- **K-nearest Neighbors and Distinguishing Clusters**
 
@@ -359,7 +361,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
 	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
-
+	
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
 
@@ -408,6 +410,15 @@ be classified and identified as representative of those pre-determined topics.
 
 
 ### Phase IV: Web Application
+* #### Web framework  
+	* ##### Flask
+		* Allows communication between our Python-based back-end and our front-end web application.
+		* Flask is a micro framework which means that it has a simple yet extensible core. This is important for a computationally intensive project because any overhead incurred by functionality not being used would be detrimental.
+		* One of the easier to learn and use frameworks with a low amount of organizational overhead compared to many other frameworks, allowing for rapid integration and expansion.
+* #### Languages
+	* ##### HTML
+	* ##### JavaScript
+		* D3.js library will be used for visualizations of data analysis provided by processing done in Python on the back-end and communicated via Flask.
 * #### Data Visualizations
 	* ##### Clustering Visualization/Explanation
 
@@ -497,13 +508,32 @@ be classified and identified as representative of those pre-determined topics.
 ![alt text](pictures/research-40.png)
 ![alt text](pictures/research-41.png)
 
+# Development Plan
+
+## Development Method
+
+## Timeline  
+
+## Work Delegation
+
+## Possible Troubles
+* In general, this is a big, challenging project for undergraduates who will be required to learn many new techniques to bring it to the finish line.  
+* Using AWS offers great potential for decoupled, scalable data processing but this could be limited by running up against financial constraints.  
+* It might be difficult to get a high degree of accuracy in this application of unsupervised clustering due to the nature of news articles and their tendency to contain overlapping topics.
+* It might prove difficult to draw accurate conclusions with sentiment analysis due to the typically neutral language used in most news articles.
+* If any of the data needs to be labeled by hand, this could prove to be incredibly time consuming and, due to the small size of the development team, would be vulnerable to bias.
+
+## Alternative Strategies
+* If AWS proves to be unfeasible for the large amount of data processing required due to financial constraints, the team has access to the university research cluster computer to process data locally, outside of the cloud and its associated costs.
+* If unsupervised clustering proves inadequate for topic classification, we can fall back on supervised learning using K nearest neighbors or other supervised learning algorithms on labeled data.
+
 ## Testing
 
 We plan on testing using unit testing, creating testing suites with each new version release of the software. As new features are added,
 unit testing will allow us to continuously ensure old functionality while introducing new features. There remains research to be done in this area as far as testing software to use. However, a general plan for testing will resemble the following:
 
 - As new features are written, verify their functionality with unit tests, ensuring all tests are passing before a feature is finished.
-Alternatively, development may sometimes being with a test first style of development, writing code to match the tests perceived to
+Alternatively, development may sometimes begin with a test first style of development, writing code to match the tests perceived to
 be important to that feature.
 
 - Tests will be consolidated in one testing suite, which will allow old tests to be run along with new features to test that the new
