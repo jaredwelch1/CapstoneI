@@ -347,6 +347,8 @@ This section will briefly outline the machine learning techniques we intend to u
 		Another important thing to mention is that articles can overlap with their topics, so it is important not to try to over distinguish
 	clusters from each other, as overlap is expected with this type of dataset. K-means clustering might need some modifications in order to
 	ensure the overlap is not lost (if it is significant).
+	
+	![
 * ##### Supervised Learning
 	- **K-nearest Neighbors and Distinguishing Clusters**
 
@@ -356,6 +358,8 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
 	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
+	
+	![alt text](pictures/clustering.png)
 
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
