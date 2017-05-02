@@ -1,7 +1,7 @@
 # TODO
 
 ## Presentation  
-* Problem Definition (Ali)
+* Intro and Problem Definition (Ali)
 * Quick Design Overview (Justin)
 * AWS System Design (Justin)
 * Why we chose Python (Justin)
