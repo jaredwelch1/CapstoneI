@@ -2,6 +2,7 @@
 
 ## Presentation  
 * Problem Definition (Ali)
+* Quick Design Overview (Justin)
 * AWS System Design (Justin)
 * Why we chose Python (Justin)
 * Web Scraping (Jared)
