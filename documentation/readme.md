@@ -2,7 +2,6 @@
 
 ## Presentation  
 * Problem Definition (Ali)
-* Requirements (Ali)
 * AWS System Design (Justin)
 * Why we chose Python (Justin)
 * Web Scraping (Jared)
@@ -12,7 +11,7 @@
 * Datawarehouse (Kurt)
 * Visualizations (Kurt)
 * Testing (Jared)  
-* Conclusion  
+* Conclusion (Kurt)  
 ~~* flowchart for scraper logic (All that info is already there, someone just has to draw it up) (Kurt)~~
 
 ~~* flow chart for natural language processing (Justin)~~
@@ -22,7 +21,7 @@
 ~~* system architecture diagram to show how components of system interact (web scraper, database,
 processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 
-* Clustering flow chart (Jared)
+~~* Clustering flow chart (Jared)~~
 
 ~~* Machine learning topic breakdown (Jared)~~
 
