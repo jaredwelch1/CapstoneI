@@ -515,6 +515,11 @@ be classified and identified as representative of those pre-determined topics.
 ## Timeline  
 
 ## Work Delegation
+* Kurt: Data-warehousing/ data visualization
+* Ali: Backend web development
+* Justin: Natural Language Processing
+* Jared: Clustering
+* Zach: Front End Development
 
 ## Possible Troubles
 * In general, this is a big, challenging project for undergraduates who will be required to learn many new techniques to bring it to the finish line.  
