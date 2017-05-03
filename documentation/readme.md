@@ -42,3 +42,16 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 * Alternate Strategies (Justin)
 
 * Possible Troubles (Justin)
+
+### Meeting with Gary <3 <3 <3
+- Include some examples underneath use cases to flesh them out
+ - types of graph, reasons for them, radar chart if we can 
+- fill out testing, add graphics for what tests
+  - describe how we are going to pick clusters
+  - describe how we will test classifications
+  - describe methods, how we will verify they are accurate
+  - ...
+- more detail about the items in work delegation (subtasks)
+- need define sprints if we use agile, good visualizations of development method choice
+ - ex: sprint1, sprint2, ....
+- pick development type
