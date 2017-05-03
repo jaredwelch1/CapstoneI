@@ -555,6 +555,7 @@ Below is a general outline of what we think will need to be tested as we develop
 | TF-IDF keyword values | For this we can test our TF-IDF by giving articles with known TF-IDF values and testing the accuracy of our TF-IDF methods |
 | Clustering | We will need to verify the accuracy of grouped clusters. We will do this by comparing word frequency of articles pulled from a cluster and see if those articles actually share keywords|
 | Topic Classification | We will test this by sampling a few random articles from each topic cluster after we train it and verify the articles relate to that topic |
+| Sentiment Analysis | To test this, we will need to compare sentiment analysis results with the actual content of the article and judge whether the sentiment is expressed accurately |
 | Database stored procedure testing | In the general case, we should have test data to run stored procedures on and test the results to verify they work as intended |
 | Stop word Removal | Similar to TF-IDF, we will need to verify our stop words are being removed by giving sample articles and checking the output for remaining stop words |
 | Stemming/Lemmatization | Given sample words, test the expected stem output with process |
