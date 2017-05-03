@@ -547,5 +547,23 @@ features do not hurt existing functionality.
 - A stretch goal for this project will be to implement testing hooks and build automation so that all live code complies with testing
 before being put into a live environment. This ensures highly stable code releases, and prevents bad code from being released.
 
+
+Below is a general outline of what we think will need to be tested as we develop.
+
+| Feature | How we will need to test |
+|--|--|
+| TF-IDF keyword values | For this we can test our TF-IDF by giving articles with known TF-IDF values and testing the accuracy of our TF-IDF methods |
+| Clustering | We will need to verify the accuracy of grouped clusters. We will do this by comparing word frequency of articles pulled from a cluster and see if those articles actually share keywords|
+| Topic Classification | We will test this by sampling a few random articles from each topic cluster after we train it and verify the articles relate to that topic |
+| Database stored procedure testing | In the general case, we should have test data to run stored procedures on and test the results to verify they work as intended |
+| Stop word Removal | Similar to TF-IDF, we will need to verify our stop words are being removed by giving sample articles and checking the output for remaining stop words |
+| Stemming/Lemmatization | Given sample words, test the expected stem output with process |
+| Data warehouse from current database | We will need to verify when we create our data warehouse that the data accurately reflects the database data; this can be done by comparing queries and their output from the database vs the data warehouse |
+| Flask/Front End testing | The best way to test front in features seems to be with integration tests and workflow procedures to verify that the old workflows work as new features are added. This does not yield itself well to unit testing |
+| Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
+| Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
+
+
+
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
