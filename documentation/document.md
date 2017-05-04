@@ -67,7 +67,7 @@ We propose the following software solution:
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
-	* User can explore articles pertinent to trending twitter topics. 
+	* User can explore articles pertinent to trending twitter topics.
 
 ### Functional Requirements
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
@@ -351,7 +351,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 	![alt text](pictures/clustering.png)
 
-	
+
 * ##### Supervised Learning
 	- **K-nearest Neighbors and Distinguishing Clusters**
 
@@ -361,7 +361,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
 	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
-	
+
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
 
@@ -513,7 +513,7 @@ be classified and identified as representative of those pre-determined topics.
 ## Development Method
 Waterfall methodology follows the following steps:
 First you capture all of the requirements of a software system, which we’ve done via this documentation. Next we will start analyzing our scraped data using the NLP and machine learning python libraries and creation of the data warehouse. The design will be next so we can solidify the layout of the website and begin work on the visualization. We will be coding throughout all of these steps, along with testing however a testing suite will be implemented last. And finally the software will be  deployed from DEV to PROD, ending Capstone II and our senior year at Mizzou. Any further support, migration or maintenance will come through all members of our team for review and verification.  
-
+![alt text](pictures/waterfall.png)
 ## Timeline
 ![alt text](pictures/Timeline-1.png)
 
