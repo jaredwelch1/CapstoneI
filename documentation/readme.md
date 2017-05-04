@@ -5,7 +5,7 @@
 * more detail about the items in work delegation (subtasks) per meeting feedback
 * Title page with Team Name, team member names, and project title
 * ### Clean up all first and second person pronouns in anything you wrote (remove all I, we, our, and so on). Yes this fucking sucks, but it would be dumb to lose points for it and I'm not doing it for anything except what I wrote so do it yourself 
-
+* more to come from Gary's Doc III feedback..
 
 ## Presentation  
 * Intro and Problem Definition (Ali)
