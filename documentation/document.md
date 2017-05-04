@@ -511,6 +511,8 @@ be classified and identified as representative of those pre-determined topics.
 # Development Plan
 
 ## Development Method
+Waterfall methodology follows the following steps:
+First you capture all of the requirements of a software system, which we’ve done via this documentation. Next we will start analyzing our scraped data using the NLP and machine learning python libraries and creation of the data warehouse. The design will be next so we can solidify the layout of the website and begin work on the visualization. We will be coding throughout all of these steps, along with testing however a testing suite will be implemented last. And finally the software will be  deployed from DEV to PROD, ending Capstone II and our senior year at Mizzou. Any further support, migration or maintenance will come through all members of our team for review and verification.  
 
 ## Timeline  
 
@@ -547,6 +549,8 @@ features do not hurt existing functionality.
 - A stretch goal for this project will be to implement testing hooks and build automation so that all live code complies with testing
 before being put into a live environment. This ensures highly stable code releases, and prevents bad code from being released.
 
+ - Database Integration Testing
+Since our data is what drives this projects, we need to be aware of its status. To do this, I will create a bar chart that gives a count of all null fields in each column of the database and check it by weekly. If it seems like the count is getting too high we will need to check our scraper to confirm it is passing its unit tests and that it’s passing information to the database the way we intended it too
 
 Below is a general outline of what we think will need to be tested as we develop.
 
