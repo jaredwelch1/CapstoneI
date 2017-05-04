@@ -1,5 +1,12 @@
 # TODO
 
+## Final Submission
+* Works cited from papers conglomerated at end per meeting feedback
+* more detail about the items in work delegation (subtasks) per meeting feedback
+* Title page with Team Name, team member names, and project title
+* ### Clean up all first and second person pronouns in anything you wrote (remove all I, we, our, and so on). Yes this fucking sucks, but it would be dumb to lose points for it and I'm not doing it for anything except what I wrote so do it yourself 
+
+
 ## Presentation  
 * Intro and Problem Definition (Ali)
 * Quick Design Overview (Justin)
@@ -30,18 +37,18 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 
 ## Documentation Part III
 
-* Testing Plan (Jared)
-  * Database Integration Testing (Kurt)  
+~~* Testing Plan (Jared)~~
+  ~~* Database Integration Testing (Kurt)~~
 
-* Development Strategy - Agile? (Kurt)
+~~* Development Strategy - Agile? (Kurt)~~
 
-* Development Timeline\Schedule (Zach)  
+~~* Development Timeline\Schedule (Zach)~~
 
-* Work Delegation (Ali)
+~~* Work Delegation (Ali)~~
 
-* Alternate Strategies (Justin)
+~~* Alternate Strategies (Justin)~~
 
-* Possible Troubles (Justin)
+~~* Possible Troubles (Justin)~~
 
 ### Meeting with Gary <3 <3 <3
 - Include some examples underneath use cases to flesh them out
