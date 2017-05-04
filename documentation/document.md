@@ -514,7 +514,8 @@ be classified and identified as representative of those pre-determined topics.
 Waterfall methodology follows the following steps:
 First you capture all of the requirements of a software system, which we’ve done via this documentation. Next we will start analyzing our scraped data using the NLP and machine learning python libraries and creation of the data warehouse. The design will be next so we can solidify the layout of the website and begin work on the visualization. We will be coding throughout all of these steps, along with testing however a testing suite will be implemented last. And finally the software will be  deployed from DEV to PROD, ending Capstone II and our senior year at Mizzou. Any further support, migration or maintenance will come through all members of our team for review and verification.  
 
-## Timeline  
+## Timeline
+![alt text](pictures/Timeline-1.png)
 
 ## Work Delegation
 * Kurt: Data-warehousing/ data visualization
