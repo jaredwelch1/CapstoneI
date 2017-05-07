@@ -1,11 +1,12 @@
 # TODO
-
+## Doc III Feedback
+* More reasoning needs to be given as to why the Waterfall method was chosen for your groups specific project.
+* More detail needs to be given in the work delegation section
+* More detail in the timeline.
 ## Final Submission
 * Works cited from papers conglomerated at end per meeting feedback
-* more detail about the items in work delegation (subtasks) per meeting feedback
 * Title page with Team Name, team member names, and project title
-* ### Clean up all first and second person pronouns in anything you wrote (remove all I, we, our, and so on). Yes this fucking sucks, but it would be dumb to lose points for it, everyone take care of it for what they wrote themselves, suck it up and get it done ;) 
-* more to come from Gary's Doc III feedback..
+* ##### Clean up all first and second person pronouns in anything you wrote (remove all I, we, our, and so on). Yes this fucking sucks, but it would be dumb to lose points for it, everyone take care of it for what they wrote themselves, suck it up ;) 
 
 ## Presentation  
 * Intro and Problem Definition (Ali)
