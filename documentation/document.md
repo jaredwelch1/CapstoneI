@@ -520,7 +520,7 @@ First you capture all of the requirements of a software system, which we’ve do
 
 ## Work Delegation
 * Kurt: Data-warehousing/ data visualization
-	* Data warehouse development to create data marts that easy reporting analytics
+	* Data warehouse development to create data marts that ease reporting analytics
 	* Create visualization based upon categorization and statistics done via analysis using Javascript (D3)
 * Ali: Backend web development
 	* Develop a normalized transactional database using PostgreSQL
