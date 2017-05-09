@@ -516,6 +516,7 @@ First you capture all of the requirements of a software system, which we’ve do
 ![alt text](pictures/waterfall.png)
 ## Timeline
 ![alt text](pictures/Timeline-1.png)
+![alt text](pictures/timeline2.png)
 
 ## Work Delegation
 * Kurt: Data-warehousing/ data visualization
