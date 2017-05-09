@@ -520,10 +520,21 @@ First you capture all of the requirements of a software system, which we’ve do
 
 ## Work Delegation
 * Kurt: Data-warehousing/ data visualization
+	* Data warehouse development to create data marts that easy reporting analytics
+	* Create visualization based upon categorization and statistics done via analysis using Javascript (D3)
 * Ali: Backend web development
+	* Develop a normalized transactional database using PostgreSQL
+	* Backend web development using Python (Flask)
 * Justin: Natural Language Processing
-* Jared: Clustering
+	* Natural language processing for cleaning data and extracting features for use in machine learning analysis
+	* Development of web scraper
+	* Design of AWS deployment prototype
+* Jared: Machine Learning Analysis
+	* Categorization of articles using both unsupervised and supervised learning techniques
+	* Web server deployment
 * Zach: Front End Development
+	* UI design using HTML, CSS, and JavaScript
+	* System administration
 
 ## Possible Troubles
 * In general, this is a big, challenging project for undergraduates who will be required to learn many new techniques to bring it to the finish line.  
