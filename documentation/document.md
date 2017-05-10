@@ -1,5 +1,3 @@
-# **Capstone 2017 Documentation**
-
 ## **Team Information**
 
 **Team Name:** Squad
