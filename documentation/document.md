@@ -106,15 +106,15 @@ We propose the following software solution:
 ## **Design**
 
 ### Phase I: System Design
-We will be deploying our project within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case we want to deploy for real world use).
+The project will be deployed within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case the project is to deploy for real world use).
 
-Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow our web scraping to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
+Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow the web scraper to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
 #### AWS Prototyping Deployment
 ![alt text](pictures/DataDrivenWebApp-Prototyping.png "Prototyping Architecture")
 Features:
 * Auto Scaling combined Web Servers/Data Processing
-	* This provides scale-up capability when we need to do data processing and to process individual user queries in a prototyping environment
-	* Saves money by reducing resource consumption since we will not need to handle many users in a prototyping environment and we can afford to sacrifice some responsiveness for the sake of cost
+	* This provides scale-up capability for data processing and to process individual user queries in a prototyping environment
+	* Saves money by reducing resource consumption since the system will not need to handle many users in a prototyping environment and the system can afford to sacrifice some responsiveness for the sake of cost
 * Single, decoupled RDS database
 * Decoupled web scraper
 #### AWS Business Model Deployment
@@ -131,7 +131,7 @@ Features:
 ![alt text](pictures/SystemFlow.png "System Flow")  
 
 #### Technologies Used
-This is a list of the technologies we will be using for reference. These are discussed in more detail at various places throughout this document.  
+This is a list of the technologies that will be used for reference. These are discussed in more detail at various places throughout this document.  
 * ##### Amazon Web Services  
 * ##### PostgreSQL  
 * ##### Python Back-End
@@ -147,7 +147,7 @@ This is a list of the technologies we will be using for reference. These are dis
 
 ### Phase II: Web Scraping and Data Design
 
-This project will require a large database of news articles and their associated metadata. To this purpose we have built a web scraper to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, we have collected over 30,000 articles and plan to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
+This project will require a large database of news articles and their associated metadata. To this purpose a web scraper has been built to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, over 30,000 articles have been collected and there are plans to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
 
 #### Web scraper
 ##### Overview
@@ -162,9 +162,9 @@ This project will require a large database of news articles and their associated
 
 [Link to Newspaper library Homepage](http://newspaper.readthedocs.io/en/latest/)
 
-The Newspaper library is specifically designed to scrape articles from news websites. Newspaper itself is based on Python's popular BeautifulSoup and Goose parsing libraries. This library allows us to cleanly scrape news articles from a wide variety of websites - a challenge that would otherwise be incredibly time consuming. The library accomplishes this by: querying a website's home page, crawling through all the links associated with the website, building a tree structure to represent it, then scraping and parsing every previously unseen article in the tree.
+The Newspaper library is specifically designed to scrape articles from news websites. Newspaper itself is based on Python's popular BeautifulSoup and Goose parsing libraries. This library provides the ability to cleanly scrape news articles from a wide variety of websites - a challenge that would otherwise be incredibly time consuming. The library accomplishes this by: querying a website's home page, crawling through all the links associated with the website, building a tree structure to represent it, then scraping and parsing every previously unseen article in the tree.
 
-Using this library, we are able to collect the following data from every article:
+Using this library, it is possible to collect the following data from every article:
 * Title
 * Primary author (if exists)
 * Secondary authors (if exists)
@@ -173,7 +173,7 @@ Using this library, we are able to collect the following data from every article
 * Body text
 * Raw html
 
-The library also has a memoization capability that we are using. This allows us to scrape only new articles for every subsequent scrape of a site.
+The library also has a memoization capability that is being used. This allows the scraper to scrape only new articles for every subsequent scrape of a site.
 
 **Scraper Code/Pseudocode**
 ```
@@ -243,9 +243,9 @@ for site in site_list:
 #### Pre-Processing and Feature Extraction
 
 * ##### Natural Language Processing
- 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and we will have to explore their viability as we explore our data.
+ 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and the viability of the various methods will need to be explored as the data is explored.
 	* ###### **Removal of Stopwords**  
-		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. We will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
+		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. The project will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
 
 		Example code:
 		```
@@ -369,7 +369,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		There are two main challenges in analyzing sentiment from news articles:  
 		1. Reporting in general purposefully employs a neutral style of language and it may be hard to extract meaningful sentiment classification results when the authors are making a conscious effort to employ neutral language.
-		2. Finding a labeled dataset similar enough to our own data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing our news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so we might have to creatively combine more generalized sentiment analysis techniques or label some of our data by hand.  
+		2. Finding a labeled dataset similar enough to the project's data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing the project's news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so the developers might have to creatively combine more generalized sentiment analysis techniques or label some of the data by hand.  
 
 		To address the potential issues raised in point 2 above, NLTK offers some generalized text corpora labeled with sentiment that could be used as training data. These include the opinion_lexicon containing a list of positive and negative words in English, and the sentence_polarity corpus containing over 10,000 sentences tagged as positive or negative.
 
@@ -513,7 +513,7 @@ be classified and identified as representative of those pre-determined topics.
 ## Development Method
 Waterfall methodology follows the following steps:
 First capture all of the requirements of a software system, which has been done via this documentation. Next, start analyzing the scraped data using the NLP and machine learning python libraries and creation of the data warehouse. Design will be next so the layout of the website can be solidified and work will begin on the visualization. Coding will be done throughout all of these steps, along with testing; however a testing suite will be implemented last. And finally the software will be  deployed from DEV to PROD, ending Capstone II and 2017 Seniors at Mizzou. Any further support, migration or maintenance will come through all members of the team for review and verification.
-The main reason waterfall is best for this project is because many of the methodologies that could potentially be used to attempt a task may fail, but that developer should still succeed at their task. Research is often done this way since it is difficult to partition out the different smaller goals. For example, having someone do the clustering piece or be in charge of it is better than doing it in smaller chunks. This is because they could while researching and prototyping discover some new way to do clustering that invalidates their work on that problem up to this point. They should continue chugging away at this new idea. If agile was used for this project someone would have a week to implement X clustering algorithm. If it works awesome, if not, they've failed and now the timeline is wrong, since time is not built into this agile development for failure and research since its done at such a graular approach. 
+The main reason waterfall is best for this project is because many of the methodologies that could potentially be used to attempt a task may fail, but that developer should still succeed at their task. Research is often done this way since it is difficult to partition out the different smaller goals. For example, having someone do the clustering piece or be in charge of it is better than doing it in smaller chunks. This is because they could while researching and prototyping discover some new way to do clustering that invalidates their work on that problem up to this point. They should continue chugging away at this new idea. If agile was used for this project someone would have a week to implement X clustering algorithm. If it works awesome, if not, they've failed and now the timeline is wrong, since time is not built into this agile development for failure and research since its done at such a granular approach.
 ![alt text](pictures/waterfall.png)
 ## Timeline
 ![alt text](pictures/Timeline-1.png)
