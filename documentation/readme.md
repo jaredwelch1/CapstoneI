@@ -49,8 +49,6 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 
 ~~* Alternate Strategies (Justin)~~
 
-~~* Possible Troubles (Justin)~~
-
 ### Meeting with Gary <3 <3 <3
 - Include some examples underneath use cases to flesh them out
  - types of graph, reasons for them, radar chart if we can 
@@ -63,3 +61,4 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 - need define sprints if we use agile, good visualizations of development method choice
  - ex: sprint1, sprint2, ....
 - pick development type
+
