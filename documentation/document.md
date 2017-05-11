@@ -1,5 +1,3 @@
-# **Capstone 2017 Documentation**
-
 ## **Team Information**
 
 **Team Name:** Squad
@@ -67,7 +65,7 @@ We propose the following software solution:
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
-	* User can explore articles pertinent to trending twitter topics. 
+	* User can explore articles pertinent to trending twitter topics.
 
 ### Functional Requirements
 * Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
@@ -106,15 +104,15 @@ We propose the following software solution:
 ## **Design**
 
 ### Phase I: System Design
-We will be deploying our project within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case we want to deploy for real world use).
+The project will be deployed within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case the project is to deploy for real world use).
 
-Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow our web scraping to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
+Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow the web scraper to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
 #### AWS Prototyping Deployment
 ![alt text](pictures/DataDrivenWebApp-Prototyping.png "Prototyping Architecture")
 Features:
 * Auto Scaling combined Web Servers/Data Processing
-	* This provides scale-up capability when we need to do data processing and to process individual user queries in a prototyping environment
-	* Saves money by reducing resource consumption since we will not need to handle many users in a prototyping environment and we can afford to sacrifice some responsiveness for the sake of cost
+	* This provides scale-up capability for data processing and to process individual user queries in a prototyping environment
+	* Saves money by reducing resource consumption since the system will not need to handle many users in a prototyping environment and the system can afford to sacrifice some responsiveness for the sake of cost
 * Single, decoupled RDS database
 * Decoupled web scraper
 #### AWS Business Model Deployment
@@ -131,7 +129,7 @@ Features:
 ![alt text](pictures/SystemFlow.png "System Flow")  
 
 #### Technologies Used
-This is a list of the technologies we will be using for reference. These are discussed in more detail at various places throughout this document.  
+This is a list of the technologies that will be used for reference. These are discussed in more detail at various places throughout this document.  
 * ##### Amazon Web Services  
 * ##### PostgreSQL  
 * ##### Python Back-End
@@ -147,7 +145,7 @@ This is a list of the technologies we will be using for reference. These are dis
 
 ### Phase II: Web Scraping and Data Design
 
-This project will require a large database of news articles and their associated metadata. To this purpose we have built a web scraper to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, we have collected over 30,000 articles and plan to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
+This project will require a large database of news articles and their associated metadata. To this purpose a web scraper has been built to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, over 30,000 articles have been collected and there are plans to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
 
 #### Web scraper
 ##### Overview
@@ -162,9 +160,9 @@ This project will require a large database of news articles and their associated
 
 [Link to Newspaper library Homepage](http://newspaper.readthedocs.io/en/latest/)
 
-The Newspaper library is specifically designed to scrape articles from news websites. Newspaper itself is based on Python's popular BeautifulSoup and Goose parsing libraries. This library allows us to cleanly scrape news articles from a wide variety of websites - a challenge that would otherwise be incredibly time consuming. The library accomplishes this by: querying a website's home page, crawling through all the links associated with the website, building a tree structure to represent it, then scraping and parsing every previously unseen article in the tree.
+The Newspaper library is specifically designed to scrape articles from news websites. Newspaper itself is based on Python's popular BeautifulSoup and Goose parsing libraries. This library provides the ability to cleanly scrape news articles from a wide variety of websites - a challenge that would otherwise be incredibly time consuming. The library accomplishes this by: querying a website's home page, crawling through all the links associated with the website, building a tree structure to represent it, then scraping and parsing every previously unseen article in the tree.
 
-Using this library, we are able to collect the following data from every article:
+Using this library, it is possible to collect the following data from every article:
 * Title
 * Primary author (if exists)
 * Secondary authors (if exists)
@@ -173,7 +171,7 @@ Using this library, we are able to collect the following data from every article
 * Body text
 * Raw html
 
-The library also has a memoization capability that we are using. This allows us to scrape only new articles for every subsequent scrape of a site.
+The library also has a memoization capability that is being used. This allows the scraper to scrape only new articles for every subsequent scrape of a site.
 
 **Scraper Code/Pseudocode**
 ```
@@ -243,9 +241,9 @@ for site in site_list:
 #### Pre-Processing and Feature Extraction
 
 * ##### Natural Language Processing
- 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and we will have to explore their viability as we explore our data.
+ 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and the viability of the various methods will need to be explored as the data is explored.
 	* ###### **Removal of Stopwords**  
-		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. We will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
+		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. The project will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
 
 		Example code:
 		```
@@ -351,7 +349,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 	![alt text](pictures/clustering.png)
 
-	
+
 * ##### Supervised Learning
 	- **K-nearest Neighbors and Distinguishing Clusters**
 
@@ -361,7 +359,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
 	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
-	
+
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
 
@@ -369,7 +367,7 @@ This section will briefly outline the machine learning techniques we intend to u
 
 		There are two main challenges in analyzing sentiment from news articles:  
 		1. Reporting in general purposefully employs a neutral style of language and it may be hard to extract meaningful sentiment classification results when the authors are making a conscious effort to employ neutral language.
-		2. Finding a labeled dataset similar enough to our own data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing our news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so we might have to creatively combine more generalized sentiment analysis techniques or label some of our data by hand.  
+		2. Finding a labeled dataset similar enough to the project's data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing the project's news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so the developers might have to creatively combine more generalized sentiment analysis techniques or label some of the data by hand.  
 
 		To address the potential issues raised in point 2 above, NLTK offers some generalized text corpora labeled with sentiment that could be used as training data. These include the opinion_lexicon containing a list of positive and negative words in English, and the sentence_polarity corpus containing over 10,000 sentences tagged as positive or negative.
 
@@ -511,10 +509,31 @@ be classified and identified as representative of those pre-determined topics.
 # Development Plan
 
 ## Development Method
-
-## Timeline  
+Waterfall methodology follows the following steps:
+First capture all of the requirements of a software system, which has been done via this documentation. Next, start analyzing the scraped data using the NLP and machine learning python libraries and creation of the data warehouse. Design will be next so the layout of the website can be solidified and work will begin on the visualization. Coding will be done throughout all of these steps, along with testing; however a testing suite will be implemented last. And finally the software will be  deployed from DEV to PROD, ending Capstone II and 2017 Seniors at Mizzou. Any further support, migration or maintenance will come through all members of the team for review and verification.
+The main reason waterfall is best for this project is because many of the methodologies that could potentially be used to attempt a task may fail, but that developer should still succeed at their task. Research is often done this way since it is difficult to partition out the different smaller goals. For example, having someone do the clustering piece or be in charge of it is better than doing it in smaller chunks. This is because they could while researching and prototyping discover some new way to do clustering that invalidates their work on that problem up to this point. They should continue chugging away at this new idea. If agile was used for this project someone would have a week to implement X clustering algorithm. If it works awesome, if not, they've failed and now the timeline is wrong, since time is not built into this agile development for failure and research since its done at such a granular approach.
+![alt text](pictures/waterfall.png)
+## Timeline
+![alt text](pictures/Timeline-1.png)
+![alt text](pictures/timeline2.png)
 
 ## Work Delegation
+* Kurt: Data-warehousing/ data visualization
+	* Data warehouse development to create data marts that ease reporting analytics
+	* Create visualization based upon categorization and statistics done via analysis using Javascript (D3)
+* Ali: Backend web development
+	* Develop a normalized transactional database using PostgreSQL
+	* Backend web development using Python (Flask)
+* Justin: Natural Language Processing
+	* Natural language processing for cleaning data and extracting features for use in machine learning analysis
+	* Development of web scraper
+	* Design of AWS deployment prototype
+* Jared: Machine Learning Analysis
+	* Categorization of articles using both unsupervised and supervised learning techniques
+	* Web server deployment
+* Zach: Front End Development
+	* UI design using HTML, CSS, and JavaScript
+	* System administration
 
 ## Possible Troubles
 * In general, this is a big, challenging project for undergraduates who will be required to learn many new techniques to bring it to the finish line.  
@@ -541,6 +560,27 @@ features do not hurt existing functionality.
 
 - A stretch goal for this project will be to implement testing hooks and build automation so that all live code complies with testing
 before being put into a live environment. This ensures highly stable code releases, and prevents bad code from being released.
+
+ - Database Integration Testing
+Since our data is what drives this projects, we need to be aware of its status. To do this, I will create a bar chart that gives a count of all null fields in each column of the database and check it by weekly. If it seems like the count is getting too high we will need to check our scraper to confirm it is passing its unit tests and that it’s passing information to the database the way we intended it too
+
+Below is a general outline of what we think will need to be tested as we develop.
+
+| Feature | How we will need to test |
+|--|--|
+| TF-IDF keyword values | For this we can test our TF-IDF by giving articles with known TF-IDF values and testing the accuracy of our TF-IDF methods |
+| Clustering | We will need to verify the accuracy of grouped clusters. We will do this by comparing word frequency of articles pulled from a cluster and see if those articles actually share keywords|
+| Topic Classification | We will test this by sampling a few random articles from each topic cluster after we train it and verify the articles relate to that topic |
+| Sentiment Analysis | To test this, we will need to compare sentiment analysis results with the actual content of the article and judge whether the sentiment is expressed accurately |
+| Database stored procedure testing | In the general case, we should have test data to run stored procedures on and test the results to verify they work as intended |
+| Stop word Removal | Similar to TF-IDF, we will need to verify our stop words are being removed by giving sample articles and checking the output for remaining stop words |
+| Stemming/Lemmatization | Given sample words, test the expected stem output with process |
+| Data warehouse from current database | We will need to verify when we create our data warehouse that the data accurately reflects the database data; this can be done by comparing queries and their output from the database vs the data warehouse |
+| Flask/Front End testing | The best way to test front in features seems to be with integration tests and workflow procedures to verify that the old workflows work as new features are added. This does not yield itself well to unit testing |
+| Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
+| Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
+
+
 
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy

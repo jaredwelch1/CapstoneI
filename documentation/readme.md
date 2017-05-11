@@ -1,4 +1,12 @@
 # TODO
+## Doc III Feedback
+* More reasoning needs to be given as to why the Waterfall method was chosen for your groups specific project.
+* More detail needs to be given in the work delegation section
+* More detail in the timeline.
+## Final Submission
+* Works cited from papers conglomerated at end per meeting feedback
+* Title page with Team Name, team member names, and project title
+* ##### Clean up all first and second person pronouns in anything you wrote (remove all I, we, our, and so on). Yes this fucking sucks, but it would be dumb to lose points for it, everyone take care of it for what they wrote themselves, suck it up ;) 
 
 ## Presentation  
 * Intro and Problem Definition (Ali)
@@ -30,18 +38,16 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 
 ## Documentation Part III
 
-* Testing Plan (Jared)
-  * Database Integration Testing (Kurt)  
+~~* Testing Plan (Jared)~~
+  ~~* Database Integration Testing (Kurt)~~
 
-* Development Strategy - Agile? (Kurt)
+~~* Development Strategy - Agile? (Kurt)~~
 
-* Development Timeline\Schedule (Zach)  
+~~* Development Timeline\Schedule (Zach)~~
 
-* Work Delegation (Ali)
+~~* Work Delegation (Ali)~~
 
-* Alternate Strategies (Justin)
-
-* Possible Troubles (Justin)
+~~* Alternate Strategies (Justin)~~
 
 ### Meeting with Gary <3 <3 <3
 - Include some examples underneath use cases to flesh them out
@@ -55,4 +61,4 @@ processing, web site) like AWS diagram but high level logic flow  (Kurt)~~
 - need define sprints if we use agile, good visualizations of development method choice
  - ex: sprint1, sprint2, ....
 - pick development type
- 
+
