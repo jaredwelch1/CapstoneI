@@ -4,3 +4,6 @@ documentation/document_absolutePaths_for_pdf.md
 # ignore log files
 *.log
 __pycache__
+
+# ignore csv files 
+*.csv
