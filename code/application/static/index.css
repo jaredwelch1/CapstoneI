@@ -1,16 +1,34 @@
+body
+{
+	color: white;
+	background-color: black;
+}
+
+.jumbotron
+{
+	color: white;
+	background-color: black;
+}
+
+#title
+{
+	text-align: center;
+	padding-top: 70px;
+}
+
 div#banner
 {
 	width: 100%;
-	height: 500px;
+	height: 1980px;
 	margin: 0px auto;
 	background-color: #000;
-	background-image: url('/static/space.jpg');
-	background-position: 100%;
-	background-repeat: no-repeat;
-	animation: animate-background linear 50s infinite;
+	background-image: url('/static/star.png'), url('/static/space.jpg');
+	background-position: 0px 0px, 0px 0px;
+	background-repeat: repeat, repeat;
+	animation: animate-background linear 240s infinite;
 }
 @keyframes animate-background
 {
-	from {background-position: 100%; }
-	to {background-position: -20%; }
+	from {background-position: 0px 0px, 0px 0px; }
+	to {background-position: -1680px 0px, -4032px 0px; }
 }
