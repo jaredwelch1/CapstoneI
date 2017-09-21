@@ -7,7 +7,7 @@ create table author_dim(
 create table site_dim(
     site_id SERIAL, 
     domain text, 
-    name text, 
+    url text, 
     supersite_id int,
     PRIMARY KEY(site_id)
 );
