@@ -10,3 +10,6 @@ __pycache__
 
 # ignore jupyter checkpoint files
 DataWarehouse/.ipynb_checkpoints/
+
+# ignore db connection file
+DataWarehouse/authenticate.py
