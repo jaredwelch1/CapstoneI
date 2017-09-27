@@ -7,3 +7,9 @@ __pycache__
 
 # ignore csv files 
 *.csv
+
+# ignore jupyter checkpoint files
+DataWarehouse/.ipynb_checkpoints/
+
+# ignore db connection file
+DataWarehouse/authenticate.py
