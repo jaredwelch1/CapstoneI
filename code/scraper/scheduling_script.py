@@ -32,11 +32,11 @@ def main():
 	randHour = random.randrange(2,6)
 	randMin = random.randrange(0, 60, 5)
 	logger.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
-	s.add_job(job, 'cron', hour=randHour, minute=randMin, timezone=pytz.timezone('US/Central'))
+	# s.add_job(job, 'cron', hour=randHour, minute=randMin, timezone=pytz.timezone('US/Central'))
 
 	# I am keeping this here because I use it anytime we need to test run the scheduler
 	# schedules a job for now
-	# s.add_job(job, 'date')	
+	s.add_job(job, 'date')	
 
 	s.start()
 
