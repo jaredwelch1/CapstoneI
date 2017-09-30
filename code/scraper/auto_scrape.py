@@ -77,7 +77,6 @@ def scrape(logging):
 								paper.articles[x].parse()
 								# Ensure article is long enough to be valid
 								if len(nltk.word_tokenize(paper.articles[x].text)) > 200:
-									# html = paper.articles[x].article_html.replace('\n', ' ')
 									title = (paper.articles[x].title)
 									url = paper.articles[x].url
 									published_date = paper.articles[x].publish_date
