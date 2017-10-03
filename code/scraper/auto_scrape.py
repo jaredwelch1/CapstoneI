@@ -22,14 +22,14 @@ def scrape(logging):
 	
 	start = time()
 
-	host = 'localhost'
+	host = 'ec2-35-163-99-253.us-west-2.compute.amazonaws.com'
 	dbname = 'cap'
 	user = 'postgres'
 	password = 'secret'
 
 	try:
 		# create a sqlalchemy engine that connects to our db
-		engine = create_engine('postgresql://' + user + ':' + password + '@' + host + '/' + dbname)
+		engine = create_engine('postgresql://' + user + ':' + password + '@' + host + ':9000/' + dbname)
 		# get the metadata describing our database structure
 		meta = sqlalchemy.MetaData(bind=engine, reflect=True)
 		# build an object representing the specified table so we can interact with it
