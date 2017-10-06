@@ -11,7 +11,11 @@ import sys, os
 from custom_logging import get_logger 
 
 def is_valid_url( url ):
-    invalid_urls = ['kr', 'cn', 'ua', 'dk', 'it', 'mx', 'es', 'fr', 'de', 'gr', 'pk', 'ca']
+    invalid_urls = ['be', 'br', 'ca', 'ch', 'cn', 'de', 'dk', 'eg', 'es', 'fi', 'fr', 
+			'gr', 'id', 'ie', 'in', 'int', 'ir', 'is', 'it', 'jp', 'ke', 
+			'kr', 'link', 'ly', 'mil', 'mp', 'mt', 'mx', 'my', 'na', 'ng', 
+			'nl', 'nz', 'ph', 'pk', 'sa', 'se', 'sg', 'tw', 'ua', 'xyz', 'za', 'zw']
+
     url_ending = url.split('//')[-1].split('/')[0].split('.')[-1]
     if url_ending not in invalid_urls:
         return True
@@ -22,7 +26,7 @@ def scrape(logging):
 	
 	start = time()
 
-	host = 'ec2-35-163-99-253.us-west-2.compute.amazonaws.com'
+	host = 'ec2-52-27-114-159.us-west-2.compute.amazonaws.com'
 	dbname = 'cap'
 	user = 'postgres'
 	password = 'secret'
@@ -90,14 +94,6 @@ def scrape(logging):
 									except IndexError as ie:
 										primary_author = None
 										pass
-									# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
-									try:
-										if len(str(authors[1:])) > 100:
-											secondAuth = ''
-										else:
-											secondAuth = str(authors[1:])
-									except IndexError as ie:
-										pass
 									
 									if is_valid_url(url) is True:	
 										try:
@@ -105,7 +101,6 @@ def scrape(logging):
 												site=name, 
 												title=title, 
 												author=primary_author,
-												secondary_authors=secondAuth,
 												published_on=published_date,
 												accessed_on=func.current_timestamp(),
 												url=url,
