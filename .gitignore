@@ -5,11 +5,12 @@ documentation/document_absolutePaths_for_pdf.md
 *.log
 __pycache__
 
+
 # ignore csv files 
 *.csv
 
 # ignore jupyter checkpoint files
-DataWarehouse/.ipynb_checkpoints/
+.ipynb_checkpoints/*
 
 # ignore db connection file
 DataWarehouse/authenticate.py
