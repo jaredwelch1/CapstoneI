@@ -17,7 +17,19 @@ This readme is a document detailing our brainstorming and thinking
 
 ## TO DO
 
-Since we have little experience in the way of machine learning algorithms, I thought it would be nice to document our learning experience for future use. 
+- clean up git 
+
+- backup database 
+
+- Finalize script to create KMeans model
+
+- Finalize script to NLP article data
+
+- Create work flow to PCA TFIDF values and store them somehow for visuals
+
+- Label clusters by hand based on their contents
+
+- storing and loading KMeans using pickle
 
 ### Data & Analysis of articles
 
