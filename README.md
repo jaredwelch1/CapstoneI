@@ -17,19 +17,19 @@ This readme is a document detailing our brainstorming and thinking
 
 ## TO DO
 
-- clean up git 
+- [ ] clean up git 
 
-- backup database 
+- [ ] backup database
 
-- Finalize script to create KMeans model
+- [ ] Finalize script to create KMeans model
 
-- Finalize script to NLP article data
+- [ ] Finalize script to NLP article data
 
-- Create work flow to PCA TFIDF values and store them somehow for visuals
+- [ ] Create work flow to PCA TFIDF values and store them somehow for visuals
 
-- Label clusters by hand based on their contents
+- [ ] Label clusters by hand based on their contents
 
-- storing and loading KMeans using pickle
+- [ ] storing and loading KMeans using pickle
 
 ### Data & Analysis of articles
 
