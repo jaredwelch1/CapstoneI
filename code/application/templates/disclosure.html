@@ -9,11 +9,13 @@
 
 {% block body %}
         {{super()}}
-        <div class="container">
-		<p>Please insert the text in the body of your article here:</p>
-		<form>
-			<textarea placeholder="Copy and paste text here..."></textarea>
-		</form>
-		<button type="button" class="btn btn-primary">Submit</button>
+	<div id="banner">
+        	<div class="container">
+			<p>Please insert the text in the body of your article here:</p>
+			<form>
+				<textarea placeholder="Copy and paste text here..."></textarea>
+			</form>
+			<button type="button" class="btn btn-primary">Submit</button>
+		</div>
 	</div>
 {% endblock %}
