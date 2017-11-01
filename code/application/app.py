@@ -68,6 +68,58 @@ def about():
 def disclosure():
 	return render_template('disclosure.html')
 
+@app.route('/visuals')
+def visuals():
+	return render_template('visuals.html')
+
+@app.route('/jan')
+def jan():
+        return render_template('jan.html')
+
+@app.route('/feb')
+def feb():
+        return render_template('feb.html')
+
+@app.route('/mar')
+def mar():
+        return render_template('mar.html')
+
+@app.route('/apr')
+def apr():
+        return render_template('apr.html')
+
+@app.route('/may')
+def may():
+        return render_template('may.html')
+
+@app.route('/jun')
+def jun():
+        return render_template('jun.html')
+
+@app.route('/jul')
+def jul():
+        return render_template('jul.html')
+
+@app.route('/aug')
+def aug():
+        return render_template('aug.html')
+
+@app.route('/sep')
+def sep():
+        return render_template('sep.html')
+
+@app.route('/oct')
+def oct():
+        return render_template('oct.html')
+
+@app.route('/nov')
+def nov():
+        return render_template('nov.html')
+
+@app.route('/dec')
+def dec():
+        return render_template('dec.html')
+
 #Run the app
 if __name__ == '__main__':
 	print(__doc__)
