@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}Disclosure-About{% endblock %}
+{% block title %}Disclosure{% endblock %}
 
 {% block styles %}
 {{super()}}
@@ -20,9 +20,66 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<p>Check out our documentation on <a href="https://github.com/jaredwelch1/CapstoneI/blob/master/documentation/document.md">Github</a></p>
+					<span class="bold">Mission Statement</span>
 				</div>
 			</div>
+			<br>
+			<div class="row">
+                                <div class="col-lg-12">
+                                        Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
+                                </div>
+                        </div>
+			<br>
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="bold">Team Members</span>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-2">Kurt Bognar</div>
+				<div class="col-lg-2">Zach Bryant</div>
+				<div class="col-lg-2">Ali Raza</div>
+				<div class="col-lg-2">Justin Renneke</div>
+				<div class="col-lg-2">Jared Welch</div>
+				<div class="col-lg-1"></div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="bold">Problem Definition</span>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+                                <div class="col-lg-12">
+                                        News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effectively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
+                                </div>
+                        </div>
+			<br>
+			<div class="row">
+                                <div class="col-lg-12">
+                                        <span class="bold">Problem Resolution</span>
+                                </div>
+                        </div>
+			<br>
+			<div class="row">
+                                <div class="col-lg-12">
+                                	<ul>
+						<li>Scrape news articles</li>
+						<li>Pre-process using NLP and then perform TFIDF</li>
+						<li>Cluster news articles based on the similarity of TFIDF vectors</li>
+						<li>Display visualizations</li>
+					</ul>
+				</div>
+                        </div>
+			<br>
+			<div class="row">
+                                <div class="col-lg-12">
+                                        Read more about our project <a href="https://github.com/jaredwelch1/CapstoneI/blob/master/documentation/document.md">here</a>.
+                                </div>
+                        </div>
 		</div>
 	</div>
 {% endblock %}
