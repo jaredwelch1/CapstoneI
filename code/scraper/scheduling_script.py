@@ -28,11 +28,9 @@ def main():
 	
 	logger = get_logger()
 
-	# this actually creates the job and background scheduler for it
-	randHour = random.randrange(2,6)
-	randMin = random.randrange(0, 60, 5)
-	logger.info('Scrape scheduled with random time: ' + str(randHour) + ':' + str(randMin)) 
-	s.add_job(job, 'cron', hour=randHour, minute=randMin, timezone=pytz.timezone('US/Central'))
+	
+	logger.info('Scrape scheduled with time: ' + str(3) + ':' + str(30)) 
+	s.add_job(job, 'cron', hour=3, minute=30, timezone=pytz.timezone('US/Central'))
 
 	# I am keeping this here because I use it anytime we need to test run the scheduler
 	# schedules a job for now
