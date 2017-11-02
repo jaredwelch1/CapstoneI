@@ -10,18 +10,30 @@ import json
 import sys, os
 from custom_logging import get_logger 
 
+def is_valid_url( url ):
+    invalid_urls = ['be', 'br', 'ca', 'ch', 'cn', 'de', 'dk', 'eg', 'es', 'fi', 'fr', 
+			'gr', 'id', 'ie', 'in', 'int', 'ir', 'is', 'it', 'jp', 'ke', 
+			'kr', 'link', 'ly', 'mil', 'mp', 'mt', 'mx', 'my', 'na', 'ng', 
+			'nl', 'nz', 'ph', 'pk', 'sa', 'se', 'sg', 'tw', 'ua', 'xyz', 'za', 'zw']
+
+    url_ending = url.split('//')[-1].split('/')[0].split('.')[-1]
+    if url_ending not in invalid_urls:
+        return True
+    else:
+        return False
+
 def scrape(logging):
 	
 	start = time()
 
-	host = 'localhost'
+	host = 'ec2-52-27-114-159.us-west-2.compute.amazonaws.com'
 	dbname = 'cap'
 	user = 'postgres'
 	password = 'secret'
 
 	try:
 		# create a sqlalchemy engine that connects to our db
-		engine = create_engine('postgresql://' + user + ':' + password + '@' + host + '/' + dbname)
+		engine = create_engine('postgresql://' + user + ':' + password + '@' + host + ':9000/' + dbname)
 		# get the metadata describing our database structure
 		meta = sqlalchemy.MetaData(bind=engine, reflect=True)
 		# build an object representing the specified table so we can interact with it
@@ -69,7 +81,6 @@ def scrape(logging):
 								paper.articles[x].parse()
 								# Ensure article is long enough to be valid
 								if len(nltk.word_tokenize(paper.articles[x].text)) > 200:
-									html = paper.articles[x].article_html.replace('\n', ' ')
 									title = (paper.articles[x].title)
 									url = paper.articles[x].url
 									published_date = paper.articles[x].publish_date
@@ -83,33 +94,25 @@ def scrape(logging):
 									except IndexError as ie:
 										primary_author = None
 										pass
-									# if the secondary authors list is too long there was some sort of parsing problem, so throw them away to avoid insertion errors
-									try:
-										if len(str(authors[1:])) > 100:
-											secondAuth = ''
-										else:
-											secondAuth = str(authors[1:])
-									except IndexError as ie:
-										pass
-									try:
-										insert = table.insert().values( 
-											site=name, 
-											title=title, 
-											author=primary_author,
-											secondary_authors=secondAuth,
-											published_on=published_date,
-											accessed_on=func.current_timestamp(),
-											url=url,
-											body=text,
-											html=html,
-											newspaper_keywords=keywords,
-											newspaper_summary= 	
-											summary)					
-										engine.execute(insert)
-									except Exception as e:
-										logging.error("::Exception:Database insertion error for page: " + url + "::")
-										logging.error("::Exception: " + str(e) + "::")
-										pass
+									
+									if is_valid_url(url) is True:	
+										try:
+											insert = table.insert().values( 
+												site=name, 
+												title=title, 
+												author=primary_author,
+												published_on=published_date,
+												accessed_on=func.current_timestamp(),
+												url=url,
+												body=text,
+												newspaper_keywords=keywords,
+												newspaper_summary= 	
+												summary)					
+											engine.execute(insert)
+										except Exception as e:
+											logging.error("::Exception:Database insertion error for page: " + url + "::")
+											logging.error("::Exception: " + str(e) + "::")
+											pass
 			except Exception as e:
 				logging.error("::Exception:Scrapping error for site: " + name + "::")
 				logging.error("::Exception: " + str(e) + "::")
