@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Disclosure{% endblock %}
+
+{% block styles %}
+{{super()}}
+        <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='index.css')}}">
+{% endblock %}
+
+{% block body %}
+        {{super()}}
+	<div id="banner">
+        	<div class="container">
+			<p>Here are visualizations for each month:</p>
+			<ol>
+				<li><a href="/jan">January</a></li>
+				<li><a href="/feb">February</a></li>
+				<li><a href="/mar">March</a></li>
+				<li><a href="/apr">April</a></li>
+				<li><a href="/may">May</a></li>
+				<li><a href="/jun">June</a></li>
+				<li><a href="/jul">July</a></li>
+				<li><a href="/aug">August</a></li>
+				<li><a href="/sep">September</a></li>
+				<li><a href="/oct">October</a></li>
+				<li><a href="/nov">November</a></li>
+				<li><a href="/dec">December</a></li>
+			</ol>
+		</div>
+	</div>
+{% endblock %}
