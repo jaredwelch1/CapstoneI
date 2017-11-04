@@ -14,3 +14,6 @@ __pycache__
 
 # ignore db connection file
 DataWarehouse/authenticate.py
+
+# model files 
+**/model
