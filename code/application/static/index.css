@@ -3,7 +3,26 @@ body
 	color: white;
 	background-color: black;
 }
+/* xs < 768px */
+@media screen and (max-width: 767px) 
+{
 
+}
+/* sm < 992px */
+@media screen and (min-width: 992px) 
+{
+
+}
+/* md < 1000px */
+@media screen and (min-width: 1000px) 
+{
+
+}
+/* lg < 1200px */
+@media screen and (min-width: 1200px) 
+{
+
+}
 .jumbotron
 {
 	color: white;
@@ -26,7 +45,7 @@ body
 div#banner
 {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	margin: 0px auto;
 	background-color: #000;
 	background-image: url('/static/star.png'), url('/static/space.jpg');

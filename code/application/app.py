@@ -72,53 +72,53 @@ def disclosure():
 def visuals():
 	return render_template('visuals.html')
 
-@app.route('/jan')
+@app.route('/visuals/jan')
 def jan():
-        return render_template('jan.html')
+        return render_template('monthVisualLayout.html', monthName='January')
 
-@app.route('/feb')
+@app.route('/visuals/feb')
 def feb():
-        return render_template('feb.html')
+        return render_template('monthVisualLayout.html', monthName='February')
 
-@app.route('/mar')
+@app.route('/visuals/mar')
 def mar():
-        return render_template('mar.html')
+        return render_template('monthVisualLayout.html', monthName='March')
 
-@app.route('/apr')
+@app.route('/visuals/apr')
 def apr():
-        return render_template('apr.html')
+        return render_template('monthVisualLayout.html', monthName='April')
 
-@app.route('/may')
+@app.route('/visuals/may')
 def may():
-        return render_template('may.html')
+        return render_template('monthVisualLayout.html', monthName='May')
 
-@app.route('/jun')
+@app.route('/visuals/jun')
 def jun():
-        return render_template('jun.html')
+        return render_template('monthVisualLayout.html', monthName='June')
 
-@app.route('/jul')
+@app.route('/visuals/jul')
 def jul():
-        return render_template('jul.html')
+        return render_template('monthVisualLayout.html', monthName='July')
 
-@app.route('/aug')
+@app.route('/visuals/aug')
 def aug():
-        return render_template('aug.html')
+        return render_template('monthVisualLayout.html', monthName='August')
 
-@app.route('/sep')
+@app.route('/visuals/sep')
 def sep():
-        return render_template('sep.html')
+        return render_template('monthVisualLayout.html', monthName='September')
 
-@app.route('/oct')
+@app.route('/visuals/oct')
 def oct():
-        return render_template('oct.html')
+        return render_template('monthVisualLayout.html', monthName='October')
 
-@app.route('/nov')
+@app.route('/visuals/nov')
 def nov():
-        return render_template('nov.html')
+        return render_template('monthVisualLayout.html', monthName='November')
 
-@app.route('/dec')
+@app.route('/visuals/dec')
 def dec():
-        return render_template('dec.html')
+        return render_template('monthVisualLayout.html', monthName='December')
 
 #Run the app
 if __name__ == '__main__':
