@@ -307,7 +307,7 @@ for site in site_list:
 * #### NLP Workflows
 	* Flowchart for NLP-based processing pipeline.
 
-	![alt text](pictures/flow_chart.JPG "Data Processing")
+	![alt text](pictures/flow_chart.png "Data Processing")
 
 #### Machine Learning Analysis
 
