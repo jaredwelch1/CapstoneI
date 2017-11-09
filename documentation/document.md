@@ -2,7 +2,7 @@
 
 **Team Name:** Squad
 
-**Mission Statement:** Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
+**Mission Statement:** Our mission is to gather news articles and then categorize them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
 
 #### Team Members:
 - **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
@@ -68,12 +68,13 @@ We propose the following software solution:
 	* User can explore articles pertinent to trending twitter topics.
 
 ### Functional Requirements
-* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
+* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, and webpage url.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
-* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result.
+* The web application will allow a user to provide text of a specific news article, assign the article to a topic category, and inform the user of the result.
 * **Functional Requirements Stretch Goals**
+	* Allow a user to submit a url to a news article and automatically scrape the page for analysis in lieu of copied article text
 	* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 	* Perform sentiment analysis on articles and visualize the results.
@@ -84,14 +85,12 @@ We propose the following software solution:
 * The web application will have HTTPs encryption with a valid SSL certificate.
 * The software will be written using modular OOP practices to allow for easy addition of new features.
 * The web application will be designed to be compatible on mobile and tablet devices.
-* The system will decouple an RDS cloud database from computational resources to enable vertical scaling as needed.
+* The system will be hosted within Amazon Web Services to provide the ability to scale as needed.
 * **Non Functional Requirements Stretch Goal**
 	* Response Time: Real time article classification
 
 ### System Requirements
-* The project will be hosted on decoupled Amazon AWS instances.
-	* A web scraper, database system, and web application will each have their own isolated instance.
-	* The system will auto scale for intensive data analysis and improved response time during high usage situations.
+* The project will be hosted on Amazon AWS instances.
 * A relational database will be used in order to be able to accurately model the data and perform advanced queries.
 	* The database should be large enough to store a massive dataset.
 	* The database should be indexed so efficient queries can be performed.
@@ -106,15 +105,15 @@ We propose the following software solution:
 ### Phase I: System Design
 The project will be deployed within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case the project is to deploy for real world use).
 
-Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow the web scraper to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
+Decoupling and auto-scaling lie at the heart of the scalable design. A decoupled web scraping instance will allow the web scraper to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
 #### AWS Prototyping Deployment
-![alt text](pictures/DataDrivenWebApp-Prototyping.png "Prototyping Architecture")
+![alt text](pictures/CapstoneV2.png "Prototyping Architecture")
 Features:
 * Auto Scaling combined Web Servers/Data Processing
-	* This provides scale-up capability for data processing and to process individual user queries in a prototyping environment
+	* Single small EC2 instance used for the low-load tasks of serving the web page and scraping and storing news articles
+	* A second, high performance EC2 instance was activated for data processing
 	* Saves money by reducing resource consumption since the system will not need to handle many users in a prototyping environment and the system can afford to sacrifice some responsiveness for the sake of cost
-* Single, decoupled RDS database
-* Decoupled web scraper
+
 #### AWS Business Model Deployment
 ![alt text](pictures/DataDrivenWebApp-Big.png "Business Architecture")
 Features:
@@ -145,7 +144,7 @@ This is a list of the technologies that will be used for reference. These are di
 
 ### Phase II: Web Scraping and Data Design
 
-This project will require a large database of news articles and their associated metadata. To this purpose a web scraper has been built to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, over 30,000 articles have been collected and there are plans to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
+This project required a large database of news articles and their associated metadata. To this purpose a web scraper has been built to scrape articles from news sites and a data warehouse to store the articles and their metadata. We have collected over 150,000 articles for data processing.
 
 #### Web scraper
 ##### Overview
@@ -241,7 +240,7 @@ for site in site_list:
 #### Pre-Processing and Feature Extraction
 
 * ##### Natural Language Processing
- 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and the viability of the various methods will need to be explored as the data is explored.
+ 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis.
 	* ###### **Removal of Stopwords**  
 		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. The project will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
 
@@ -253,19 +252,8 @@ for site in site_list:
 		for article in article_database:
 			filtered_article = [word for word in word_list if word not in stopwords.words('english')]
 		```
-	* ###### **Stemming**  
-		Stemming is the process of reducing topically similar words to their roots. For example, “stemming,” “stemmer,” “stemmed,” all have similar meanings; stemming reduces those terms to “stem.” This is an important feature for understanding the nature of a text's topic, which would otherwise view those terms as separate entities and reduce their importance in the model. The NLTK Python library offers a stemmer function based on the most widely used stemming algorithm: Porter's stemmer.
-		```
-		from nltk.stem.porter import PorterStemmer
-
-		# Create p_stemmer of class PorterStemmer
-		p_stemmer = PorterStemmer()
-
-		# stem tokens by applying the stemmer to every token in a list of tokens, returning a list of stems
-		texts = [p_stemmer.stem(i) for i in tokens_list]
-		```  
 	* ###### **Lemmatization**  
-		Lemmatization is similar in concept to stemming, but there are important differences. Both are an attempt to find the root of a word from amongst its many forms to reduce data dimensionality, but, where stemming uses a relatively unsubtle chopping heuristic to chop word endings, lemmatization uses a more comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: both stemming and lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed'; however, only lemmatization would derive 'be' from 'am', 'are', and 'is.' This increases accuracy but at the price of performance. NLTK offers lemmatization via the WordNetLemmatizer.
+		Lemmatization attempts to find the root of a word from amongst its many forms to reduce data dimensionality. Lemmatization uses a comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed' or 'be' from 'am', 'are', and 'is.' NLTK offers lemmatization via the WordNetLemmatizer.
 		```
 		from nltk.stem import WordNetLemmatizer
 		sent = "cats running ran cactus cactuses cacti community communities"
@@ -289,10 +277,6 @@ for site in site_list:
 		# This will return labeled tuples and, after further manipulation, we will get a list of tagged entity tuples:
 		[('United States', 'LOCATION'), ('Donald Trump', 'PERSON'), ('Donald Trump Jr.', 'PERSON'), ('Invanka Trump', 'PERSON'), ('Jared Kushner', 'PERSON'), ('Trump', 'PERSON'), ('Melania', 'PERSON'), ('Trump', 'PERSON'), ('Republican Party', 'ORGANIZATION'), ('Trump', 'PERSON')]
 		```
-	* ###### **Keyword Extraction**  
-		Keywords attempt to describe the main topics expressed in an article. Python offers an easy to use keyword extraction library called RAKE.
-
-		[This link](https://www.airpair.com/nlp/keyword-extraction-tutorial) offers a tutorial on the RAKE workflow.
 	* ###### **Frequency Distribution**  
 		A frequency distribution counts the number of times every word appears in a text. NLTK offers this functionality with the FreqDist() function.
 		```
@@ -321,14 +305,9 @@ for site in site_list:
 	king  -  0.164996828044  
 	juliet  -  0.544613034225  
 * #### NLP Workflows
-	* Main NLP pipeline from raw body text through TF-IDF.
+	* Flowchart for NLP-based processing pipeline.
 
-		Lemmatization and Stemming do similar things, but with vastly different tradeoffs in accuracy vs performance. The choice to use one or the other will only become clear as we explore our data. Any process that has a high computational cost should be stored in the database so it never has to be re-computed (in the end we may choose to store every stage of the analysis in our database, but the ones shown here for sure should be).  
-	![alt text](pictures/NLP-TFIDF.JPG "TF-IDF")
-	* Named Entity Extraction and Keyword Extraction
-
-		Note that this is shown in a separate diagram for the sake of clarity but these processing stages will probably be incorporated into the larger pipeline shown above for sake of simplicity in data pipelining.  
-	![alt text](pictures/NLP-Keyword-Entity.JPG "Entities and Keywords")
+	![alt text](pictures/flow_chart.JPG "Data Processing")
 
 #### Machine Learning Analysis
 
@@ -363,29 +342,7 @@ This section will briefly outline the machine learning techniques we intend to u
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
 
-	 	The accuracy of sentiment analysis is heavily dependent upon the training data provided to it, especially in its similarity to the target data.	Research shows that even human raters agree on text sentiment only 79% of the time, so an algorithm that is 70% accurate is doing a very good job.
-
-		There are two main challenges in analyzing sentiment from news articles:  
-		1. Reporting in general purposefully employs a neutral style of language and it may be hard to extract meaningful sentiment classification results when the authors are making a conscious effort to employ neutral language.
-		2. Finding a labeled dataset similar enough to the project's data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing the project's news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so the developers might have to creatively combine more generalized sentiment analysis techniques or label some of the data by hand.  
-
-		To address the potential issues raised in point 2 above, NLTK offers some generalized text corpora labeled with sentiment that could be used as training data. These include the opinion_lexicon containing a list of positive and negative words in English, and the sentence_polarity corpus containing over 10,000 sentences tagged as positive or negative.
-
-		Finally, Python's NLTK and Sklearn libraries offer machine learning sentiment analysis algorithms. NLTK's NaiveBayesClassifier is the most widely used.
-
-		Pseudocode for sentiment analysis:
-		```
-		from nltk.classify import NaiveBayesClassifier
-
-		# import a dataset labeled by sentiment
-		# Separate the dataset into training data (call it training_set) and testing data  (test_set)
-		# Majority split should be training data, i.e. 75% training/25% test
-
-		classifier =  NaiveBayesClassifier.train(training_set)
-
-		# Compare results with test_set using comparison function
-		nltk.classify.util.accuracy(classifier, testfeats)		
-		```
+	Unfortunately, we were unable to find sentiment labeled data for a dataset similar enough to our news articles to be able to use supervised learning-based sentiment analysis. Instead, due to time and resource constraints, we chose to use a general purpose sentiment classifier known as VaderSentiment. This classifier is trained on a wide range of labeled data types, making it a good general purpose sentiment analyzer, even if less accurate for new articles than a classifier specifically trained on labeled news article data. As this classifier works at the sentence level, we processed every sentence in our article with this classifier one at a time and summed the totals then divided by the number of sentences in the article to calculate an average sentiment score for the entire article.
 
 #### Formal Procedure for Taking Text to Valid Topic Clusters
 
@@ -579,6 +536,7 @@ Below is a general outline of what we think will need to be tested as we develop
 | Flask/Front End testing | The best way to test front in features seems to be with integration tests and workflow procedures to verify that the old workflows work as new features are added. This does not yield itself well to unit testing |
 | Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
 | Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
+
 
 
 ## Prezi
