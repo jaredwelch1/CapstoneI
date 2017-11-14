@@ -23,12 +23,13 @@
 ## Introduction
 
 #### Problem Definition
-News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effectively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
+News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it is evident that news articles new to be intensively analyzed. Until recent years, it had not been possible to effectively news data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
 
 #### Problem Resolution
 
 We propose the following software solution:
-- Scrape news articles.
+- Scrape news articles
+- Organize, clean, and store data
 - Pre-process using NLP and then perform TFIDF.
 - Cluster news articles based on the similarity of TFIDF vectors.
 - Display visualizations
@@ -82,7 +83,6 @@ We propose the following software solution:
 ### Non Functional Requirements
 * The server is expected to have a 99% availability.
 * Each layer of the system should be backed-up weekly
-* The web application will have HTTPs encryption with a valid SSL certificate.
 * The software will be written using modular OOP practices to allow for easy addition of new features.
 * The web application will be designed to be compatible on mobile and tablet devices.
 * The system will be hosted within Amazon Web Services to provide the ability to scale as needed.
@@ -96,9 +96,6 @@ We propose the following software solution:
 	* The database should be indexed so efficient queries can be performed.
 * The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
 * The Random-Access-Memory must be high enough to minimize reading from disk during computationally intensive tasks.
-* **System Requirements Stretch Goals:**
-	* Store articles using a distributed framework such as Hadoop.
-	* Implement a cluster computing system and perform parallel analysis in order to drastically improve computational speed.
 
 ## **Design**
 
@@ -136,7 +133,7 @@ This is a list of the technologies that will be used for reference. These are di
 		* Web scraping: Newspaper
 		* Natural language processing: NLTK and Stanford OpenNLP
 		* Machine learning: skLearn
-		* Data manipulation: Pandas
+		* Data manipulation: Pandas, Psycopg2, SQLAlchemy
 	* ##### Flask (web framework)   
 * ##### HTML/Javascript Front-End
 	* ##### D3.js library for visualizations
@@ -144,7 +141,7 @@ This is a list of the technologies that will be used for reference. These are di
 
 ### Phase II: Web Scraping and Data Design
 
-This project required a large database of news articles and their associated metadata. To this purpose a web scraper has been built to scrape articles from news sites and a data warehouse to store the articles and their metadata. We have collected over 150,000 articles for data processing.
+This project required a large database of news articles and their associated metadata. A web scraper has been built to scrape articles from news sites. We created a data warehouse to organize and store the articles and their metadata. We have collected over 160,000 articles for data processing as 11/14/2017.
 
 #### Web scraper
 ##### Overview
