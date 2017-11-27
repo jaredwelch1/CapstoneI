@@ -107,6 +107,7 @@ def assign_sentiment(score):
 
 '''
 Perform sentiment analysis on a single user-supplied article.
+Return an integer: 0 for negative sentiment, 1 for positive sentiment.
 '''
 def analyze_sentiment(text):
 	sentiment_score = calculate_sentiment(text)
@@ -116,6 +117,7 @@ def analyze_sentiment(text):
 
 '''
 Transform a single user-supplied article to lemmatized version for clustering.
+Returns a list of lemmatized words from the original article.
 '''
 def cluster_prep(text):
 	tokens = tokenize_article(text)
