@@ -12,72 +12,62 @@
         <div id="banner">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<div id="title">
-						About Disclosure
-					</div>
-				</div>
+				<div id="title">
+				   Disclosure<br><br>
+			    </div>
 			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="bold">Mission Statement</span>
-				</div>
-			</div>
-			<br>
-			<div class="row">
-                                <div class="col-lg-12">
-                                        Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
-                                </div>
-                        </div>
-			<br>
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="bold">Team Members</span>
-				</div>
-			</div>
-			<br>
-			<div class="row">
+            
+            <div class="row">
+            
+            <div class="col-lg-6">
+                <b>The Problem</b><hr>
+                "Fake news" is a common phrase used by politicians and PR to criticize the sensationalized focus of mainstream American media. The term came to prominence during the 2016 presidental election which was full of questionable reporting that focused on entertainment and shock value rather than substance.<br><br>Investigative journalism has long been considered an essential part of democracy, responsible for holding officials and organizations accountable. It appears that the modern media has failed to uphold this virtue. It has become evident that there exists an urgent need to analyze the content of news in order to organize information so that it is accessible to the public and the biases of sources are highlighted.
+            </div>
+            
+            <div class="col-lg-6">
+                <b>Our Solution</b><hr>
+                News articles generate massive amounts of data. Everyday, thousands of sources publish countless articles. This data is easily accesible but has traditionally been considered difficult to analyze because it's format isn't standardized and it is quite tedious for humans to analyze this information. Advancments in high-performance computing, data science, machine learning, and natural language processing have mitigated the difficulty of analyzing news articles. Disclosure aims to apply the afreomentioned computational advancments towards analyzing news articles. Here is how we do so:
+                <ul>
+                    <li>Scrape articles from various local and national sources</li>
+                    <li>Build a data-warehouse to clean and organize data to a standard format</li>
+                    <li>Use natural language processing techniques to analyze text for sentiment</li>
+                    <li>Use machine learning techniques to cluster articles by similarity</li>
+                    <li>Create visualizations to display results in a consumable format</li>
+                </ul>
+                Read more about our project <a href="https://github.com/jaredwelch1/CapstoneI/blob/master/documentation/document.md">here</a>.
+            </div><br>
+            
+            </div> <!-- row -->
+				
+			<div id="sub-title">The Team</div><hr>
+            <div class="row">
+            
 				<div class="col-lg-1"></div>
-				<div class="col-lg-2"><a href="https://www.linkedin.com/in/kurt-bognar-02b826a9/">Kurt Bognar</a></div>
-				<div class="col-lg-2"><a href="https://www.linkedin.com/in/zachary-bryant-0aa885b2/">Zach Bryant</a></div>
-				<div class="col-lg-2"><a href="https://www.linkedin.com/in/ali-raza-/">Ali Raza</a></div>
-				<div class="col-lg-2"><a href="https://www.linkedin.com/in/justin-renneke/">Justin Renneke</a></div>
-				<div class="col-lg-2"><a href="https://www.linkedin.com/in/jared-welch-402726126/">Jared Welch</a></div>
+				<div class="col-lg-2 member">
+                    <img src="{{url_for('.static', filename='kurt.jpg')}}" class="team-img"><br>
+                    <a href="https://www.linkedin.com/in/kurt-bognar-02b826a9/">Kurt Bognar</a>
+                </div>
+				<div class="col-lg-2 member">
+                    <img src="{{url_for('.static', filename='zach.jpg')}}" class="team-img"><br>
+                    <a href="https://www.linkedin.com/in/zachary-bryant-0aa885b2/">
+                    Zach Bryant</a>
+                </div>
+				<div class="col-lg-2 member">
+                    <img src="{{url_for('.static', filename='ali.jpeg')}}" class="team-img"><br>
+                    <a href="https://www.linkedin.com/in/ali-raza-/">Ali Raza</a>
+                </div>
+				<div class="col-lg-2 member">
+                    <img src="{{url_for('.static', filename='justin.png')}}" class="team-img"><br>
+                    <a href="https://www.linkedin.com/in/justin-renneke/">Justin Renneke</a>
+                </div>
+				<div class="col-lg-2 member">
+                    <img src="{{url_for('.static', filename='jared.png')}}" class="team-img"><br>
+                    <a href="https://www.linkedin.com/in/jared-welch-402726126/">Jared Welch</a>
+                </div>
 				<div class="col-lg-1"></div>
 			</div>
-			<br>
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="bold">Problem Definition</span>
-				</div>
-			</div>
-			<br>
-			<div class="row">
-                                <div class="col-lg-12">
-                                        News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effectively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
-                                </div>
-                        </div>
-			<br>
-			<div class="row">
-                                <div class="col-lg-12">
-                                        <span class="bold">Problem Resolution</span>
-                                </div>
-                        </div>
-			<br>
-			<div class="row">
-                                <div class="col-lg-12">
-                                	<ul>
-						<li>Scrape news articles</li>
-						<li>Pre-process using NLP and then perform TFIDF</li>
-						<li>Cluster news articles based on the similarity of TFIDF vectors</li>
-						<li>Display visualizations</li>
-					</ul>
-				</div>
-                        </div>
-			<br>
-			<div class="row">
-                                <div class="col-lg-12">
-                                        Read more about our project <a href="https://github.com/jaredwelch1/CapstoneI/blob/master/documentation/document.md">here</a>.
+
+                                        
                                 </div>
                         </div>
 		</div>

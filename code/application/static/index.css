@@ -34,12 +34,30 @@ body
 	text-align: center;
 	padding-top: 70px;
 	font-size: 200%;
-	text-decoration: underline;
+}
+
+#sub-title
+{
+    text-align: center;
+    font-size: 200%;
 }
 
 .bold
 {
 	font-weight: bold;
+}
+
+ul{
+    padding-left: 25px;
+}
+
+.team-img{
+    height:128px;
+    width: 100px;
+}
+
+.member{
+    text-align: center;
 }
 
 div#banner
