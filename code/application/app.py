@@ -41,11 +41,17 @@ def disclosure():
 def visuals():
 	return render_template('visuals.html')
 
-@app.route('/visuals/jan')
+@app.route('/jan')
 def jan():
 	import json
-	with open('./data4pie/jan.txt', 'r') as data:
-    		jan = json.load(data)
+	try:
+		with open('/var/www/html/test_app/data4pie/jan.txt', 'r') as data:
+    			jan = json.load(data)
+			print("var www html test_app")
+	except IOError:
+		with open('./data4pie/jan.txt', 'r') as data:
+                	jan = json.load(data)
+			print(".")
 	h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
 	allofem=[]
 	for day in jan.keys():
@@ -66,15 +72,22 @@ def jan():
     		source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
     		p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
     		allofem = allofem + [p]
-	rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+	rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+	, allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
 	script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='January', script=script, div=div)
 
-@app.route('/visuals/feb')
+@app.route('/feb')
 def feb():
         import json
-        with open('./data4pie/feb.txt', 'r') as data:
-                feb = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/feb.txt', 'r') as data:
+                        feb = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/feb.txt', 'r') as data:
+                        feb = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in feb.keys():
@@ -95,15 +108,22 @@ def feb():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='February', script=script, div=div)
 
-@app.route('/visuals/mar')
+@app.route('/mar')
 def mar():
         import json
-        with open('./data4pie/march.txt', 'r') as data:
-                march = json.load(data)
+	try:
+                with open('/var/www/html/test_app/data4pie/march.txt', 'r') as data:
+                        march = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/march.txt', 'r') as data:
+                        march = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in march.keys():
@@ -124,15 +144,22 @@ def mar():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='March', script=script, div=div)
 
-@app.route('/visuals/apr')
+@app.route('/apr')
 def apr():
         import json
-        with open('./data4pie/april.txt', 'r') as data:
-                april = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/april.txt', 'r') as data:
+                        april = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/april.txt', 'r') as data:
+                        april = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in april.keys():
@@ -153,15 +180,22 @@ def apr():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='April', script=script, div=div)
 
-@app.route('/visuals/may')
+@app.route('/may')
 def may():
         import json
-        with open('./data4pie/may.txt', 'r') as data:
-                may = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/may.txt', 'r') as data:
+                        may = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/may.txt', 'r') as data:
+                        may = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in may.keys():
@@ -182,15 +216,22 @@ def may():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='May', script=script, div=div)
 
-@app.route('/visuals/jun')
+@app.route('/jun')
 def jun():
         import json
-        with open('./data4pie/june.txt', 'r') as data:
-                june = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/june.txt', 'r') as data:
+                        june = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/june.txt', 'r') as data:
+                        june = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in june.keys():
@@ -211,15 +252,22 @@ def jun():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='June', script=script, div=div)
 
-@app.route('/visuals/jul')
+@app.route('/jul')
 def jul():
         import json
-        with open('./data4pie/july.txt', 'r') as data:
-                july = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/july.txt', 'r') as data:
+                        july = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/july.txt', 'r') as data:
+                        july = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in july.keys():
@@ -240,15 +288,22 @@ def jul():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='July', script=script, div=div)
 
-@app.route('/visuals/aug')
+@app.route('/aug')
 def aug():
         import json
-        with open('./data4pie/aug.txt', 'r') as data:
-                aug = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/aug.txt', 'r') as data:
+                        aug = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/aug.txt', 'r') as data:
+                        aug = json.load(data)
+			print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in aug.keys():
@@ -269,15 +324,22 @@ def aug():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='August', script=script, div=div)
 
-@app.route('/visuals/sep')
+@app.route('/sep')
 def sep():
         import json
-        with open('./data4pie/sept.txt', 'r') as data:
-                sept = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/sept.txt', 'r') as data:
+                        sept = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/sept.txt', 'r') as data:
+                        sept = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in sept.keys():
@@ -298,15 +360,22 @@ def sep():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='September', script=script, div=div)
 
-@app.route('/visuals/oct')
+@app.route('/oct')
 def oct():
         import json
-        with open('./data4pie/oct.txt', 'r') as data:
-                oct = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/oct.txt', 'r') as data:
+                        oct = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/oct.txt', 'r') as data:
+                        oct = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in oct.keys():
@@ -327,15 +396,22 @@ def oct():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12], allofem[12:14], allofem[14:16], allofem[16:18]
+        , allofem[18:20], allofem[20:22], allofem[22:24], allofem[24:26], allofem[26:28], allofem[28:30], allofem[30:]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='October', script=script, div=div)
 
-@app.route('/visuals/nov')
+@app.route('/nov')
 def nov():
         import json
-        with open('./data4pie/nov.txt', 'r') as data:
-                nov = json.load(data)
+        try:
+                with open('/var/www/html/test_app/data4pie/nov.txt', 'r') as data:
+                        nov = json.load(data)
+                        print("var www html test_app")
+        except IOError:
+                with open('./data4pie/nov.txt', 'r') as data:
+                        nov = json.load(data)
+                        print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
         for day in nov.keys():
@@ -356,11 +432,11 @@ def nov():
                 source = ColumnDataSource(dict(colors=h, label=list(perdiem.index), x=[0]*10, y=[0]*10,radius=[1/2]*10, start_angle=starts,end_angle=ends))
                 p.wedge(x='x',y='y' ,radius='radius' , start_angle='start_angle',end_angle='end_angle', color='colors', legend = 'label', source=source)
                 allofem = allofem + [p]
-        rc = gridplot([allofem[0:7], allofem[7:14], allofem[14:21], allofem[21:28], allofem[28:]])
+        rc = gridplot([allofem[0:2], allofem[2:4], allofem[4:6], allofem[6:8], allofem[8:10], allofem[10:12]])
         script, div = components(rc)
         return render_template('monthVisualLayout.html', monthName='November', script=script, div=div)
 
-@app.route('/visuals/dec')
+@app.route('/dec')
 def dec():
         #import json
         #with open('./data4pie/dec.txt', 'r') as data:
