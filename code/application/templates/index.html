@@ -1,1 +1,20 @@
-This is index.html
+{% extends 'layout.html' %}
+
+{% block title %}Disclosure{% endblock %}
+
+{% block styles %}
+{{super()}}
+	<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='index.css')}}">
+{% endblock %}
+
+{% block body %}
+	{{super()}}
+	<div id="banner">
+		<div class="container">
+			<div class="jumbotron text-center">
+				<h1>Welcome to Disclosure</h1>
+				<p>This application is dedicated to shining a light on the articles we read everyday.</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

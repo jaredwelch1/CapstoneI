@@ -1,0 +1,120 @@
+{% extends 'layout.html' %}
+
+{% block title %}Disclosure{% endblock %}
+
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='index.css')}}">
+{% endblock %}
+
+{% block body %}
+    {{super()}}
+	<div id="banner">
+	<div class="container">
+		<p><h3>Visualizations by Month</h3>
+		
+		<div class="row">
+		
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>January</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('jan') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>Feburary</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('feb') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>March</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('mar') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>April</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('apr') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		
+		</div> <!-- row -->
+		
+		<br>
+		<div class="row">
+		
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>May</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('may') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>June</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('jun') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>July</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('jul') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>August</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('aug') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		
+		</div> <!--row -->
+		
+		<br>	
+		<div class="row">
+		
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>September</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('sep') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>October</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('oct') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>November</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('nov') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="col col-md-3">
+			<div class="card month-card">
+				<div class="card-block"><br><h3>December</h3>
+				<button type="button" class="btn btn-primary"><a class="card-link" href="{{ url_for('dec') }}">View</a></button>
+				</div>
+			</div>
+		</div>
+
+		</div> <!-- row -->
+
+	</div> <!-- container -->
+	</div> <!-- banner -->
+
+{% endblock %}
