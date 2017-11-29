@@ -4,7 +4,8 @@
 from __future__ import print_function
 from __future__ import division
 import flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash, session
+from flask.ext.session import Session
 from flask_bootstrap import Bootstrap
 import psycopg2
 import pandas as pd
@@ -20,9 +21,26 @@ from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.plotting import *
 from numpy import pi
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from sklearn.externals import joblib
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+
+import sys
+sys.path.insert(0,'/var/www/html/CapstoneI/code/application/scripts/')
+from classify import predict_cluster
+
+km = joblib.load('/var/www/html/CapstoneI/code/application/static/models/kmeans_model.pkl')
+vectorizer = joblib.load('/var/www/html/CapstoneI/code/application/static/models/tf_vectorizer_obj.pkl')
 
 app = Flask(__name__) #__name__ = Placeholder for current module
+app.secret_key = 'secretsecret'
 Bootstrap(app)
+sess = Session()
+
+
+class DisclosureForm(Form):
+	article = TextAreaField('Article Text: ', validators=[validators.required()])
 
 #Use routes to define directories
 @app.route('/')
@@ -33,9 +51,22 @@ def index():
 def about():
 	return render_template('about.html')
 
-@app.route('/disclosure')
+@app.route('/disclosure', methods=['GET', 'POST'])
 def disclosure():
-	return render_template('disclosure.html')
+	form = DisclosureForm(request.form)
+	print(form.errors)
+	
+	if request.method == 'POST':
+		text = request.form['article']
+		
+		if form.validate():
+			result = predict_cluster(text, km, vectorizer)
+
+			flash(result)
+		else:
+			flash("Please provide body text of at least 250 characters")	
+
+	return render_template('disclosure.html', form=form)
 
 @app.route('/visuals')
 def visuals():
@@ -469,4 +500,7 @@ def dec():
 #Run the app
 if __name__ == '__main__':
 	print(__doc__)
-	app.run(debug=True) #Deubug is set to true
+	app.config['SESSION_TYPE'] = 'filesystem'
+	sess.init_app(app)
+	app.debug = True	
+	app.run() #Deubug is set to true

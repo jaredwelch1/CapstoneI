@@ -5,17 +5,31 @@
 {% block styles %}
 {{super()}}
         <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='index.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='disclosure_form.css')}}">
 {% endblock %}
 
 {% block body %}
         {{super()}}
 	<div id="banner">
         	<div class="container">
-			<p>Please insert the text in the body of your article here:</p>
-			<form>
-				<textarea placeholder="Copy and paste text here..."></textarea>
+			<p>Please insert the text in the body of your article here!!!!!:</p>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					<ul>
+					{% for message in messages %}
+						<li>{{ message[1] }}</li>
+					{% endfor %}					
+					</ul>
+				{% endif %}
+			{% endwith %}
+			<form action='' method='post'>
+				{{ form.csrf }}
+				<div id="textarea_div" >
+					{{ form.article(id='disclosure_form_textarea') }}
+				</div>
+				<input type='submit' value="Submit" \>			
 			</form>
-			<button type="button" class="btn btn-primary">Submit</button>
+			
 		</div>
 	</div>
 {% endblock %}
