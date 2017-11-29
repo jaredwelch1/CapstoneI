@@ -16,7 +16,6 @@ def stopword_article(body):
 
 	stopworded_body =  [w.lower() for w in body if w not in stop_words]
 
-	print(stopworded_body)
 	return stopworded_body
 
 '''
@@ -25,7 +24,6 @@ Tokenize article by word.
 def tokenize_article(body):
 	text = body.decode('utf-8')
 	tokens = nltk.word_tokenize(text)
-	print(tokens)
 	return tokens
 
 
@@ -48,7 +46,6 @@ def lemmatize_article(stopworded_body):
 			lemma = wnl.lemmatize(word, wntag)
 		lemmatized_words.append(lemma)
 
-	print(lemmatized_words)
 	return lemmatized_words
 
 '''
