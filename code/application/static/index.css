@@ -85,3 +85,19 @@ textarea
     	resize: none;
 }
 
+/*
+ * Calendar styled display for visualization landing page
+ */
+.month-card{
+    background-color: white;
+    color: black;
+    width: 20rem;
+    height: 15rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.card-link{
+     color: white;
+}
+
