@@ -17,11 +17,11 @@
         {{super()}}
         <div id="banner">
                 <div class="container">
-                        <div id="title">{{ monthName }} Visualization</div>
-                </div>
-		
-		{{ script|safe }}
-		{{ div|safe }}
-		
+                        <div id="title">{{ monthName }} Visualizations</div>
+		</div>
+		<div id="visuals">	
+			{{ script|safe }}
+			{{ div|safe }}
+		</div>
         </div>
 {% endblock %}
