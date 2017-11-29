@@ -8,68 +8,71 @@
 {% endblock %}
 
 {% block body %}
-        {{super()}}
-        <div id="banner">
-		<div class="container">
-			<div class="row">
-				<div id="title">
-				   Disclosure<br><br>
-			    </div>
-			</div>
-            
-            <div class="row">
-            
-            <div class="col-lg-6">
-                <b>The Problem</b><hr>
-                "Fake news" is a common phrase used by politicians and PR to criticize the sensationalized focus of mainstream American media. The term came to prominence during the 2016 presidental election which was full of questionable reporting that focused on entertainment and shock value rather than substance.<br><br>Investigative journalism has long been considered an essential part of democracy, responsible for holding officials and organizations accountable. It appears that the modern media has failed to uphold this virtue. It has become evident that there exists an urgent need to analyze the content of news in order to organize information so that it is accessible to the public and the biases of sources are highlighted.
+    {{super()}}
+    <div id="banner">
+    <div class="container">
+        <div class="row">
+            <div id="title">
+               Disclosure<br><br>
             </div>
+        </div> <!-- row -->
+        
+        <div class="row">
+        
+        <div class="col-lg-6">
+            <b>The Problem</b><hr>
+            "Fake news" is a common phrase used by politicians and PR to criticize the sensationalized focus of mainstream American media. The term came to prominence during the 2016 presidental election which was full of questionable reporting that focused on entertainment and shock value rather than substance.<br><br>Investigative journalism has long been considered an essential part of democracy, responsible for holding officials and organizations accountable. It appears that the modern media has failed to uphold this virtue. It has become evident that there exists an urgent need to analyze the content of news in order to organize information so that it is accessible to the public and the biases of sources are highlighted.
+        </div>
+        
+        <div class="col-lg-6">
+            <b>Our Solution</b><hr>
+            News articles generate massive amounts of data. Everyday, thousands of sources publish countless articles. This data is easily accesible but has traditionally been considered difficult to analyze because it's format isn't standardized and it is quite tedious for humans to analyze this information. Advancments in high-performance computing, data science, machine learning, and natural language processing have mitigated the difficulty of analyzing news articles. Disclosure aims to apply the afreomentioned computational advancments towards analyzing news articles. Here is how we do so:
+            <ul>
+                <li>Scrape articles from various local and national sources</li>
+                <li>Build a data-warehouse to clean and organize data to a standard format</li>
+                <li>Use natural language processing techniques to analyze text for sentiment</li>
+                <li>Use machine learning techniques to cluster articles by similarity</li>
+                <li>Create visualizations to display results in a consumable format</li>
+            </ul>
+            Read more about our project <a href="https://github.com/jaredwelch1/CapstoneI/blob/master/documentation/document.md">here</a>.
+        </div><br>
+        
+        </div> <!-- row -->
             
-            <div class="col-lg-6">
-                <b>Our Solution</b><hr>
-                News articles generate massive amounts of data. Everyday, thousands of sources publish countless articles. This data is easily accesible but has traditionally been considered difficult to analyze because it's format isn't standardized and it is quite tedious for humans to analyze this information. Advancments in high-performance computing, data science, machine learning, and natural language processing have mitigated the difficulty of analyzing news articles. Disclosure aims to apply the afreomentioned computational advancments towards analyzing news articles. Here is how we do so:
-                <ul>
-                    <li>Scrape articles from various local and national sources</li>
-                    <li>Build a data-warehouse to clean and organize data to a standard format</li>
-                    <li>Use natural language processing techniques to analyze text for sentiment</li>
-                    <li>Use machine learning techniques to cluster articles by similarity</li>
-                    <li>Create visualizations to display results in a consumable format</li>
-                </ul>
-                Read more about our project <a href="https://github.com/jaredwelch1/CapstoneI/blob/master/documentation/document.md">here</a>.
-            </div><br>
-            
-            </div> <!-- row -->
-				
-			<div id="sub-title">The Team</div><hr>
-            <div class="row">
-            
-				<div class="col-lg-1"></div>
-				<div class="col-lg-2 member">
-                    <img src="{{url_for('.static', filename='kurt.png')}}" class="team-img"><br>
-                    <a href="https://www.linkedin.com/in/kurt-bognar-02b826a9/">Kurt Bognar</a>
-                </div>
-				<div class="col-lg-2 member">
-                    <img src="{{url_for('.static', filename='zach.jpg')}}" class="team-img"><br>
-                    <a href="https://www.linkedin.com/in/zachary-bryant-0aa885b2/">
-                    Zach Bryant</a>
-                </div>
-				<div class="col-lg-2 member">
-                    <img src="{{url_for('.static', filename='ali.jpeg')}}" class="team-img"><br>
-                    <a href="https://www.linkedin.com/in/ali-raza-/">Ali Raza</a>
-                </div>
-				<div class="col-lg-2 member">
-                    <img src="{{url_for('.static', filename='justin.png')}}" class="team-img"><br>
-                    <a href="https://www.linkedin.com/in/justin-renneke/">Justin Renneke</a>
-                </div>
-				<div class="col-lg-2 member">
-                    <img src="{{url_for('.static', filename='jared.png')}}" class="team-img"><br>
-                    <a href="https://www.linkedin.com/in/jared-welch-402726126/">Jared Welch</a>
-                </div>
-				<div class="col-lg-1"></div>
-			</div>
+        <div id="sub-title">The Team</div><hr>
+        <div class="row">
+        
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2 member">
+                <img src="{{url_for('.static', filename='kurt.png')}}" class="team-img"><br>
+            </div>
+            <div class="col-lg-2 member">
+                <img src="{{url_for('.static', filename='zach.jpg')}}" class="team-img"><br>
+            </div>
+            <div class="col-lg-2 member">
+                <img src="{{url_for('.static', filename='ali.jpeg')}}" class="team-img"><br>
+            </div>
+            <div class="col-lg-2 member">
+                <img src="{{url_for('.static', filename='justin.png')}}" class="team-img"><br>
+            </div>
+            <div class="col-lg-2 member">
+                <img src="{{url_for('.static', filename='jared.png')}}" class="team-img"><br>
+           </div>
+            <div class="col-lg-1"></div>
+        
+        </div> <!-- row -->
+        <div class="row">
+        
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2 member"><a href="https://www.linkedin.com/in/kurt-bognar-02b826a9/">Kurt Bognar</a></div>
+            <div class="col-lg-2 member"><a href="https://www.linkedin.com/in/zachary-bryant-0aa885b2/">Zach Bryant</a></div>
+            <div class="col-lg-2 member"><a href="https://www.linkedin.com/in/ali-raza-/">Ali Raza</a></div>
+            <div class="col-lg-2 member"><a href="https://www.linkedin.com/in/justin-renneke/">Justin Renneke</a></div>
+            <div class="col-lg-2 member"><a href="https://www.linkedin.com/in/jared-welch-402726126/">Jared Welch</a></div>
+            <div class="col-lg-1"></div>
+        
+        </div> <!-- row -->
+    </div> <!-- container -->
+    </div> <!-- banner -->
 
-                                        
-                                </div>
-                        </div>
-		</div>
-	</div>
 {% endblock %}

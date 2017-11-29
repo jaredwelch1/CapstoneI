@@ -52,8 +52,8 @@ ul{
 }
 
 .team-img{
-    height:128px;
-    width: 100px;
+    max-height: 128px;
+    max-width: 100px;
 }
 
 .member{
