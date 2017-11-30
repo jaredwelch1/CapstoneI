@@ -17,3 +17,7 @@ DataWarehouse/authenticate.py
 
 # model files 
 **/model
+
+*.pkl
+
+*.pyc
