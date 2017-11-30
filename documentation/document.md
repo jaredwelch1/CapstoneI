@@ -398,18 +398,18 @@ be classified and identified as representative of those pre-determined topics.
 	##### Site Flow
 	![alt text](pictures/SiteFlow.png "Site Flow")
 	##### Homepage
-	![alt text](pictures/index.png "Homepage")
+	![alt text](pictures/index.PNG "Homepage")
 	##### About
-	![alt text](pictures/about.png "About")
+	![alt text](pictures/about.PNG "About")
 	##### Request Disclosure
-	![alt text](pictures/disclosure.png "Request Disclosure")
+	![alt text](pictures/disclosure.PNG "Request Disclosure")
 	##### Request Disclosure Error
-	![alt text](pictures/disclosureError.png "Request Disclosure Error")
+	![alt text](pictures/disclosureError.PNG "Request Disclosure Error")
 	##### Disclosure Result
-	![alt text](pictures/disclosureResult.png "Disclosure Result")
+	![alt text](pictures/disclosureResult.PNG "Disclosure Result")
 	##### Visuals
-	![alt text](pictures/visuals.png "Visuals")
-	![alt text](pictures/visualsData.png "VisualsData")
+	![alt text](pictures/visuals.PNG "Visuals")
+	![alt text](pictures/visualsData.PNG "VisualsData")
 
 ## Research
 
