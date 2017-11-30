@@ -398,22 +398,18 @@ be classified and identified as representative of those pre-determined topics.
 	##### Site Flow
 	![alt text](pictures/SiteFlow.png "Site Flow")
 	##### Homepage
-	![alt text](pictures/Homepage.png "Homepage")
-	##### Trending Topics
-	![alt text](pictures/TrendingTopics.png "TrendingTopics")
-	##### Topic Chosen
-	![alt text](pictures/TrendingTopicsTopicChosen.png "TrendingTopicsTopicChosen")
-	##### Topic + Article Chosen
-	![alt text](pictures/TrendingTopicsTopicChosenArticleChosen.png "TrendingTopicsTopicChosenArticleChosen")
-	##### Help
-	![alt text](pictures/Help.png "Help")
-	##### Results
-	![alt text](pictures/Stats.png "Stats")
-	![alt text](pictures/SimilarArticles.png "SimilarArticles")
-	![alt text](pictures/RecentRelatedArticles.png "RecentRelatedArticles")
-	![alt text](pictures/Visualizations.png "Visualizations")
-	##### Options
-	![alt text](pictures/Options.png "Options"))
+	![alt text](pictures/index.png "Homepage")
+	##### About
+	![alt text](pictures/about.png "About")
+	##### Request Disclosure
+	![alt text](pictures/disclosure.png "Request Disclosure")
+	##### Request Disclosure Error
+	![alt text](pictures/disclosureError.png "Request Disclosure Error")
+	##### Disclosure Result
+	![alt text](pictures/disclosureResult.png "Disclosure Result")
+	##### Visuals
+	![alt text](pictures/visuals.png "Visuals")
+	![alt text](pictures/visualsData.png "VisualsData")
 
 ## Research
 
