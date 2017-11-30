@@ -2,13 +2,13 @@
 
 **Team Name:** Squad
 
-**Mission Statement:** Our mission is to gather news articles and then categorizes them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
+**Mission Statement:** Our mission is to gather news articles and then categorize them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
 
 #### Team Members:
-- **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
+- **Zach Bryant:** I am a senior undergraduate of Computer Science here at Mizzou. I am very passionate about the influence of today's modern technology and how it can be used for the betterment of all people. I've been working on campus as an IT Support Specialist ever since my freshman year ended. I enjoy helping people and love getting paid for it. Over this past year, I have become very interested in cryptocurrencies and have made the decision to invest as well. After graduation, I plan to further my education by using my gained capital from cryptos to fund my own self-taught education on software development for cryptocurrencies.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
-- **Kurt Bognar:** Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining.  
+- **Kurt Bognar:** Starting a job at Sogeti as a Consultant. I've been a researcher for the university aiding in the creation of new tools and algorithms for Association-Rule Mining, worked for VU for the past year, and actively trade cryptocurrencies.  
 ![alt text](pictures/kurt.jpg "Kurt Bognar")
 
 - **Ali Raza:** I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
@@ -23,12 +23,13 @@
 ## Introduction
 
 #### Problem Definition
-News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it has become evident that it is important to analyze news articles. However, up until recent years, it has not been possible to effectively analyze this data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
+News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it is evident that news articles new to be intensively analyzed. Until recent years, it was not possible to effectively categorize news data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
 
 #### Problem Resolution
 
 We propose the following software solution:
-- Scrape news articles.
+- Scrape news articles
+- Organize, clean, and store data
 - Pre-process using NLP and then perform TFIDF.
 - Cluster news articles based on the similarity of TFIDF vectors.
 - Display visualizations
@@ -61,19 +62,20 @@ We propose the following software solution:
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 	* Users can use the website to view clusters of articles by topic via a visualization.
 	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
-	* Users can use the website to view a word cloud representation of trending topics for that day.
+	* Users can use the website to view a word cloud representation of trending topics for the whole year.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
 	* User can explore articles pertinent to trending twitter topics.
 
 ### Functional Requirements
-* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, raw html, and webpage url.
+* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, and webpage url.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
-* The web application will allow a user to provide the url of a specific news article, scrape the webpage, assign the article to a topic category, and inform the user of the result.
+* The web application will allow a user to provide text of a specific news article, assign the article to a topic category, and inform the user of the result.
 * **Functional Requirements Stretch Goals**
+	* Allow a user to submit a url to a news article and automatically scrape the page for analysis in lieu of copied article text
 	* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 	* Perform sentiment analysis on articles and visualize the results.
@@ -81,40 +83,34 @@ We propose the following software solution:
 ### Non Functional Requirements
 * The server is expected to have a 99% availability.
 * Each layer of the system should be backed-up weekly
-* The web application will have HTTPs encryption with a valid SSL certificate.
 * The software will be written using modular OOP practices to allow for easy addition of new features.
 * The web application will be designed to be compatible on mobile and tablet devices.
-* The system will decouple an RDS cloud database from computational resources to enable vertical scaling as needed.
+* The system will be hosted within Amazon Web Services to provide the ability to scale as needed.
 * **Non Functional Requirements Stretch Goal**
 	* Response Time: Real time article classification
 
 ### System Requirements
-* The project will be hosted on decoupled Amazon AWS instances.
-	* A web scraper, database system, and web application will each have their own isolated instance.
-	* The system will auto scale for intensive data analysis and improved response time during high usage situations.
+* The project will be hosted on Amazon AWS instances.
 * A relational database will be used in order to be able to accurately model the data and perform advanced queries.
 	* The database should be large enough to store a massive dataset.
 	* The database should be indexed so efficient queries can be performed.
 * The computational processing power must be sufficient enough to not bottleneck the clustering, analysis, and data visualization process.
 * The Random-Access-Memory must be high enough to minimize reading from disk during computationally intensive tasks.
-* **System Requirements Stretch Goals:**
-	* Store articles using a distributed framework such as Hadoop.
-	* Implement a cluster computing system and perform parallel analysis in order to drastically improve computational speed.
 
 ## **Design**
 
 ### Phase I: System Design
 The project will be deployed within Amazon Web Services. There are two architecture proposals: one for the prototyping phase (which will be the entire extent of the capstone project) and one for a business model deployment (in case the project is to deploy for real world use).
 
-Decoupling and auto scaling lie at the heart of each design. A decoupled web scraping instance will allow the web scraper to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
+Decoupling and auto-scaling lie at the heart of the scalable design. A decoupled web scraping instance will allow the web scraper to continue to run uninterrupted in an automated environment. Auto Scaling groups of larger EC2 instances will allow the design to scale up for processing intensive data analysis and faster response to user queries when under load, while conserving resources by scaling down when the system is idle. To achieve this, the database must be decoupled as well.
 #### AWS Prototyping Deployment
-![alt text](pictures/DataDrivenWebApp-Prototyping.png "Prototyping Architecture")
+![alt text](pictures/CapstoneV2.png "Prototyping Architecture")
 Features:
 * Auto Scaling combined Web Servers/Data Processing
-	* This provides scale-up capability for data processing and to process individual user queries in a prototyping environment
+	* Single small EC2 instance used for the low-load tasks of serving the web page and scraping and storing news articles
+	* A second, high performance EC2 instance was activated for data processing
 	* Saves money by reducing resource consumption since the system will not need to handle many users in a prototyping environment and the system can afford to sacrifice some responsiveness for the sake of cost
-* Single, decoupled RDS database
-* Decoupled web scraper
+
 #### AWS Business Model Deployment
 ![alt text](pictures/DataDrivenWebApp-Big.png "Business Architecture")
 Features:
@@ -137,15 +133,14 @@ This is a list of the technologies that will be used for reference. These are di
 		* Web scraping: Newspaper
 		* Natural language processing: NLTK and Stanford OpenNLP
 		* Machine learning: skLearn
-		* Data manipulation: Pandas
+		* Data manipulation: Pandas, Psycopg2, SQLAlchemy
 	* ##### Flask (web framework)   
 * ##### HTML/Javascript Front-End
-	* ##### D3.js library for visualizations
 
 
 ### Phase II: Web Scraping and Data Design
 
-This project will require a large database of news articles and their associated metadata. To this purpose a web scraper has been built to scrape articles from news sites and a data warehouse to store the articles and their metadata. As of the time of writing, over 30,000 articles have been collected and there are plans to run the scraper through the summer to accumulate a few hundred thousand articles for data analysis in Capstone II.
+This project required a large database of news articles and their associated metadata. A web scraper has been built to scrape articles from news sites. We created a data warehouse to organize and store the articles and their metadata. We have collected over 160,000 articles for data processing as 11/14/2017.
 
 #### Web scraper
 ##### Overview
@@ -227,21 +222,21 @@ for site in site_list:
 #### Data Design
 ![alt text](pictures/ERD.png "ERD")  
 * ERD Diagram  
-		The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
+		The database has 2 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 2. In schema 1 only the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Each visualization will have a data mart if we made them real time.
 * RDBMS: PostgreSQL is the database system to be used for a variety of reasons:
-	- It is a relational database which is needed because the data being gathered by our scraper has many complex relationships.
+	- It is a relational database; this is needed because the data being gathered by our scraper has many complex relationships.
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
 * ETL Pipeline:
-	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table.
-	* Transformation: The data is organized into relational tables through SQL queries.
-	* Loading: The relational tables will be used in conjunction with machine-learning analysis to gather meaningful and interesting information.
+	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table. This table is what is used to feed the reporting data warehouse
+	* Transformation: The data is pulled into memory via a Python script and it is at this stage that foreign language articles are removed. 
+	* Loading: We followed a star-schema methodology when designing the data warehouse so the data is seperated into logical groupings and placed in the dimensions tables. 
 
 ### Phase III: Data Analysis
 
 #### Pre-Processing and Feature Extraction
 
 * ##### Natural Language Processing
- 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis. Some of these methods do similar things in different ways and the viability of the various methods will need to be explored as the data is explored.
+ 	Various NLP methods will play a key role in cleaning our data and extracting features for use in machine learning analysis.
 	* ###### **Removal of Stopwords**  
 		Stopwords are the very common words in the English language such as 'the', 'there', 'from', etc that provide little to no information on their own. The project will use NLP to remove these words before performing further analysis. Python's NLTK library offers predefined lists of stopwords and functions to easily accomplish this.
 
@@ -253,19 +248,8 @@ for site in site_list:
 		for article in article_database:
 			filtered_article = [word for word in word_list if word not in stopwords.words('english')]
 		```
-	* ###### **Stemming**  
-		Stemming is the process of reducing topically similar words to their roots. For example, “stemming,” “stemmer,” “stemmed,” all have similar meanings; stemming reduces those terms to “stem.” This is an important feature for understanding the nature of a text's topic, which would otherwise view those terms as separate entities and reduce their importance in the model. The NLTK Python library offers a stemmer function based on the most widely used stemming algorithm: Porter's stemmer.
-		```
-		from nltk.stem.porter import PorterStemmer
-
-		# Create p_stemmer of class PorterStemmer
-		p_stemmer = PorterStemmer()
-
-		# stem tokens by applying the stemmer to every token in a list of tokens, returning a list of stems
-		texts = [p_stemmer.stem(i) for i in tokens_list]
-		```  
 	* ###### **Lemmatization**  
-		Lemmatization is similar in concept to stemming, but there are important differences. Both are an attempt to find the root of a word from amongst its many forms to reduce data dimensionality, but, where stemming uses a relatively unsubtle chopping heuristic to chop word endings, lemmatization uses a more comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: both stemming and lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed'; however, only lemmatization would derive 'be' from 'am', 'are', and 'is.' This increases accuracy but at the price of performance. NLTK offers lemmatization via the WordNetLemmatizer.
+		Lemmatization attempts to find the root of a word from amongst its many forms to reduce data dimensionality. Lemmatization uses a comprehensive approach that takes into account the parts of speech surrounding the word in question. For example: lemmatization would derive 'stem' from 'stemming,' 'stemmer,' and 'stemmed' or 'be' from 'am', 'are', and 'is.' NLTK offers lemmatization via the WordNetLemmatizer.
 		```
 		from nltk.stem import WordNetLemmatizer
 		sent = "cats running ran cactus cactuses cacti community communities"
@@ -289,10 +273,6 @@ for site in site_list:
 		# This will return labeled tuples and, after further manipulation, we will get a list of tagged entity tuples:
 		[('United States', 'LOCATION'), ('Donald Trump', 'PERSON'), ('Donald Trump Jr.', 'PERSON'), ('Invanka Trump', 'PERSON'), ('Jared Kushner', 'PERSON'), ('Trump', 'PERSON'), ('Melania', 'PERSON'), ('Trump', 'PERSON'), ('Republican Party', 'ORGANIZATION'), ('Trump', 'PERSON')]
 		```
-	* ###### **Keyword Extraction**  
-		Keywords attempt to describe the main topics expressed in an article. Python offers an easy to use keyword extraction library called RAKE.
-
-		[This link](https://www.airpair.com/nlp/keyword-extraction-tutorial) offers a tutorial on the RAKE workflow.
 	* ###### **Frequency Distribution**  
 		A frequency distribution counts the number of times every word appears in a text. NLTK offers this functionality with the FreqDist() function.
 		```
@@ -321,14 +301,9 @@ for site in site_list:
 	king  -  0.164996828044  
 	juliet  -  0.544613034225  
 * #### NLP Workflows
-	* Main NLP pipeline from raw body text through TF-IDF.
+	* Flowchart for NLP-based processing pipeline.
 
-		Lemmatization and Stemming do similar things, but with vastly different tradeoffs in accuracy vs performance. The choice to use one or the other will only become clear as we explore our data. Any process that has a high computational cost should be stored in the database so it never has to be re-computed (in the end we may choose to store every stage of the analysis in our database, but the ones shown here for sure should be).  
-	![alt text](pictures/NLP-TFIDF.JPG "TF-IDF")
-	* Named Entity Extraction and Keyword Extraction
-
-		Note that this is shown in a separate diagram for the sake of clarity but these processing stages will probably be incorporated into the larger pipeline shown above for sake of simplicity in data pipelining.  
-	![alt text](pictures/NLP-Keyword-Entity.JPG "Entities and Keywords")
+	![alt text](pictures/flow_chart.png "Data Processing")
 
 #### Machine Learning Analysis
 
@@ -349,43 +324,16 @@ This section will briefly outline the machine learning techniques we intend to u
 
 	![alt text](pictures/clustering.png)
 
+	* **Labeling Clusters**
 
-* ##### Supervised Learning
-	- **K-nearest Neighbors and Distinguishing Clusters**
-
-		We will be employing the classic KNN technique within our project in a unique way. Once we have created clusters from the data, we
-	will supply training data, and based upon that training data and its nearest neighbors, we can hopefully somewhat classify our clusters
-	based on the training data and its placements within. KNN will be the way we calculate the proportion of our training points within clusters. For further details about KNN check the research paper related to clustering.  
-
-		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
-	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
+		Labeling was done by hand, by referencing the frequent terms and their meanings, as well as the title and
+		body contents of articles sampled from the clusters. Once labels were chosen, they were put into the database.
+		These topics can then be used to classify new articles based on their contents
 
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
 
-	 	The accuracy of sentiment analysis is heavily dependent upon the training data provided to it, especially in its similarity to the target data.	Research shows that even human raters agree on text sentiment only 79% of the time, so an algorithm that is 70% accurate is doing a very good job.
-
-		There are two main challenges in analyzing sentiment from news articles:  
-		1. Reporting in general purposefully employs a neutral style of language and it may be hard to extract meaningful sentiment classification results when the authors are making a conscious effort to employ neutral language.
-		2. Finding a labeled dataset similar enough to the project's data so a sentiment classifier trained on the labeled dataset can provide meaningful results when analyzing the project's news article dataset. There are a large number of sentiment datasets regarding things such as Tweets, movie reviews, and product reviews, but datasets labeling news articles might be difficult or impossible to find so the developers might have to creatively combine more generalized sentiment analysis techniques or label some of the data by hand.  
-
-		To address the potential issues raised in point 2 above, NLTK offers some generalized text corpora labeled with sentiment that could be used as training data. These include the opinion_lexicon containing a list of positive and negative words in English, and the sentence_polarity corpus containing over 10,000 sentences tagged as positive or negative.
-
-		Finally, Python's NLTK and Sklearn libraries offer machine learning sentiment analysis algorithms. NLTK's NaiveBayesClassifier is the most widely used.
-
-		Pseudocode for sentiment analysis:
-		```
-		from nltk.classify import NaiveBayesClassifier
-
-		# import a dataset labeled by sentiment
-		# Separate the dataset into training data (call it training_set) and testing data  (test_set)
-		# Majority split should be training data, i.e. 75% training/25% test
-
-		classifier =  NaiveBayesClassifier.train(training_set)
-
-		# Compare results with test_set using comparison function
-		nltk.classify.util.accuracy(classifier, testfeats)		
-		```
+	Unfortunately, we were unable to find sentiment labeled data for a dataset similar enough to our news articles to be able to use supervised learning-based sentiment analysis. Instead, due to time and resource constraints, we chose to use a general purpose sentiment classifier known as VaderSentiment. This classifier is trained on a wide range of labeled data types, making it a good general purpose sentiment analyzer, even if less accurate for new articles than a classifier specifically trained on labeled news article data. As this classifier works at the sentence level, we processed every sentence in our article with this classifier one at a time and summed the totals then divided by the number of sentences in the article to calculate an average sentiment score for the entire article.
 
 #### Formal Procedure for Taking Text to Valid Topic Clusters
 
@@ -398,8 +346,7 @@ on each article. This will represent the article as a vector of keywords.
 - (3) Using cosine similarity or Euclidean distance, similarity will be measure between articles. Those more similar will be grouped closer, less similar further.
 
 - (4) Once the entire set of articles is measured and positioned relative to other articles, areas of highest density should naturally occur,
-indicating similar articles in that area. Using KNN-like measurement, and training datasets pre-determined for some topic, the clusters will
-be classified and identified as representative of those pre-determined topics.
+indicating similar articles in that area. Then examination and labeling of clusters will occur
 
 - (5) Using this model, repeated training can be supplied to improve it, and as users submit articles, their submitted articles can be classified and described, then utilized back into the model to improve it as well.
 
@@ -415,8 +362,8 @@ be classified and identified as representative of those pre-determined topics.
 		* One of the easier to learn and use frameworks with a low amount of organizational overhead compared to many other frameworks, allowing for rapid integration and expansion.
 * #### Languages
 	* ##### HTML
+	* ##### Flask (Python)
 	* ##### JavaScript
-		* D3.js library will be used for visualizations of data analysis provided by processing done in Python on the back-end and communicated via Flask.
 * #### Data Visualizations
 	* ##### Clustering Visualization/Explanation
 
@@ -445,22 +392,18 @@ be classified and identified as representative of those pre-determined topics.
 	##### Site Flow
 	![alt text](pictures/SiteFlow.png "Site Flow")
 	##### Homepage
-	![alt text](pictures/Homepage.png "Homepage")
-	##### Trending Topics
-	![alt text](pictures/TrendingTopics.png "TrendingTopics")
-	##### Topic Chosen
-	![alt text](pictures/TrendingTopicsTopicChosen.png "TrendingTopicsTopicChosen")
-	##### Topic + Article Chosen
-	![alt text](pictures/TrendingTopicsTopicChosenArticleChosen.png "TrendingTopicsTopicChosenArticleChosen")
-	##### Help
-	![alt text](pictures/Help.png "Help")
-	##### Results
-	![alt text](pictures/Stats.png "Stats")
-	![alt text](pictures/SimilarArticles.png "SimilarArticles")
-	![alt text](pictures/RecentRelatedArticles.png "RecentRelatedArticles")
-	![alt text](pictures/Visualizations.png "Visualizations")
-	##### Options
-	![alt text](pictures/Options.png "Options"))
+	![alt text](pictures/index.PNG "Homepage")
+	##### About
+	![alt text](pictures/about.PNG "About")
+	##### Request Disclosure
+	![alt text](pictures/disclosure.PNG "Request Disclosure")
+	##### Request Disclosure Error
+	![alt text](pictures/disclosureError.PNG "Request Disclosure Error")
+	##### Disclosure Result
+	![alt text](pictures/disclosureResult.PNG "Disclosure Result")
+	##### Visuals
+	![alt text](pictures/visuals.PNG "Visuals")
+	![alt text](pictures/visualsData.PNG "VisualsData")
 
 ## Research
 
@@ -579,6 +522,7 @@ Below is a general outline of what we think will need to be tested as we develop
 | Flask/Front End testing | The best way to test front in features seems to be with integration tests and workflow procedures to verify that the old workflows work as new features are added. This does not yield itself well to unit testing |
 | Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
 | Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
+
 
 
 ## Prezi
