@@ -36,7 +36,7 @@ We propose the following software solution:
 
 ## Changelog for software
 
-### NewsArticleScraper - Version 1.1
+### NewsArticleScraper - Version 1.2
 
 - Initial features:
 
@@ -56,26 +56,33 @@ We propose the following software solution:
 
 	- more try catch error checking to improve error logs
 
+- Version 1.2:
+	- Prevent foreign language articles from being scraped by checking the country code top-level domain of an articles URL
+
 ## **Requirements**
 
 ### User Requirements
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 	* Users can use the website to view clusters of articles by topic via a visualization.
-	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
 	* Users can use the website to view a word cloud representation of trending topics for the whole year.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
-	* User can explore articles pertinent to trending twitter topics.
+	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
 
 ### Functional Requirements
-* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, and webpage url.
+* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: 
+	* Article title 
+	* author name(s) 
+	* date published
+	* article body text
+	* webpage url.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
 * The web application will allow a user to provide text of a specific news article, assign the article to a topic category, and inform the user of the result.
 * **Functional Requirements Stretch Goals**
-	* Allow a user to submit a url to a news article and automatically scrape the page for analysis in lieu of copied article text
+	* Allow a user to submit url to a news article and automatically scrape the page for analysis in lieu of copied article text
 	* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 	* Perform sentiment analysis on articles and visualize the results.
