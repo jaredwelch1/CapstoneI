@@ -19,8 +19,11 @@
 				<img src="{{url_for('.static', filename='plots/cluster')}}{{ cluster }}.png">
 							
 			{% else %}
-				<p>Please insert the text in the body of your article here:</p>
-						
+				{% if text_error %}
+					<p>There are unexpected errors processing that text, very sorry. Try another</p>	
+				{% else %}				
+					<p>Please insert the text in the body of your article here:</p>
+				{% endif %}		
 				{% with messages = get_flashed_messages(with_categories=true) %}
 					{% if messages %}
 						<ul>

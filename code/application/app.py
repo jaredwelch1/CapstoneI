@@ -71,14 +71,17 @@ def about():
 def disclosure():
 	form = DisclosureForm(request.form)
 	print(form.errors)
-	
+ 
 	if request.method == 'POST':
 		text = request.form['article']
 		
 		if form.validate():
-			result = predict_cluster(text, km, vectorizer)
-			data = Cluster_labels.query.get(int(result))
-			return render_template('disclosure.html', cluster=result, text=text, form=form, label=data.cluster_label)
+			try:
+				result = predict_cluster(text, km, vectorizer)
+				data = Cluster_labels.query.get(int(result))
+				return render_template('disclosure.html', cluster=result, text=text, form=form, label=data.cluster_label)
+			except:
+				return render_template('disclosure.html', form=form, text_error=True)
 		else:
 			flash("Please provide body text of at least 250 characters")	
 
