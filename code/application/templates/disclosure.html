@@ -12,24 +12,31 @@
         {{super()}}
 	<div id="banner">
         	<div class="container">
-			<p>Please insert the text in the body of your article here!!!!!:</p>
-			{% with messages = get_flashed_messages(with_categories=true) %}
-				{% if messages %}
-					<ul>
-					{% for message in messages %}
-						<li>{{ message[1] }}</li>
-					{% endfor %}					
-					</ul>
-				{% endif %}
-			{% endwith %}
-			<form action='' method='post'>
-				{{ form.csrf }}
-				<div id="textarea_div" >
-					{{ form.article(id='disclosure_form_textarea') }}
-				</div>
-				<input type='submit' value="Submit" \>			
-			</form>
-			
+			{% if label %}
+				<p>
+					Our model classifies this article under the topic {{ label }}
+				</p>
+							
+			{% else %}
+				<p>Please insert the text in the body of your article here:</p>
+						
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						<ul>
+						{% for message in messages %}
+							<li>{{ message[1] }}</li>
+						{% endfor %}					
+						</ul>
+					{% endif %}
+				{% endwith %}
+				<form action='' method='post'>
+					{{ form.csrf }}
+					<div id="textarea_div" >
+						{{ form.article(id='disclosure_form_textarea') }}
+					</div>
+					<input type='submit' value="Submit" \>			
+				</form>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

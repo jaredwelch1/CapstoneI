@@ -7,6 +7,7 @@ import flask
 from flask import Flask, render_template, request, flash, session
 from flask.ext.session import Session
 from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
 import psycopg2
 import pandas as pd
 import nltk
@@ -35,12 +36,27 @@ vectorizer = joblib.load('/var/www/html/CapstoneI/code/application/static/models
 
 app = Flask(__name__) #__name__ = Placeholder for current module
 app.secret_key = 'secretsecret'
+
+#database stuff
+host = 'ec2-34-215-56-46.us-west-2.compute.amazonaws.com'
+dbname = 'cap'
+user = 'postgres'
+password = 'secret'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = str('postgresql://' + user + ':' + password + '@' + host + ':9000/' + dbname)
+db = SQLAlchemy(app)
 Bootstrap(app)
 sess = Session()
 
 
+# template for database cluster_labels table
+class Cluster_labels(db.Model):
+	cluster_num = db.Column(db.Integer, primary_key=True)
+	cluster_label = db.Column(db.String(30))
+
+# form for submitting text
 class DisclosureForm(Form):
-	article = TextAreaField('Article Text: ', validators=[validators.required()])
+	article = TextAreaField('Article Text: ', validators=[validators.required(), validators.Length(min=250)])
 
 #Use routes to define directories
 @app.route('/')
@@ -61,8 +77,8 @@ def disclosure():
 		
 		if form.validate():
 			result = predict_cluster(text, km, vectorizer)
-
-			flash(result)
+			data = Cluster_labels.query.get(int(result))
+			return render_template('disclosure.html', cluster=result, text=text, form=form, label=data.cluster_label)
 		else:
 			flash("Please provide body text of at least 250 characters")	
 

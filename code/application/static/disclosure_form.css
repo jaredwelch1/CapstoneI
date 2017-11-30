@@ -11,10 +11,10 @@
 
 #disclosure_form_textarea
 {
-	background-color: green;
+	background-color: white;
 	margin: auto;
-	height: 50%;
-	width: 50%;
+	height: 70%;
+	width: 75%;
 	text-align: left;
 	padding: 2.5px;
 }
