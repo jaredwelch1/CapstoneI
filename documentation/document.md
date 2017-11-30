@@ -8,7 +8,7 @@
 - **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
-- **Kurt Bognar:** Senior at MU Majoring in Computer Science with a Minor in Math. I'm a research for the university aiding in the creation of new tools and algorithms for Association-Rule Mining.  
+- **Kurt Bognar:** Starting a job at Sogeti as a Consultant. I've been a researcher for the university aiding in the creation of new tools and algorithms for Association-Rule Mining, worked for VU for the past year, and actively trade cryptocurrencies.  
 ![alt text](pictures/kurt.jpg "Kurt Bognar")
 
 - **Ali Raza:** I am a senior at the University of Missouri studying Computer Science. I do research at the iDAS Lab where I am currently developing a data mining library.   
@@ -23,7 +23,7 @@
 ## Introduction
 
 #### Problem Definition
-News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it is evident that news articles new to be intensively analyzed. Until recent years, it had not been possible to effectively news data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
+News articles generate massive amounts of data. Following the climactic nature of the 2016 Presidential Election due to the dissemination of false news, it is evident that news articles new to be intensively analyzed. Until recent years, it was not possible to effectively categorize news data due to computational limitations. However, recent advances in High Performance Computing, Data Analytics, and Machine Learning have made it possible to gather, store, and analyze news articles. We propose a model to cluster news articles based upon similarity and then provide data visualizations based upon the generated clusters and analysis done.
 
 #### Problem Resolution
 
@@ -62,7 +62,7 @@ We propose the following software solution:
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 	* Users can use the website to view clusters of articles by topic via a visualization.
 	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
-	* Users can use the website to view a word cloud representation of trending topics for that day.
+	* Users can use the website to view a word cloud representation of trending topics for the whole year.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
@@ -136,7 +136,6 @@ This is a list of the technologies that will be used for reference. These are di
 		* Data manipulation: Pandas, Psycopg2, SQLAlchemy
 	* ##### Flask (web framework)   
 * ##### HTML/Javascript Front-End
-	* ##### D3.js library for visualizations
 
 
 ### Phase II: Web Scraping and Data Design
@@ -223,14 +222,14 @@ for site in site_list:
 #### Data Design
 ![alt text](pictures/ERD.png "ERD")  
 * ERD Diagram  
-		The database has 3 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 3. In schema 2, the user information for accessing the website will exist. In schema 1 only the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Most likely each visualization will have a data mart.
+		The database has 2 schemas. The reason for this is that there are three different access points. There are reporting mechanisms that would use the data warehouse in schema 2. In schema 1 only the data warehouse and the scraper will have access to this transactional table which is a flow of articles. The reason for creating the data warehouse is because it allows you to create data marts that will join together all of the information you use easier for reporting. Each visualization will have a data mart if we made them real time.
 * RDBMS: PostgreSQL is the database system to be used for a variety of reasons:
-	- It is a relational database which is needed because the data being gathered by our scraper has many complex relationships.
+	- It is a relational database; this is needed because the data being gathered by our scraper has many complex relationships.
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
 * ETL Pipeline:
-	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table.
-	* Transformation: The data is organized into relational tables through SQL queries.
-	* Loading: The relational tables will be used in conjunction with machine-learning analysis to gather meaningful and interesting information.
+	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table. This table is what is used to feed the reporting data warehouse
+	* Transformation: The data is pulled into memory via a Python script and it is at this stage that foreign language articles are removed. 
+	* Loading: We followed a star-schema methodology when designing the data warehouse so the data is seperated into logical groupings and placed in the dimensions tables. 
 
 ### Phase III: Data Analysis
 
@@ -369,8 +368,8 @@ be classified and identified as representative of those pre-determined topics.
 		* One of the easier to learn and use frameworks with a low amount of organizational overhead compared to many other frameworks, allowing for rapid integration and expansion.
 * #### Languages
 	* ##### HTML
+	* ##### Flask (Python)
 	* ##### JavaScript
-		* D3.js library will be used for visualizations of data analysis provided by processing done in Python on the back-end and communicated via Flask.
 * #### Data Visualizations
 	* ##### Clustering Visualization/Explanation
 
