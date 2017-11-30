@@ -30,3 +30,8 @@ p
 	align-items: center;
 	background-color: transparent;
 }
+
+div#banner
+{
+	height: 100%;
+}
