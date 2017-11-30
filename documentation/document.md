@@ -475,16 +475,21 @@ The main reason waterfall is best for this project is because many of the method
 	* UI design using HTML, CSS, and JavaScript
 	* System administration
 
-## Possible Troubles
-* In general, this is a big, challenging project for undergraduates who will be required to learn many new techniques to bring it to the finish line.  
-* Using AWS offers great potential for decoupled, scalable data processing but this could be limited by running up against financial constraints.  
-* It might be difficult to get a high degree of accuracy in this application of unsupervised clustering due to the nature of news articles and their tendency to contain overlapping topics.
-* It might prove difficult to draw accurate conclusions with sentiment analysis due to the typically neutral language used in most news articles.
-* If any of the data needs to be labeled by hand, this could prove to be incredibly time consuming and, due to the small size of the development team, would be vulnerable to bias.
+## Problems
+* In general, this is a big, challenging project for undergraduates who had to learn many new techniques to bring it to the finish line.  
+* Using AWS offers great potential for decoupled, scalable data processing but we found ourselves limited by financial constraints.  
+* Due to our low budget, our virtual machine ran out of disk space at one point.
+* Due to our lack of resources, we could not obtain sufficient data to train our sentiment analysis predictions.
+* The database also crashed at one point and we lost ~100k articles because we did not properly back things up.
+* We should have had Flask running python 3 instead of python 2 because we had to adjust some code to work for python 2 when we already had it working in python 3.
+* Ran out of time.
 
-## Alternative Strategies
-* If AWS proves to be unfeasible for the large amount of data processing required due to financial constraints, the team has access to the university research cluster computer to process data locally, outside of the cloud and its associated costs.
-* If unsupervised clustering proves inadequate for topic classification, we can fall back on supervised learning using K nearest neighbors or other supervised learning algorithms on labeled data.
+## Solutions
+* Divided tasks up evenly and established a #help channel in Slack to promote asking questions when stuck.
+* Used a super computer for some of our heavy computations.
+* Restored our crashed database from an AWS AMI (Amazon Machine Image).
+* Adapted our code to python 2 when needed.
+* Hand labeled clusters.
 
 ## Testing
 
