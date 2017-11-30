@@ -534,7 +534,7 @@ Below is a general outline of what we think will need to be tested as we develop
 
 ## Implementation Plan
 
-![alt text](pictures/implementation.jpg "Implementation")
+![alt text](pictures/implementation.png "Implementation")
 
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
