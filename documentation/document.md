@@ -368,23 +368,20 @@ indicating similar articles in that area. Then examination and labeling of clust
 	* ##### Clustering Visualization/Explanation
 
 		In order to provide meaningful information to end users, and for purposes of measurement and accuracy and interacting with the
-		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic could show
-		density of clusters, count of articles within, boundaries of clusters, and/or any information that is determined to be useful
-		in relation to the grouping of the articles by similarities.
+		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic is a visual representation of clustering, articles near each other cover similar topics. 
+		
 		![alt text](pictures/ClusterViz.png "ClusteringViz")
 		In this example, node size represents confidence, cluster represents rule part groupings, color represents something else and transparency could be another stat if it's not overwhelming.
 	* ##### Examples of Statistics-based Visualizations/Explanations  
 		![alt text](pictures/CalendarPieChart.png "CalendarPieChart")
 
-		By day we can show the amounts of the pie graph based on topics, or based on sentiment towards certain topics.  
+		By day we can show the trending topics.  
 
-		![alt text](pictures/RelationalViz.png "RelationalViz")
-		This could use news sites around the and the relations could be be cross site topics.  
 
 		[More information](https://csaladenes.com/2015/06/21/a-visual-exploratory-of-refugee-flows-over-the-world-using-dynamic-chord-diagrams/)
 	* ##### Wordcloud example/Explanation
 		![alt text](pictures/WordCloud.png "WordCloud")
-		Size will be representative of the word count, color will indicate sentiment and orientation will represent something else.
+		Size will be representative of the word count, color will indicate sentiment.
 
 		[Link to Potential Python Library](https://www.jasondavies.com/wordcloud/)
 
