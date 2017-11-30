@@ -16,6 +16,7 @@
 				<p>
 					Our model classifies this article under the topic {{ label }}
 				</p>
+				<img src="{{url_for('.static', filename='plots/cluster')}}{{ cluster }}.png">
 							
 			{% else %}
 				<p>Please insert the text in the body of your article here:</p>

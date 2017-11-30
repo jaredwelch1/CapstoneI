@@ -18,3 +18,15 @@
 	text-align: left;
 	padding: 2.5px;
 }
+
+p 
+{
+	font-size: 40px;
+}
+
+.container
+{
+	margin: auto;
+	align-items: center;
+	background-color: transparent;
+}
