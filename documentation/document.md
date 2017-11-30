@@ -5,7 +5,7 @@
 **Mission Statement:** Our mission is to gather news articles and then categorize them based upon similarity after processing our data with Natural Language Processing techniques. We will provide visualizations of our results to user via a web application. By doing this we hope to expose trends in the news.
 
 #### Team Members:
-- **Zach Bryant:** Nickname = Zen Master Zach. I work on campus as an IT Support Specialist. Yes, I save lives. Really though, I am in charge of keeping all the printers in the computer labs filled with paper. I can get you swipe access to the labs for after hour access ;) I am a senior in Computer Science and will graduate December 2017.
+- **Zach Bryant:** I am a senior undergraduate of Computer Science here at Mizzou. I am very passionate about the influence of today's modern technology and how it can be used for the betterment of all people. I been working on campus as an IT Support Specialist ever since my freshman year ended. I enjoy helping people and love getting paid for it. Over this past year, I have become very interested in cryptocurrencies and have made the decision to invest as well. After graduation, I plan to further my education by using my gained capital from cryptos to fund my own self-taught education on software development for cryptocurrencies.
 ![alt text](pictures/zach.jpg "Zach Bryant")
 
 - **Kurt Bognar:** Starting a job at Sogeti as a Consultant. I've been a researcher for the university aiding in the creation of new tools and algorithms for Association-Rule Mining, worked for VU for the past year, and actively trade cryptocurrencies.  
