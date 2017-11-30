@@ -101,7 +101,11 @@ def jan():
 			print(".")
 	h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
 	allofem=[]
-	for day in jan.keys():
+
+	dates = [day for day in jan]
+	dates.sort()
+
+	for day in dates:
     		print(day)
     		perdiem = pd.DataFrame.from_dict(jan[day], orient="index")
     		perdiem.columns = ['count']
@@ -137,8 +141,12 @@ def feb():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in feb.keys():
-                print(day)
+
+	dates = [day for day in feb]
+	dates.sort()
+
+        for day in dates:
+
                 perdiem = pd.DataFrame.from_dict(feb[day], orient="index")
                 perdiem.columns = ['count']
                 perdiem = perdiem.sort_values(by='count', ascending = False)[:10]
@@ -173,7 +181,11 @@ def mar():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in march.keys():
+
+	dates = [day for day in march]
+	dates.sort()	
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(march[day], orient="index")
                 perdiem.columns = ['count']
@@ -209,7 +221,11 @@ def apr():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in april.keys():
+
+	dates = [day for day in april]
+	dates.sort()	
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(april[day], orient="index")
                 perdiem.columns = ['count']
@@ -245,7 +261,11 @@ def may():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in may.keys():
+
+	dates = [day for day in may]
+	dates.sort()
+
+        for day in date:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(may[day], orient="index")
                 perdiem.columns = ['count']
@@ -281,7 +301,11 @@ def jun():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in june.keys():
+
+	dates = [day for day in june]
+	dates.sort()
+	
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(june[day], orient="index")
                 perdiem.columns = ['count']
@@ -317,7 +341,11 @@ def jul():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in july.keys():
+
+	dates = [day for day in july]
+	dates.sort()
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(july[day], orient="index")
                 perdiem.columns = ['count']
@@ -353,7 +381,11 @@ def aug():
 			print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in aug.keys():
+
+	dates = [day for day in aug]
+	dates.sort()
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(aug[day], orient="index")
                 perdiem.columns = ['count']
@@ -389,7 +421,11 @@ def sep():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in sept.keys():
+
+	dates = [day for day in sept]
+	dates.sort()
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(sept[day], orient="index")
                 perdiem.columns = ['count']
@@ -425,7 +461,11 @@ def oct():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in oct.keys():
+
+	dates = [day for day in oct]
+	dates.sort()
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(oct[day], orient="index")
                 perdiem.columns = ['count']
@@ -461,7 +501,11 @@ def nov():
                         print(".")
         h = ["#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "red", "green"]
         allofem=[]
-        for day in nov.keys():
+
+	dates = [day for day in nov]
+	dates.sort()
+
+        for day in dates:
                 print(day)
                 perdiem = pd.DataFrame.from_dict(nov[day], orient="index")
                 perdiem.columns = ['count']
