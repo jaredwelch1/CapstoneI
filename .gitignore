@@ -17,3 +17,12 @@ DataWarehouse/authenticate.py
 
 # model files 
 **/model
+
+
+# wsgi script
+*.wsgi
+
+*.pkl
+
+*.pyc
+

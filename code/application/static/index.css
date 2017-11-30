@@ -3,7 +3,26 @@ body
 	color: white;
 	background-color: black;
 }
+/* xs < 768px */
+@media screen and (max-width: 767px) 
+{
 
+}
+/* sm < 992px */
+@media screen and (min-width: 992px) 
+{
+
+}
+/* md < 1000px */
+@media screen and (min-width: 1000px) 
+{
+
+}
+/* lg < 1200px */
+@media screen and (min-width: 1200px) 
+{
+
+}
 .jumbotron
 {
 	color: white;
@@ -15,7 +34,12 @@ body
 	text-align: center;
 	padding-top: 70px;
 	font-size: 200%;
-	text-decoration: underline;
+}
+
+#sub-title
+{
+    text-align: center;
+    font-size: 200%;
 }
 
 .bold
@@ -23,16 +47,35 @@ body
 	font-weight: bold;
 }
 
+ul{
+    padding-left: 25px;
+}
+
+.team-img{
+    max-height: 128px;
+    max-width: 100px;
+}
+
+.member{
+    text-align: center;
+}
+
 div#banner
 {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	margin: 0px auto;
 	background-color: #000;
-	background-image: url('/static/star.png'), url('/static/space.jpg');
+	background-image: url(http://ec2-34-215-56-46.us-west-2.compute.amazonaws.com/test_app/static/star.png), url(http://ec2-34-215-56-46.us-west-2.compute.amazonaws.com/test_app/static/space.jpg);
 	background-position: 0px 0px, 0px 0px;
 	background-repeat: repeat, repeat;
 	animation: animate-background linear 240s infinite;
+}
+
+div#visuals
+{
+	width: 90%;
+	margin: auto;
 }
 
 @keyframes animate-background
@@ -58,5 +101,21 @@ textarea
     	background-color: #f8f8f8;
     	font-size: 16px;
     	resize: none;
+}
+
+/*
+ * Calendar styled display for visualization landing page
+ */
+.month-card{
+    background-color: white;
+    color: black;
+    width: 20rem;
+    height: 15rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.card-link{
+     color: white;
 }
 
