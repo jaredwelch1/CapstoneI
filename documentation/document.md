@@ -36,7 +36,7 @@ We propose the following software solution:
 
 ## Changelog for software
 
-### NewsArticleScraper - Version 1.1
+### NewsArticleScraper - Version 1.2
 
 - Initial features:
 
@@ -56,26 +56,33 @@ We propose the following software solution:
 
 	- more try catch error checking to improve error logs
 
+- Version 1.2:
+	- Prevent foreign language articles from being scraped by checking the country code top-level domain of an articles URL
+
 ## **Requirements**
 
 ### User Requirements
 * User can explore visualizations of statistics and analysis of news data using a graphical interface to navigate.
 	* Users can use the website to view clusters of articles by topic via a visualization.
-	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
 	* Users can use the website to view a word cloud representation of trending topics for the whole year.
 * User can submit an article to be analyzed and view the results of the analysis of the article compared to our dataset; the results will be classification data based upon our models.
 * **User Requirements Stretch Goals:**
 	* User can perform custom searches against the database, yielding search results related to statistics on the news article data
-	* User can explore articles pertinent to trending twitter topics.
+	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
 
 ### Functional Requirements
-* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: Article title, author name(s), date published, article body text, and webpage url.
+* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article:
+	* Article title
+	* author name(s)
+	* date published
+	* article body text
+	* webpage url.
 * Perform natural language processing analysis on articles to clean the data and generate features such as named entities, bag of word counts, and term frequency-inverse document frequency metrics.
 * Categorize articles into groups based on topic determined by performing machine learning-based cluster analysis using generated features.
 * A web application will provide users with visualizations of the clustered topics and their articles.
 * The web application will allow a user to provide text of a specific news article, assign the article to a topic category, and inform the user of the result.
 * **Functional Requirements Stretch Goals**
-	* Allow a user to submit a url to a news article and automatically scrape the page for analysis in lieu of copied article text
+	* Allow a user to submit url to a news article and automatically scrape the page for analysis in lieu of copied article text
 	* Allow users to perform custom searches of the article database and return data visualizations based on metrics such as frequency of occurrence, trends of occurrence over time, and relation to other topics.
 	* Create a scrolling wordcloud graphic to visualize changes in overarching news trends over time.
 	* Perform sentiment analysis on articles and visualize the results.
@@ -228,8 +235,8 @@ for site in site_list:
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
 * ETL Pipeline:
 	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table. This table is what is used to feed the reporting data warehouse
-	* Transformation: The data is pulled into memory via a Python script and it is at this stage that foreign language articles are removed. 
-	* Loading: We followed a star-schema methodology when designing the data warehouse so the data is seperated into logical groupings and placed in the dimensions tables. 
+	* Transformation: The data is pulled into memory via a Python script and it is at this stage that foreign language articles are removed.
+	* Loading: We followed a star-schema methodology when designing the data warehouse so the data is seperated into logical groupings and placed in the dimensions tables.
 
 ### Phase III: Data Analysis
 
@@ -368,23 +375,20 @@ indicating similar articles in that area. Then examination and labeling of clust
 	* ##### Clustering Visualization/Explanation
 
 		In order to provide meaningful information to end users, and for purposes of measurement and accuracy and interacting with the
-		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic could show
-		density of clusters, count of articles within, boundaries of clusters, and/or any information that is determined to be useful
-		in relation to the grouping of the articles by similarities.
+		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic is a visual representation of clustering, articles near each other cover similar topics.
+
 		![alt text](pictures/ClusterViz.png "ClusteringViz")
 		In this example, node size represents confidence, cluster represents rule part groupings, color represents something else and transparency could be another stat if it's not overwhelming.
 	* ##### Examples of Statistics-based Visualizations/Explanations  
 		![alt text](pictures/CalendarPieChart.png "CalendarPieChart")
 
-		By day we can show the amounts of the pie graph based on topics, or based on sentiment towards certain topics.  
+		By day we can show the trending topics.  
 
-		![alt text](pictures/RelationalViz.png "RelationalViz")
-		This could use news sites around the and the relations could be be cross site topics.  
 
 		[More information](https://csaladenes.com/2015/06/21/a-visual-exploratory-of-refugee-flows-over-the-world-using-dynamic-chord-diagrams/)
 	* ##### Wordcloud example/Explanation
 		![alt text](pictures/WordCloud.png "WordCloud")
-		Size will be representative of the word count, color will indicate sentiment and orientation will represent something else.
+		Size will be representative of the word count, color will indicate sentiment.
 
 		[Link to Potential Python Library](https://www.jasondavies.com/wordcloud/)
 
@@ -478,16 +482,25 @@ The main reason waterfall is best for this project is because many of the method
 	* UI design using HTML, CSS, and JavaScript
 	* System administration
 
-## Possible Troubles
-* In general, this is a big, challenging project for undergraduates who will be required to learn many new techniques to bring it to the finish line.  
-* Using AWS offers great potential for decoupled, scalable data processing but this could be limited by running up against financial constraints.  
-* It might be difficult to get a high degree of accuracy in this application of unsupervised clustering due to the nature of news articles and their tendency to contain overlapping topics.
-* It might prove difficult to draw accurate conclusions with sentiment analysis due to the typically neutral language used in most news articles.
-* If any of the data needs to be labeled by hand, this could prove to be incredibly time consuming and, due to the small size of the development team, would be vulnerable to bias.
+## Problems
+* In general, this is a big, challenging project for undergraduates who had to learn many new techniques to bring it to the finish line.  
+* Using AWS offers great potential for decoupled, scalable data processing but we found ourselves limited by financial constraints.  
+* Due to our low budget, our virtual machine ran out of disk space at one point.
+* Due to our lack of resources, we could not obtain sufficient data to train our sentiment analysis predictions.
+* The database also crashed at one point and we lost ~100k articles because we did not properly back things up.
+* We should have had Flask running python 3 instead of python 2 because we had to adjust some code to work for python 2 when we already had it working in python 3.
+* Ran out of time.
 
-## Alternative Strategies
-* If AWS proves to be unfeasible for the large amount of data processing required due to financial constraints, the team has access to the university research cluster computer to process data locally, outside of the cloud and its associated costs.
-* If unsupervised clustering proves inadequate for topic classification, we can fall back on supervised learning using K nearest neighbors or other supervised learning algorithms on labeled data.
+## Solutions
+* Divided tasks up evenly and established a #help channel in Slack to promote asking questions when stuck.
+* Used a super computer for some of our heavy computations.
+* Restored our crashed database from an AWS AMI (Amazon Machine Image).
+* Adapted our code to python 2 when needed.
+* Hand labeled clusters.
+
+## Implementation Plan
+
+![alt text](pictures/implementation.png "Implementation")
 
 ## Testing
 
@@ -522,7 +535,6 @@ Below is a general outline of what we think will need to be tested as we develop
 | Flask/Front End testing | The best way to test front in features seems to be with integration tests and workflow procedures to verify that the old workflows work as new features are added. This does not yield itself well to unit testing |
 | Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
 | Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
-
 
 
 ## Prezi
