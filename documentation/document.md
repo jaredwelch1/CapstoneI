@@ -520,7 +520,9 @@ Below is a general outline of what we think will need to be tested as we develop
 | Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
 | Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
 
+## Implementation Plan
 
+![alt text](pictures/implementation.jpg "Implementation")
 
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
