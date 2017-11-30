@@ -17,21 +17,23 @@ This readme is a document detailing our brainstorming and thinking
 
 ## TO DO
 
-- [X] clean up git 
-
 - [ ] backup database
-
-- [X] Finalize script to create KMeans model
-
-- [ ] Finalize script to NLP article data
-
-- [X] Store TFIDF data to a file
-
-- [ ] Create work flow to PCA TFIDF values and then store those
 
 - [ ] Label clusters by hand based on their contents
 
-- [X] storing and loading KMeans
+- [ ] Finish backend for classifying new article
+
+- [ ] Finish frontend for submitting and classifying article
+
+- [ ] Finish classification feature for site
+
+- [ ] Finish documentation 
+
+- [ ] Add power point slides into documentation
+
+- [ ] Finish backend for displaying list of articles by topic 
+
+- [ ] Upload finished code and documentation in pdf format to a flash drive to turn in thursday by 2:30pm
 
 ### Data & Analysis of articles
 
