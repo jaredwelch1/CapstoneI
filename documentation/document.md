@@ -324,16 +324,11 @@ This section will briefly outline the machine learning techniques we intend to u
 
 	![alt text](pictures/clustering.png)
 
+	* **Labeling Clusters**
 
-* ##### Supervised Learning
-	- **K-nearest Neighbors and Distinguishing Clusters**
-
-		We will be employing the classic KNN technique within our project in a unique way. Once we have created clusters from the data, we
-	will supply training data, and based upon that training data and its nearest neighbors, we can hopefully somewhat classify our clusters
-	based on the training data and its placements within. KNN will be the way we calculate the proportion of our training points within clusters. For further details about KNN check the research paper related to clustering.  
-
-		Further, once we have chosen a fixed set of so-called 'topic clusters', we can grow these clusters as we add more datasets, hopefully
-	creating more diverse and accurate classification of new articles as the model improves through laws of big numbers in statistics.
+		Labeling was done by hand, by referencing the frequent terms and their meanings, as well as the title and
+		body contents of articles sampled from the clusters. Once labels were chosen, they were put into the database.
+		These topics can then be used to classify new articles based on their contents
 
 	* **Sentiment Analysis**  
 	Sentiment analysis is a supervised learning process of classifying text as having either a neutral, positive, or negative sentiment. The classic example analyzes movie reviews. A sentiment analysis classifier is trained on a subset of data from a dataset containing reviews of movies that have already been rated as being good movies or bad movies by viewers with the goal of being able to classify new, uncategorized reviews as being positive or negative. The classifier is then tested on the remaining subset of the data to check for correctness of predictions.
@@ -351,8 +346,7 @@ on each article. This will represent the article as a vector of keywords.
 - (3) Using cosine similarity or Euclidean distance, similarity will be measure between articles. Those more similar will be grouped closer, less similar further.
 
 - (4) Once the entire set of articles is measured and positioned relative to other articles, areas of highest density should naturally occur,
-indicating similar articles in that area. Using KNN-like measurement, and training datasets pre-determined for some topic, the clusters will
-be classified and identified as representative of those pre-determined topics.
+indicating similar articles in that area. Then examination and labeling of clusters will occur
 
 - (5) Using this model, repeated training can be supplied to improve it, and as users submit articles, their submitted articles can be classified and described, then utilized back into the model to improve it as well.
 
