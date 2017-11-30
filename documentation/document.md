@@ -71,9 +71,9 @@ We propose the following software solution:
 	* Users can use the website to view visualizations depicting trending topics per day for a past time period.
 
 ### Functional Requirements
-* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article: 
-	* Article title 
-	* author name(s) 
+* Given a list of news websites, scrape every new article on every site and return and store in a database the following data from each article:
+	* Article title
+	* author name(s)
 	* date published
 	* article body text
 	* webpage url.
@@ -235,8 +235,8 @@ for site in site_list:
 	- PostgreSQL supports advanced data-types such as JSON while also providing object features which will allow for easy object-relational mapping if needed.
 * ETL Pipeline:
 	* Extraction: The articles are extracted by a webscraper. The scraper places all the data collected into a single database table. This table is what is used to feed the reporting data warehouse
-	* Transformation: The data is pulled into memory via a Python script and it is at this stage that foreign language articles are removed. 
-	* Loading: We followed a star-schema methodology when designing the data warehouse so the data is seperated into logical groupings and placed in the dimensions tables. 
+	* Transformation: The data is pulled into memory via a Python script and it is at this stage that foreign language articles are removed.
+	* Loading: We followed a star-schema methodology when designing the data warehouse so the data is seperated into logical groupings and placed in the dimensions tables.
 
 ### Phase III: Data Analysis
 
@@ -375,8 +375,8 @@ indicating similar articles in that area. Then examination and labeling of clust
 	* ##### Clustering Visualization/Explanation
 
 		In order to provide meaningful information to end users, and for purposes of measurement and accuracy and interacting with the
-		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic is a visual representation of clustering, articles near each other cover similar topics. 
-		
+		clusters of data, creating a visualization tool for this clustering could serve both of these purposes. This graphic is a visual representation of clustering, articles near each other cover similar topics.
+
 		![alt text](pictures/ClusterViz.png "ClusteringViz")
 		In this example, node size represents confidence, cluster represents rule part groupings, color represents something else and transparency could be another stat if it's not overwhelming.
 	* ##### Examples of Statistics-based Visualizations/Explanations  
@@ -498,6 +498,10 @@ The main reason waterfall is best for this project is because many of the method
 * Adapted our code to python 2 when needed.
 * Hand labeled clusters.
 
+## Implementation Plan
+
+![alt text](pictures/implementation.png "Implementation")
+
 ## Testing
 
 We plan on testing using unit testing, creating testing suites with each new version release of the software. As new features are added,
@@ -532,9 +536,6 @@ Below is a general outline of what we think will need to be tested as we develop
 | Web scraper | We can test the scraper is working by checking for recently posted articles at sites we expect to scrape properly and verifying those articles are contained in the database as expected |
 | Visualizations | Testing visualizations should be relatively simple using dummy data to visualize and verifying it is displayed accurately |
 
-## Implementation Plan
-
-![alt text](pictures/implementation.png "Implementation")
 
 ## Prezi
 * http://prezi.com/ybpo3byyhwaw/?utm_campaign=share&utm_medium=copy
