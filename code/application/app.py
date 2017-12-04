@@ -30,6 +30,7 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 import sys
 sys.path.insert(0,'/var/www/html/CapstoneI/code/application/scripts/')
 from classify import predict_cluster
+from nlp import analyze_sentiment
 
 km = joblib.load('/var/www/html/CapstoneI/code/application/static/models/kmeans_model.pkl')
 vectorizer = joblib.load('/var/www/html/CapstoneI/code/application/static/models/tf_vectorizer_obj.pkl')
@@ -74,14 +75,16 @@ def disclosure():
  
 	if request.method == 'POST':
 		text = request.form['article']
+		text = text.encode("ascii", errors="ignore").decode()
 		
 		if form.validate():
 			try:
 				result = predict_cluster(text, km, vectorizer)
 				data = Cluster_labels.query.get(int(result))
-				return render_template('disclosure.html', cluster=result, text=text, form=form, label=data.cluster_label)
-			except:
-				return render_template('disclosure.html', form=form, text_error=True)
+				sentiment = analyze_sentiment(text) 
+				return render_template('disclosure.html', cluster=result, text=text, form=form, label=data.cluster_label, sentiment=sentiment)
+			except Exception as e:
+				return render_template('disclosure.html', form=form, text_error=True, exception=e, text=text)
 		else:
 			flash("Please provide body text of at least 250 characters")	
 
