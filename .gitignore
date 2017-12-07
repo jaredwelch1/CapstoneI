@@ -20,7 +20,7 @@ DataWarehouse/authenticate.py
 
 
 # wsgi script
-*.wsgi
+**.wsgi
 
 *.pkl
 

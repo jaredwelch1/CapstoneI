@@ -35,3 +35,23 @@ div#banner
 {
 	height: 100vh;
 }
+
+#image_div{
+	margin: 0 auto;
+	width: 800px;
+}
+
+#_image
+{
+	margin: auto;
+	display: inline-block;
+	padding: 10px;
+}
+
+.sentiment_image
+{
+	height: 35%;
+	width: 35%;
+	padding: 20px;
+}
+

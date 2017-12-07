@@ -4,6 +4,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import string
 
 '''
 Remove stopwords from article body.
@@ -22,7 +23,7 @@ def stopword_article(body):
 Tokenize article by word.
 '''
 def tokenize_article(body):
-	text = body.decode('utf-8')
+	#text = body.encode('utf-8', errors="ignore")
 	tokens = nltk.word_tokenize(text)
 	return tokens
 
@@ -52,7 +53,7 @@ def lemmatize_article(stopworded_body):
 We need to tokenize at the sentence level for our sentiment analysis.
 '''
 def get_sentence_tokens(body):
-	text = body.decode('utf-8')
+	#text = body.decode('utf-8')
 	sentences = sent_tokenize(text)
 	return sentences
 
@@ -117,6 +118,11 @@ Transform a single user-supplied article to lemmatized version for clustering.
 Returns a list of lemmatized words from the original article.
 '''
 def cluster_prep(text):
+	#text = text.encode('string-escape')
+	#printable = set(string.printable)
+	#text = ''.join(filter(lambda x: x in string.printable, text))
+	text = text.encode("ascii", errors="ignore").decode()
+	#text = text.encode('utf-8')
 	tokens = tokenize_article(text)
 	stopped_text = stopword_article(tokens)
 	lemmatized_text = lemmatize_article(stopped_text)

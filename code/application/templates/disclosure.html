@@ -14,13 +14,26 @@
         	<div class="container">
 			{% if label %}
 				<p>
-					Our model classifies this article under the topic {{ label }}
+				Our model classifies this article under the topic <b><u>{{ label }}</u></b> with a
+					{% if sentiment == 1 %}
+						positive
+					{% else %}
+						negative
+					{% endif %}
+					sentiment.
 				</p>
-				<img src="{{url_for('.static', filename='plots/cluster')}}{{ cluster }}.png">
+				<div class="image_div">
+					<img id="_image" src="{{url_for('.static', filename='plots/cluster')}}{{ cluster }}.png">
+					{% if sentiment == 1 %}
+						<img id="_image" class="sentiment_image" src="{{url_for('.static', filename='positive')}}{{ positive }}.png">
+                        	        {% else %}
+						<img id="_image" class="sentiment_image" src="{{url_for('.static', filename='negative')}}{{ negative }}.png">
+					{% endif %}
+				</div>
 							
 			{% else %}
 				{% if text_error %}
-					<p>There are unexpected errors processing that text, very sorry. Try another</p>	
+					<p>There are unexpected errors processing that text, very sorry. Try another</p>
 				{% else %}				
 					<p>Please insert the text in the body of your article here:</p>
 				{% endif %}		
@@ -36,7 +49,7 @@
 				<form action='' method='post'>
 					{{ form.csrf }}
 					<div id="textarea_div" >
-						{{ form.article(id='disclosure_form_textarea') }}
+						{{ form.article(id='disclosure_form_textarea') | safe }}
 					</div>
 					<input type='submit' value="Submit" \>			
 				</form>
